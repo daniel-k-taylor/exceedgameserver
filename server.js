@@ -26,6 +26,16 @@ function join_room(ws, join_room_json) {
     return false
   }
 
+  var player = active_connections.get(ws)
+  if (player === undefined) {
+    console.log("Player is undefined")
+    return false
+  }
+
+  if ('player_name' in join_room_json && typeof join_room_json.player_name === 'string') {
+    set_name(player, join_room_json.player_name)
+  }
+
   var deck_id = join_room_json.deck_id
   var room_id = join_room_json.room_id
   var player = active_connections.get(ws)
@@ -43,7 +53,7 @@ function join_room(ws, join_room_json) {
 
   if (!success) {
     const message = {
-      type: 'join_room_failed',
+      type: 'room_join_failed',
       reason: 'Room is full'
     }
     ws.send(JSON.stringify(message))
@@ -76,9 +86,19 @@ function already_has_player_with_name(name) {
   return false
 }
 
+function set_name(player, desired_name) {
+  var name_to_set = desired_name
+  while (already_has_player_with_name(desired_name)) {
+    name_to_set = desired_name + "_" + running_id++
+  }
+  player.set_name(name_to_set)
+  console.log("Player name set to " + name_to_set)
+}
+
 wss.on('connection', function connection(ws) {
   var new_player_id = running_id++
-  const player = new Player(ws, new_player_id, "Anon_" + new_player_id)
+  var player_name = "Anon_" + new_player_id
+  const player = new Player(ws, new_player_id, player_name)
   active_connections.set(ws, player)
 
   ws.on('message', function message(data) {
@@ -89,12 +109,7 @@ wss.on('connection', function connection(ws) {
       if (message_type == 'join_room') {
         handled = join_room(ws, json_data)
       } else if (message_type == "set_name") {
-        var name_to_set = json_data.name
-        while (already_has_player_with_name(json_data.name)) {
-          name_to_set = json_data.name + "_" + running_id++
-        }
-        player.set_name(name_to_set)
-        console.log("Player name set to " + name_to_set)
+        set_name(player, json_data.name)
         handled = true
       }
     }
@@ -111,7 +126,11 @@ wss.on('connection', function connection(ws) {
     handle_disconnect(ws)
   })
 
-  ws.send('Connected to server!')
+  const message = {
+    type: 'server_hello',
+    player_name: player_name
+  }
+  ws.send(JSON.stringify(message))
 })
 
 console.log("Server started on port " + port + ".")

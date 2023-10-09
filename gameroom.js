@@ -13,6 +13,11 @@ class GameRoom {
       console.log(`Player joined. Total players: ${this.players.length}`)
       if (this.players.length === 2) {
         this.startGame()
+      } else {
+        const message = {
+          type: 'room_waiting_for_opponent',
+        }
+        player.ws.send(JSON.stringify(message))
       }
       return true
     }
