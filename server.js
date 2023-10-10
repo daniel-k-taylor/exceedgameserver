@@ -62,18 +62,20 @@ function join_room(ws, join_room_json) {
   return true
 }
 
+function leave_room(player, disconnect) {
+  if (player.room !== null) {
+    var room_id = player.room.name
+    player.room.player_quit(player, disconnect)
+    console.log("Closing room " + room_id)
+    delete game_rooms[room_id]
+    player.room = null
+  }
+}
+
 function handle_disconnect(ws) {
   const player = active_connections.get(ws)
   console.log(`Player ${player.name} disconnected`)
-  for (const room_id in game_rooms) {
-    const room = game_rooms[room_id]
-    if (room.players.includes(player)) {
-      room.player_disconnect(player)
-      console.log("Closing room " + room_id)
-      delete game_rooms[room_id]
-      break
-    }
-  }
+  leave_room(player, true)
   active_connections.delete(ws)
 }
 
@@ -110,6 +112,14 @@ wss.on('connection', function connection(ws) {
         handled = join_room(ws, json_data)
       } else if (message_type == "set_name") {
         set_name(player, json_data.name)
+        handled = true
+      } else if (message_type == "leave_room") {
+        leave_room(player, false)
+        handled = true
+      } else if (message_type == "game_message") {
+        if (player.room !== null) {
+          player.room.handle_game_message(player, json_data)
+        }
         handled = true
       }
     }
