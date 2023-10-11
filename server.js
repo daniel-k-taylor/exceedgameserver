@@ -33,7 +33,16 @@ function join_room(ws, join_room_json) {
   }
 
   if ('player_name' in join_room_json && typeof join_room_json.player_name === 'string') {
-    set_name(player, join_room_json.player_name)
+    set_name(player, join_room_json)
+  }
+
+  if (join_room_json.room_id == "Lobby") {
+    const message = {
+      type: 'room_join_failed',
+      reason: "Can't join lobby"
+    }
+    ws.send(JSON.stringify(message))
+    return true
   }
 
   var deck_id = join_room_json.deck_id
@@ -58,6 +67,7 @@ function join_room(ws, join_room_json) {
     }
     ws.send(JSON.stringify(message))
   }
+  broadcast_players_update()
 
   return true
 }
@@ -69,6 +79,7 @@ function leave_room(player, disconnect) {
     console.log("Closing room " + room_id)
     delete game_rooms[room_id]
     player.room = null
+    broadcast_players_update()
   }
 }
 
@@ -77,6 +88,7 @@ function handle_disconnect(ws) {
   console.log(`Player ${player.name} disconnected`)
   leave_room(player, true)
   active_connections.delete(ws)
+  broadcast_players_update()
 }
 
 function already_has_player_with_name(name) {
@@ -88,13 +100,37 @@ function already_has_player_with_name(name) {
   return false
 }
 
-function set_name(player, desired_name) {
+function set_name(player, json_message) {
+  if (!('player_name' in json_message && typeof json_message.player_name === 'string')) {
+    console.log("set_name message does not have 'player_name' field")
+    return
+  }
+
+  var desired_name = json_message.player_name
   var name_to_set = desired_name
   while (already_has_player_with_name(desired_name)) {
     name_to_set = desired_name + "_" + running_id++
   }
   player.set_name(name_to_set)
   console.log("Player name set to " + name_to_set)
+  broadcast_players_update()
+}
+
+function broadcast_players_update() {
+  const message = {
+    type: 'players_update',
+    players: []
+  }
+  for (const player of active_connections.values()) {
+    message.players.push({
+      player_id: player.id,
+      player_name: player.name,
+      room_name: player.room === null ? "Lobby" : player.room.name
+    })
+  }
+  for (const player of active_connections.values()) {
+    player.ws.send(JSON.stringify(message))
+  }
 }
 
 wss.on('connection', function connection(ws) {
@@ -111,7 +147,7 @@ wss.on('connection', function connection(ws) {
       if (message_type == 'join_room') {
         handled = join_room(ws, json_data)
       } else if (message_type == "set_name") {
-        set_name(player, json_data.name)
+        set_name(player, json_data)
         handled = true
       } else if (message_type == "leave_room") {
         leave_room(player, false)
@@ -141,6 +177,7 @@ wss.on('connection', function connection(ws) {
     player_name: player_name
   }
   ws.send(JSON.stringify(message))
+  broadcast_players_update()
 })
 
 console.log("Server started on port " + port + ".")
