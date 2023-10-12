@@ -5,6 +5,8 @@ import GameRoom from './gameroom.js'
 const port = process.env.PORT || 8080
 const wss = new WebSocketServer({ port: port })
 
+// Set player timeout to 10 minutes
+const PlayerTimeoutMs = 10 * 60 * 1000
 const game_rooms = {}
 const active_connections = new Map()
 
@@ -85,10 +87,12 @@ function leave_room(player, disconnect) {
 
 function handle_disconnect(ws) {
   const player = active_connections.get(ws)
-  console.log(`Player ${player.name} disconnected`)
-  leave_room(player, true)
-  active_connections.delete(ws)
-  broadcast_players_update()
+  if (player) {
+    console.log(`Player ${player.name} disconnected`)
+    leave_room(player, true)
+    active_connections.delete(ws)
+    broadcast_players_update()
+  }
 }
 
 function already_has_player_with_name(name) {
@@ -133,14 +137,27 @@ function broadcast_players_update() {
   }
 }
 
+function set_player_timeout(player) {
+  if (player.timeout !== null) {
+    clearTimeout(player.timeout)
+  }
+  player.timeout = setTimeout(() => {
+    console.log("Timing out")
+    console.log(`Player ${player.name} timed out`)
+    player.ws.close()
+  }, PlayerTimeoutMs)
+}
+
 wss.on('connection', function connection(ws) {
   var new_player_id = running_id++
   var player_name = "Anon_" + new_player_id
   const player = new Player(ws, new_player_id, player_name)
   active_connections.set(ws, player)
+  set_player_timeout(player)
 
   ws.on('message', function message(data) {
     var handled = false
+    set_player_timeout(player)
     try {
       const json_data = JSON.parse(data)
       const message_type = json_data.type

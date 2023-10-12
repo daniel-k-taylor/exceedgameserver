@@ -3,6 +3,7 @@ class Player {
       this.ws = ws
       this.id = id
       this.name = name
+      this.timeout = null
       this.deck_id = ""
       this.room = null
     }
