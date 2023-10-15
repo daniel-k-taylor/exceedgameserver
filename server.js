@@ -38,7 +38,8 @@ function join_room(ws, join_room_json) {
     set_name(player, join_room_json)
   }
 
-  if (join_room_json.room_id == "Lobby") {
+  var room_id = join_room_json.room_id.trim()
+  if (room_id == "Lobby") {
     const message = {
       type: 'room_join_failed',
       reason: "Can't join lobby"
@@ -48,7 +49,6 @@ function join_room(ws, join_room_json) {
   }
 
   var deck_id = join_room_json.deck_id
-  var room_id = join_room_json.room_id
   var player = active_connections.get(ws)
   player.set_deck_id(deck_id)
   var success = false
