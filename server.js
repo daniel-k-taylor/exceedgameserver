@@ -11,6 +11,8 @@ const game_rooms = {}
 const active_connections = new Map()
 
 var running_id = 1
+var running_match_id = 1
+var awaiting_match_room = null
 
 function join_room(ws, join_room_json) {
   // Check if jsonObj is an object
@@ -30,7 +32,7 @@ function join_room(ws, join_room_json) {
 
   var player = active_connections.get(ws)
   if (player === undefined) {
-    console.log("Player is undefined")
+    console.log("join_room Player is undefined")
     return false
   }
 
@@ -47,6 +49,9 @@ function join_room(ws, join_room_json) {
     ws.send(JSON.stringify(message))
     return true
   }
+
+  // Add a prefix to the room id to indicate custom match.
+  room_id = "custom_" + room_id
 
   var deck_id = join_room_json.deck_id
   var player = active_connections.get(ws)
@@ -70,6 +75,71 @@ function join_room(ws, join_room_json) {
     ws.send(JSON.stringify(message))
   }
   broadcast_players_update()
+
+  return true
+}
+
+function create_new_match_room(player) {
+  const room_id = "Match_" + running_match_id++
+  const new_room = new GameRoom(room_id)
+  new_room.join(player)
+  game_rooms[room_id] = new_room
+  awaiting_match_room = room_id
+}
+
+function join_matchmaking(ws, json_data) {
+  // Check if jsonObj is an object
+  if (typeof json_data !== 'object' || json_data === null) {
+    console.log("join_matchmaking json is not an object")
+    return false
+  }
+  // Check if 'room_id' and 'deck_id' fields exist in the object
+  if (!('deck_id' in json_data)) {
+    console.log("join_matchmaking  does not have 'deck_id' fields")
+    return false
+  }
+  if (!(typeof json_data.deck_id === 'string' && typeof json_data.deck_id === 'string')) {
+    console.log("join_matchmaking 'deck_id' fields are not strings")
+    return false
+  }
+
+  var player = active_connections.get(ws)
+  if (player === undefined) {
+    console.log("join_matchmaking Player is undefined")
+    return false
+  }
+
+  if ('player_name' in json_data && typeof json_data.player_name === 'string') {
+    set_name(player, json_data)
+  }
+
+  var deck_id = json_data.deck_id
+  var player = active_connections.get(ws)
+  player.set_deck_id(deck_id)
+  var success = false
+  if (awaiting_match_room === null) {
+    // Create a new room and join it.
+    create_new_match_room(player)
+    success = true
+  } else {
+    if (game_rooms.hasOwnProperty(awaiting_match_room)) {
+      const room = game_rooms[awaiting_match_room]
+      success = room.join(player)
+      awaiting_match_room = null
+    } else {
+      // They must have disconnected.
+      create_new_match_room(player)
+      success = true
+    }
+  }
+
+  if (!success) {
+    const message = {
+      type: 'room_join_failed',
+      reason: 'Matchmaking failed'
+    }
+    ws.send(JSON.stringify(message))
+  }
 
   return true
 }
@@ -163,6 +233,8 @@ wss.on('connection', function connection(ws) {
       const message_type = json_data.type
       if (message_type == 'join_room') {
         handled = join_room(ws, json_data)
+      } else if (message_type == "join_matchmaking") {
+        handled = join_matchmaking(ws, json_data)
       } else if (message_type == "set_name") {
         set_name(player, json_data)
         handled = true
