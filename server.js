@@ -141,12 +141,17 @@ function join_matchmaking(ws, json_data) {
     ws.send(JSON.stringify(message))
   }
 
+  broadcast_players_update()
+
   return true
 }
 
 function leave_room(player, disconnect) {
   if (player.room !== null) {
     var room_id = player.room.name
+    if (awaiting_match_room == room_id) {
+      awaiting_match_room = null
+    }
     player.room.player_quit(player, disconnect)
     console.log("Closing room " + room_id)
     delete game_rooms[room_id]
@@ -193,7 +198,8 @@ function set_name(player, json_message) {
 function broadcast_players_update() {
   const message = {
     type: 'players_update',
-    players: []
+    players: [],
+    match_available: awaiting_match_room !== null
   }
   for (const player of active_connections.values()) {
     message.players.push({
