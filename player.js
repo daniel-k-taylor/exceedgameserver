@@ -6,9 +6,11 @@ class Player {
       this.timeout = null
       this.deck_id = ""
       this.room = null
+      this.version = "?"
     }
 
-    set_name(name) {
+    set_name(version, name) {
+      this.version = version
       this.name = name
     }
 
