@@ -22,6 +22,13 @@ class GameRoom {
     return ""
   }
 
+  get_player_deck(index) {
+    if (index < this.players.length) {
+      return this.players[index].deck_id
+    }
+    return ""
+  }
+
   join(player) {
     if (this.players.length < 2 && !this.gameStarted) {
       this.players.push(player)

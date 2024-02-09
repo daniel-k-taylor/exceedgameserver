@@ -354,6 +354,7 @@ function broadcast_players_update() {
       player_id: player.id,
       player_version: player.version,
       player_name: player.name,
+      player_deck: player.deck_id,
       room_name: player.room === null ? "Lobby" : player.room.name
     })
   }
@@ -365,7 +366,8 @@ function broadcast_players_update() {
       player_count: room.players.length,
       observer_count: room.get_observer_count(),
       game_started: room.gameStarted,
-      player_names: [room.get_player_name(0), room.get_player_name(1)]
+      player_names: [room.get_player_name(0), room.get_player_name(1)],
+      player_decks: [room.get_player_deck(0), room.get_player_deck(1)]
     })
   }
   for (const player of active_connections.values()) {
