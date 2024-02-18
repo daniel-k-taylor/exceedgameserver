@@ -1,4 +1,5 @@
 import sql from 'mssql'
+import retry from 'async-retry';
 
 function formatDate(date) {
     const isoString = date.toISOString();
@@ -43,12 +44,31 @@ export default class Database {
         }
     }
 
-    async executeQuery(query) {
+    async executeQuery(query, params) {
         await this.connect();
-        const request = this.poolconnection.request();
-        const result = await request.query(query);
+        console.log(`DATABASE: Executing query`);
+        const outer_result = await retry(async () => {
+            const request = this.poolconnection.request();
+            if (params) {
+                for (const [key, value] of Object.entries(params)) {
+                    request.input(key, value);
+                }
+            }
+            const result = await request.query(query);
+            console.log(`DATABASE: result: ${JSON.stringify(result)}`);
+            return result.rowsAffected.length ? result.rowsAffected[0] : 0
+        }, {
+            retries: 3,
+            minTimeout: 1000,
+            maxTimeout: 5000,
+            factor: 2,
+            randomize: true,
+            onRetry: (err, attempt) => {
+                console.log(`DATABASE: Retrying (${attempt}/${3}): ${err}`);
+            }
+        });
 
-        return result.rowsAffected[0];
+        return outer_result;
     }
 
     // Function to insert a new entry into the MatchData table
@@ -62,23 +82,39 @@ export default class Database {
         this.executeQuery(`
             INSERT INTO MatchData (MatchId, Player1Name, Player2Name, Player1Character, Player2Character, StartTime, EndTime, MatchResult, GameVersion, MatchLog, MatchEventLength, FirstPlayer, Player1Life, Player2Life, Disconnects)
             VALUES (
-                '${matchData.MatchId}',
-                '${matchData.Player1Name}',
-                '${matchData.Player2Name}',
-                '${matchData.Player1Character}',
-                '${matchData.Player2Character}',
-                '${formatDate(matchData.StartTime)}',
-                '${formatDate(matchData.EndTime)}',
-                '${matchData.MatchResult}',
-                '${matchData.GameVersion}',
-                '${matchData.MatchLog}',
-                '${matchData.MatchEventLength}',
-                '${matchData.FirstPlayer}',
-                '${matchData.Player1Life}',
-                '${matchData.Player2Life}',
-                '${matchData.Disconnects}'
+                @MatchId,
+                @Player1Name,
+                @Player2Name,
+                @Player1Character,
+                @Player2Character,
+                @StartTime,
+                @EndTime,
+                @MatchResult,
+                @GameVersion,
+                @MatchLog,
+                @MatchEventLength,
+                @FirstPlayer,
+                @Player1Life,
+                @Player2Life,
+                @Disconnects
             )
-        `).then(() => {
+        `, {
+            MatchId: matchData.MatchId,
+            Player1Name: matchData.Player1Name,
+            Player2Name: matchData.Player2Name,
+            Player1Character: matchData.Player1Character,
+            Player2Character: matchData.Player2Character,
+            StartTime: formatDate(matchData.StartTime),
+            EndTime: formatDate(matchData.EndTime),
+            MatchResult: matchData.MatchResult,
+            GameVersion: matchData.GameVersion,
+            MatchLog: matchData.MatchLog,
+            MatchEventLength: matchData.MatchEventLength,
+            FirstPlayer: matchData.FirstPlayer,
+            Player1Life: matchData.Player1Life,
+            Player2Life: matchData.Player2Life,
+            Disconnects: matchData.Disconnects
+        }).then(() => {
             console.log('DATABASE: Match inserted successfully');
         })
         .catch(err => {
