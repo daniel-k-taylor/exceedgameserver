@@ -22,34 +22,40 @@ export default class Database {
 
     async connect() {
         try {
-            console.log(`Database connecting...${this.connected}`);
+            console.log(`DATABASE: Connecting...${this.connected}`);
             if (this.connected === false) {
                 this.poolconnection = await sql.connect(this.config);
+                this.poolconnection.on( "error", async err => {
+                    console.log('DATABASE: Connection error, closing pool');
+                    await disconnect();
+                } );
                 this.connected = true;
-                console.log('Database connection successful');
+                console.log('DATABASE: Connection successful');
             } else {
-                console.log('Database already connected');
+                console.log('DATABASE: Already connected');
             }
         } catch (error) {
             // If error is string, just print it
-            console.error(`Error connecting to database: ${error}`);
+            console.error(`DATABASE: Error connecting to database: ${error}`);
         }
     }
 
     async disconnect() {
         try {
-            this.poolconnection.close();
-            console.log('Database connection closed');
+            await this.poolconnection.close();
+            this.connected = false;
+            console.log('DATABASE: Connection closed');
         } catch (error) {
-            console.error(`Error closing database connection: ${error}`);
+            this.connected = false;
+            console.error(`DATABASE: Error closing database connection: ${error}`);
         }
     }
 
     async executeQuery(query, params) {
-        await this.connect();
         const startTime = performance.now();
         console.log(`DATABASE: Executing query`)
         const outer_result = await retry(async () => {
+            await this.connect();
             const request = this.poolconnection.request();
             if (params) {
                 for (const [key, value] of Object.entries(params)) {
@@ -62,8 +68,8 @@ export default class Database {
             return result.rowsAffected.length ? result.rowsAffected[0] : 0
         }, {
             retries: 3,
-            minTimeout: 1000,
-            maxTimeout: 5000,
+            minTimeout: 5000,
+            maxTimeout: 25000,
             factor: 2,
             randomize: true,
             onRetry: (err, attempt) => {
@@ -77,12 +83,6 @@ export default class Database {
 
     // Function to insert a new entry into the MatchData table
     async insertMatchData(matchData) {
-        await this.connect();
-        if (!this.connected) {
-            console.error('DATABASE: Aborting since no connection');
-            return
-        }
-
         this.executeQuery(`
             INSERT INTO MatchData (MatchId, Player1Name, Player2Name, Player1Character, Player2Character, StartTime, EndTime, MatchResult, GameVersion, MatchLog, MatchEventLength, FirstPlayer, Player1Life, Player2Life, Disconnects)
             VALUES (

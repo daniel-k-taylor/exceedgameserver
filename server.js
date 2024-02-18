@@ -13,15 +13,21 @@ const PlayerTimeoutMs = 10 * 60 * 1000 * 99
 const game_rooms = {}
 const active_connections = new Map()
 
+const sqltimeout = 90000
 const config = {
   user: process.env.AZURE_SQL_USER,
   password: process.env.AZURE_SQL_PASSWORD,
   port: parseInt(process.env.AZURE_SQL_PORT),
   server: process.env.AZURE_SQL_SERVER,
   database: process.env.AZURE_SQL_DATABASE,
-  requestTimeout: 90000,
+  requestTimeout: sqltimeout,
   options: {
-      encrypt: true, // If you're connecting to Azure SQL Database
+    encrypt: true, // If you're connecting to Azure SQL Database
+  },
+  pool: {
+    max: 50,
+    min: 1,
+    idleTimeoutMillis: sqltimeout,
   }
 };
 const database = new Database(config);

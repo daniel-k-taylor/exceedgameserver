@@ -183,7 +183,6 @@ class GameRoom {
   }
 
   broadcast(message) {
-    console.log("Broadcast message type: " + message.type)
     this.message_log.push(message)
     for (const player of this.players) {
       message['your_player_id'] = player.id
