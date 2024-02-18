@@ -20,7 +20,8 @@ const config = {
   server: process.env.AZURE_SQL_SERVER,
   database: process.env.AZURE_SQL_DATABASE,
   options: {
-      encrypt: true // If you're connecting to Azure SQL Database
+      encrypt: true, // If you're connecting to Azure SQL Database
+      requestTimeout: 90000,
   }
 };
 const database = new Database(config);
