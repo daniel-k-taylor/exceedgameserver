@@ -1,6 +1,8 @@
 {
   "type": "module",
   "dependencies": {
+    "dotenv": "^16.4.4",
+    "mssql": "^10.0.2",
     "ws": "^8.14.2"
   }
 }

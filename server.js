@@ -1,6 +1,9 @@
 import { WebSocketServer } from 'ws'
 import Player from './player.js'
 import GameRoom from './gameroom.js'
+import Database from './dbaccess.js'
+import * as dotenv from 'dotenv';
+dotenv.config({ path: `.env`, debug: true });
 
 const port = process.env.PORT || 8080
 const wss = new WebSocketServer({ port: port })
@@ -9,6 +12,19 @@ const wss = new WebSocketServer({ port: port })
 const PlayerTimeoutMs = 10 * 60 * 1000 * 99
 const game_rooms = {}
 const active_connections = new Map()
+
+const config = {
+  user: process.env.AZURE_SQL_USER,
+  password: process.env.AZURE_SQL_PASSWORD,
+  port: parseInt(process.env.AZURE_SQL_PORT),
+  server: process.env.AZURE_SQL_SERVER,
+  database: process.env.AZURE_SQL_DATABASE,
+  options: {
+      encrypt: true // If you're connecting to Azure SQL Database
+  }
+};
+const database = new Database(config);
+database.connect();
 
 var running_id = 1
 var running_match_id = 1
@@ -76,7 +92,7 @@ function join_custom_room(ws, join_room_json) {
       }
       success = room.join(player)
     } else {
-      const new_room = new GameRoom(version, room_id)
+      const new_room = new GameRoom(version, room_id, database)
       new_room.join(player)
       game_rooms[room_id] = new_room
       success = true
@@ -192,7 +208,7 @@ function get_next_match_id() {
 
 function create_new_match_room(version, player) {
   const room_id = "Match_" + get_next_match_id()
-  const new_room = new GameRoom(version, room_id)
+  const new_room = new GameRoom(version, room_id, database)
   new_room.join(player)
   game_rooms[room_id] = new_room
   awaiting_match_room = room_id
@@ -287,6 +303,7 @@ function leave_room(player, disconnect) {
     player.room.player_quit(player, disconnect)
     if (player.room.is_game_over) {
       console.log("Closing room " + room_id)
+      game_rooms[room_id].close_room()
       delete game_rooms[room_id]
     }
     player.room = null
