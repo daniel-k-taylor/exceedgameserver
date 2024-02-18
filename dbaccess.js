@@ -1,5 +1,6 @@
 import sql from 'mssql'
 import retry from 'async-retry';
+import { performance } from 'perf_hooks';
 
 function formatDate(date) {
     const isoString = date.toISOString();
@@ -46,7 +47,8 @@ export default class Database {
 
     async executeQuery(query, params) {
         await this.connect();
-        console.log(`DATABASE: Executing query`);
+        const startTime = performance.now();
+        console.log(`DATABASE: Executing query`)
         const outer_result = await retry(async () => {
             const request = this.poolconnection.request();
             if (params) {
@@ -55,7 +57,8 @@ export default class Database {
                 }
             }
             const result = await request.query(query);
-            console.log(`DATABASE: result: ${JSON.stringify(result)}`);
+            var elapsedMs = performance.now() - startTime;
+            console.log(`DATABASE: result after ${elapsedMs}ms: ${JSON.stringify(result)}`);
             return result.rowsAffected.length ? result.rowsAffected[0] : 0
         }, {
             retries: 3,
@@ -64,7 +67,8 @@ export default class Database {
             factor: 2,
             randomize: true,
             onRetry: (err, attempt) => {
-                console.log(`DATABASE: Retrying (${attempt}/${3}): ${err}`);
+                var elapsedMs = performance.now() - startTime;
+                console.log(`DATABASE: Retrying (${elapsedMs}ms) (${attempt}/${3}): ${err}`);
             }
         });
 

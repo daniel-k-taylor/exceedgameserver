@@ -19,9 +19,9 @@ const config = {
   port: parseInt(process.env.AZURE_SQL_PORT),
   server: process.env.AZURE_SQL_SERVER,
   database: process.env.AZURE_SQL_DATABASE,
+  requestTimeout: 90000,
   options: {
       encrypt: true, // If you're connecting to Azure SQL Database
-      requestTimeout: 90000,
   }
 };
 const database = new Database(config);
