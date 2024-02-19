@@ -27,7 +27,7 @@ export default class Database {
                 this.poolconnection = await sql.connect(this.config);
                 this.poolconnection.on( "error", async err => {
                     console.log('DATABASE: Connection error, closing pool');
-                    await disconnect();
+                    await this.disconnect();
                 } );
                 this.connected = true;
                 console.log('DATABASE: Connection successful');
