@@ -67,7 +67,7 @@ export default class Database {
             console.log(`DATABASE: result after ${elapsedMs}ms: ${JSON.stringify(result)}`);
             return result.rowsAffected.length ? result.rowsAffected[0] : 0
         }, {
-            retries: 3,
+            retries: 5,
             minTimeout: 5000,
             maxTimeout: 25000,
             factor: 2,
@@ -84,7 +84,7 @@ export default class Database {
     // Function to insert a new entry into the MatchData table
     async insertMatchData(matchData) {
         this.executeQuery(`
-            INSERT INTO MatchData (MatchId, Player1Name, Player2Name, Player1Character, Player2Character, StartTime, EndTime, MatchResult, GameVersion, MatchLog, MatchEventLength, FirstPlayer, Player1Life, Player2Life, Disconnects)
+            INSERT INTO MatchData (MatchId, Player1Name, Player2Name, Player1Character, Player2Character, StartTime, EndTime, MatchResult, GameVersion, MatchLog, MatchEventLength, FirstPlayer, Player1Life, Player2Life, Disconnects, Player1Clock, Player2Clock)
             VALUES (
                 @MatchId,
                 @Player1Name,
@@ -100,7 +100,9 @@ export default class Database {
                 @FirstPlayer,
                 @Player1Life,
                 @Player2Life,
-                @Disconnects
+                @Disconnects,
+                @Player1Clock,
+                @Player2Clock
             )
         `, {
             MatchId: matchData.MatchId,
@@ -117,7 +119,9 @@ export default class Database {
             FirstPlayer: matchData.FirstPlayer,
             Player1Life: matchData.Player1Life,
             Player2Life: matchData.Player2Life,
-            Disconnects: matchData.Disconnects
+            Disconnects: matchData.Disconnects,
+            Player1Clock: matchData.Player1Clock,
+            Player2Clock: matchData.Player2Clock
         }).then(() => {
             console.log('DATABASE: Match inserted successfully');
         })
