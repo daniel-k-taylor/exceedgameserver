@@ -116,10 +116,14 @@ class GameRoom {
     var winning_player_number = 0
     var p1life = 0
     var p2life = 0
+    var p1clock = 0
+    var p2clock = 0
     if (Object.keys(this.reported_match_result).length > 0) {
       winning_player_number = this.reported_match_result['winning_player']
       p1life = this.reported_match_result['p1life']
       p2life = this.reported_match_result['p2life']
+      p1clock = this.reported_match_result['p1clock']
+      p2clock = this.reported_match_result['p2clock']
     }
 
     var match_result_str = "Not Reported"
@@ -128,6 +132,8 @@ class GameRoom {
     } else if (winning_player_number == 2) {
       match_result_str = "Player 2 Wins"
     }
+
+    console.log("Match result (" + match_id + "): " + p1name + " vs " + p2name + " - " + match_result_str)
 
     const matchData = {
       MatchId: match_id,
@@ -145,6 +151,8 @@ class GameRoom {
       Player1Life: p1life,
       Player2Life: p2life,
       Disconnects: this.disconnects,
+      Player1Clock: p1clock,
+      Player2Clock: p2clock,
     };
 
     this.database.insertMatchData(matchData);
