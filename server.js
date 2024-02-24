@@ -13,7 +13,7 @@ const PlayerTimeoutMs = 10 * 60 * 1000 * 99
 const game_rooms = {}
 const active_connections = new Map()
 
-const sqltimeout = 90000
+const sqltimeout = 30000
 const config = {
   user: process.env.AZURE_SQL_USER,
   password: process.env.AZURE_SQL_PASSWORD,
@@ -31,7 +31,6 @@ const config = {
   }
 };
 const database = new Database(config);
-database.connect();
 
 var running_id = 1
 var running_match_id = 1
