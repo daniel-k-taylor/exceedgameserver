@@ -1,4 +1,10 @@
 import { WebSocketServer } from 'ws'
+import {
+	RegExpMatcher,
+	TextCensor,
+	englishDataset,
+	englishRecommendedTransformers,
+} from 'obscenity';
 import Player from './player.js'
 import GameRoom from './gameroom.js'
 import Database from './dbaccess.js'
@@ -7,6 +13,12 @@ dotenv.config({ path: `.env`, debug: true });
 
 const port = process.env.PORT || 8080
 const wss = new WebSocketServer({ port: port })
+
+const matcher = new RegExpMatcher({
+	...englishDataset.build(),
+	...englishRecommendedTransformers,
+});
+const censor = new TextCensor();
 
 // Set player timeout to 10 minutes
 const PlayerTimeoutMs = 10 * 60 * 1000 * 99
@@ -20,6 +32,7 @@ const config = {
   port: parseInt(process.env.AZURE_SQL_PORT),
   server: process.env.AZURE_SQL_SERVER,
   database: process.env.AZURE_SQL_DATABASE,
+  enabled: process.env.AZURE_SQL_ENABLED,
   requestTimeout: sqltimeout,
   options: {
     encrypt: true, // If you're connecting to Azure SQL Database
@@ -351,10 +364,14 @@ function set_name(player, json_message) {
   }
   var version = json_message.version
 
-  var desired_name = json_message.player_name
+  var desired_name = json_message.player_name.trim()
   if (desired_name.length == 0 || player.name.toLowerCase() == desired_name.toLowerCase()) {
     desired_name = player.name
   }
+
+  // Check for obscenities.
+  const matches = matcher.getAllMatches(desired_name)
+  desired_name = censor.applyTo(desired_name, matches)
 
   var name_to_set = desired_name
   while (already_has_player_with_name(player, desired_name)) {

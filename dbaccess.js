@@ -21,6 +21,10 @@ export default class Database {
     }
 
     async connect() {
+        if (!this.config.enabled) {
+            return;
+        }
+
         try {
             console.log(`DATABASE: Connecting...${this.connected}`);
             if (this.connected === false) {
@@ -83,6 +87,10 @@ export default class Database {
 
     // Function to insert a new entry into the MatchData table
     async insertMatchData(matchData) {
+        if (!this.config.enabled) {
+            return;
+        }
+
         this.executeQuery(`
             INSERT INTO MatchData (MatchId, Player1Name, Player2Name, Player1Character, Player2Character, StartTime, EndTime, MatchResult, GameVersion, MatchLog, MatchEventLength, FirstPlayer, Player1Life, Player2Life, Disconnects, Player1Clock, Player2Clock)
             VALUES (
