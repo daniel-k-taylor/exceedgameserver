@@ -20,8 +20,12 @@ export default class Database {
         console.log(`Database: config: ${JSON.stringify(config)}`);
     }
 
+    isEnabled() {
+        return this.config.enabled;
+    }
+
     async connect() {
-        if (!this.config.enabled) {
+        if (!this.isEnabled()) {
             return;
         }
 

@@ -1,6 +1,8 @@
 import Player from './player.js'
 import { v4 as uuidv4 } from 'uuid';
 
+import { upload_to_blob_storage } from './blobstorage.js';
+
 class GameRoom {
   constructor(version, room_name, database) {
     this.database = database
@@ -155,7 +157,11 @@ class GameRoom {
       Player2Clock: p2clock,
     };
 
-    this.database.insertMatchData(matchData);
+    upload_to_blob_storage(matchData);
+
+    if (this.database.isEnabled()) {
+      this.database.insertMatchData(matchData);
+    }
   }
 
   startGame() {

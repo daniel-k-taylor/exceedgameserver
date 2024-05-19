@@ -32,7 +32,7 @@ const config = {
   port: parseInt(process.env.AZURE_SQL_PORT),
   server: process.env.AZURE_SQL_SERVER,
   database: process.env.AZURE_SQL_DATABASE,
-  enabled: process.env.AZURE_SQL_ENABLED,
+  enabled: parseInt(process.env.AZURE_SQL_ENABLED),
   requestTimeout: sqltimeout,
   options: {
     encrypt: true, // If you're connecting to Azure SQL Database
