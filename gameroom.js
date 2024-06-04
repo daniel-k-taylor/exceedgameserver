@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { upload_to_blob_storage } from './blobstorage.js';
 
 class GameRoom {
-  constructor(version, room_name, database) {
+  constructor(version, room_name, database, starting_timer, enforce_timer) {
     this.database = database
     this.name = room_name
     this.players = []
@@ -17,6 +17,8 @@ class GameRoom {
     this.firstplayer = 0
     this.reported_match_result = {}
     this.disconnects = 0
+    this.starting_timer = starting_timer
+    this.enforce_timer = enforce_timer
   }
 
   get_observer_count() {
@@ -182,6 +184,8 @@ class GameRoom {
         player2_name: this.players[1].name,
         player2_id: this.players[1].id,
         player2_deck_id: this.players[1].deck_id,
+        starting_timer: this.starting_timer,
+        enforce_timer: this.enforce_timer
       }
       this.broadcast(message)
     }

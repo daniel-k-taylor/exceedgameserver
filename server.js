@@ -49,6 +49,14 @@ var running_id = 1
 var running_match_id = 1
 var awaiting_match_room = null
 
+
+// Manages creating and joining a custom room.
+// Required information: 
+// Game version 
+// a room_id. If this matches an existing id, join that room. 
+// database (game data?) 
+// the desired starting_timer (irrelevent if a game is being joined)
+// whether to enforce_timer with a game loss (irrelevent if a game is being joined)
 function join_custom_room(ws, join_room_json) {
   // Check if jsonObj is an object
   if (typeof join_room_json !== 'object' || join_room_json === null) {
@@ -81,6 +89,7 @@ function join_custom_room(ws, join_room_json) {
     set_name(player, join_room_json)
   }
 
+  // Get the room id from the passed in json.
   var room_id = join_room_json.room_id.trim()
   if (room_id == "Lobby") {
     const message = {
@@ -98,20 +107,26 @@ function join_custom_room(ws, join_room_json) {
     // Add a prefix to the room id to indicate custom match.
     room_id = "custom_" + room_id
 
+    // Extract room settings from the passed in json.
     var deck_id = join_room_json.deck_id
+    var starting_timer = join_room_json.starting_timer
+    var enforce_timer = join_room_json.enforce_timer
     var player = active_connections.get(ws)
     player.set_deck_id(deck_id)
     var success = false
+
+    // Check whether the player is joining an existing room.
     if (game_rooms.hasOwnProperty(room_id)) {
       const room = game_rooms[room_id]
+      // Check for Player/Room version mismatch.
       if (room.version != version) {
-        // Player/Room version mismatch.
         send_join_version_error(ws)
         return true
       }
       success = room.join(player)
     } else {
-      const new_room = new GameRoom(version, room_id, database)
+      // Start a new custom game room.
+      const new_room = new GameRoom(version, room_id, database, starting_timer, enforce_timer)
       new_room.join(player)
       game_rooms[room_id] = new_room
       success = true
