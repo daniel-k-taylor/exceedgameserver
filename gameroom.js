@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { upload_to_blob_storage } from './blobstorage.js';
 
 class GameRoom {
-  constructor(version, room_name, database, starting_timer, enforce_timer) {
+  constructor(version, room_name, database, starting_timer, enforce_timer, minimum_time_per_turn) {
     this.database = database
     this.name = room_name
     this.players = []
@@ -19,6 +19,7 @@ class GameRoom {
     this.disconnects = 0
     this.starting_timer = starting_timer
     this.enforce_timer = enforce_timer
+    this.minimum_time_per_turn = minimum_time_per_turn
   }
 
   get_observer_count() {
@@ -157,6 +158,9 @@ class GameRoom {
       Disconnects: this.disconnects,
       Player1Clock: p1clock,
       Player2Clock: p2clock,
+      StartingTimer: this.starting_timer,
+      EnforceTimer: this.enforce_timer,
+      MinimumTimePerTurn: this.minimum_time_per_turn
     };
 
     upload_to_blob_storage(matchData);
@@ -185,7 +189,8 @@ class GameRoom {
         player2_id: this.players[1].id,
         player2_deck_id: this.players[1].deck_id,
         starting_timer: this.starting_timer,
-        enforce_timer: this.enforce_timer
+        enforce_timer: this.enforce_timer,
+        minimum_time_per_turn: this.minimum_time_per_turn
       }
       this.broadcast(message)
     }
