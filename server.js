@@ -104,25 +104,21 @@ function join_custom_room(ws, join_room_json) {
     // Add a prefix to the room id to indicate custom match.
     room_id = "custom_" + room_id
 
-    // Extract room settings from the passed in json.
+    // More or less arbitrary default values
+    var starting_timer = 15 * 60
+    var enforce_timer = false
+    var minimum_time_per_choice = 30
+
+    // Extract actual room settings from the passed in json.
     var deck_id = join_room_json.deck_id
     if (join_room_json.hasOwnProperty('starting_timer') && isFinite(join_room_json.starting_timer)) {
-      var starting_timer = join_room_json.starting_timer
-    }
-    else {
-      var starting_timer = 15 * 60
+      starting_timer = join_room_json.starting_timer
     }
     if (join_room_json.hasOwnProperty('enforce_timer')) {
-      var enforce_timer = join_room_json.enforce_timer
-    }
-    else {
-      var enforce_timer = false
+      enforce_timer = join_room_json.enforce_timer
     }
     if (join_room_json.hasOwnProperty('minimum_time_per_choice') && isFinite(join_room_json.minimum_time_per_choice)) {
-      var minimum_time_per_choice = join_room_json.minimum_time_per_choice
-    }
-    else {
-      var minimum_time_per_choice = 30
+      minimum_time_per_choice = join_room_json.minimum_time_per_choice
     }
     
     var player = active_connections.get(ws)
