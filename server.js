@@ -50,12 +50,17 @@ var running_match_id = 1
 var awaiting_match_room = null
 
 function join_custom_room(ws, join_room_json) {
-  // Check if jsonObj is an object
+  // join_room_json required parameters: 
+  // version - Version of the joining player.
+  // room_id - If this matches an existing id, join that room. 
+  // database - Global variable for logging
+  // starting_timer - Initial game timer for both players. Only the room creator's setting matters.
+  // enforce_timer - Trigger a game loss when the timer runs out. Only the room creator's setting matters.
+  // minimum_time_per_choice - The minimum nonzero time a player will have at the start of each turn.
   if (typeof join_room_json !== 'object' || join_room_json === null) {
     console.log("join_room_json is not an object")
     return false
   }
-  // Check if 'room_id' and 'deck_id' fields exist in the object
   if (!('room_id' in join_room_json && 'deck_id' in join_room_json)) {
     console.log("join_room_json does not have 'room_id' and 'deck_id' fields")
     return false
@@ -68,19 +73,20 @@ function join_custom_room(ws, join_room_json) {
     console.log("join_room_json does not have 'version' field")
     return false
   }
-  var version = join_room_json.version
+  var player_join_version = join_room_json.version
 
   var player = active_connections.get(ws)
   if (player === undefined) {
     console.log("join_room Player is undefined")
     return false
   }
-  player.version = version
+  player.version = player_join_version
 
   if ('player_name' in join_room_json && typeof join_room_json.player_name === 'string') {
     set_name(player, join_room_json)
   }
 
+  // Get the room id from the passed in json.
   var room_id = join_room_json.room_id.trim()
   if (room_id == "Lobby") {
     const message = {
@@ -98,20 +104,38 @@ function join_custom_room(ws, join_room_json) {
     // Add a prefix to the room id to indicate custom match.
     room_id = "custom_" + room_id
 
+    // More or less arbitrary default values
+    var starting_timer = 15 * 60
+    var enforce_timer = false
+    var minimum_time_per_choice = 30
+
+    // Extract actual room settings from the passed in json.
     var deck_id = join_room_json.deck_id
+    if (join_room_json.hasOwnProperty('starting_timer') && isFinite(join_room_json.starting_timer)) {
+      starting_timer = join_room_json.starting_timer
+    }
+    if (join_room_json.hasOwnProperty('enforce_timer')) {
+      enforce_timer = join_room_json.enforce_timer
+    }
+    if (join_room_json.hasOwnProperty('minimum_time_per_choice') && isFinite(join_room_json.minimum_time_per_choice)) {
+      minimum_time_per_choice = join_room_json.minimum_time_per_choice
+    }
+    
     var player = active_connections.get(ws)
     player.set_deck_id(deck_id)
     var success = false
+
     if (game_rooms.hasOwnProperty(room_id)) {
+      // The room the player wants to join already exists.
       const room = game_rooms[room_id]
-      if (room.version != version) {
-        // Player/Room version mismatch.
+      if (room.version != player_join_version) {
         send_join_version_error(ws)
         return true
       }
       success = room.join(player)
     } else {
-      const new_room = new GameRoom(version, room_id, database)
+      // The room doesn't exist, so start a new custom game room.
+      const new_room = new GameRoom(player_join_version, room_id, database, starting_timer, enforce_timer, minimum_time_per_choice)
       new_room.join(player)
       game_rooms[room_id] = new_room
       success = true
@@ -149,14 +173,14 @@ function observe_room(ws, json_data) {
     console.log("json_data does not have 'version' field")
     return false
   }
-  var version = json_data.version
+  var player_join_version = json_data.version
 
   var player = active_connections.get(ws)
   if (player === undefined) {
     console.log("observe_room Player is undefined")
     return false
   }
-  player.version = version
+  player.version = player_join_version
 
   if ('player_name' in json_data && typeof json_data.player_name === 'string') {
     set_name(player, json_data)
@@ -182,7 +206,7 @@ function observe_room(ws, json_data) {
   }
 
   if (room != null) {
-    if (room.version != version) {
+    if (room.version != player_join_version) {
       // Player/Room version mismatch.
       send_join_version_error(ws)
       return true
@@ -225,9 +249,9 @@ function get_next_match_id() {
   return value
 }
 
-function create_new_match_room(version, player) {
+function create_new_match_room(player_join_version, player, starting_timer, enforce_timer, minimum_time_per_choice) {
   const room_id = "Match_" + get_next_match_id()
-  const new_room = new GameRoom(version, room_id, database)
+  const new_room = new GameRoom(player_join_version, room_id, database, starting_timer, enforce_timer, minimum_time_per_choice)
   new_room.join(player)
   game_rooms[room_id] = new_room
   awaiting_match_room = room_id
@@ -252,7 +276,7 @@ function join_matchmaking(ws, json_data) {
     console.log("join_matchmaking does not have 'version' field")
     return false
   }
-  var version = json_data.version
+  var player_join_version = json_data.version
 
   var player = active_connections.get(ws)
   if (player === undefined) {
@@ -265,25 +289,28 @@ function join_matchmaking(ws, json_data) {
   }
 
   var deck_id = json_data.deck_id
+  var starting_timer = json_data.starting_timer
+  var enforce_timer = json_data.enforce_timer
+  var minimum_time_per_choice = json_data.minimum_time_per_choice
   var player = active_connections.get(ws)
   player.set_deck_id(deck_id)
   var success = false
   if (awaiting_match_room === null) {
     // Create a new room and join it.
-    create_new_match_room(version, player)
+    create_new_match_room(player_join_version, player, starting_timer, enforce_timer, minimum_time_per_choice)
     success = true
   } else {
     if (game_rooms.hasOwnProperty(awaiting_match_room)) {
       const room = game_rooms[awaiting_match_room]
-      if (room.version < version) {
+      if (room.version < player_join_version) {
         // The player joining has a larger version,
         // kick the player in the room and make a new one.
         var player_in_room = room.players[0]
         send_join_version_error(player_in_room.ws)
         leave_room(player_in_room, false)
-        create_new_match_room(version, player)
+        create_new_match_room(player_join_version, player)
         success = true
-      } else if (room.version > version) {
+      } else if (room.version > player_join_version) {
         // Lower version than room, probably need to update.
         // Send error message.
         send_join_version_error(ws)
@@ -295,7 +322,7 @@ function join_matchmaking(ws, json_data) {
       }
     } else {
       // They must have disconnected.
-      create_new_match_room(version, player)
+      create_new_match_room(player_join_version, player, starting_timer, enforce_timer, minimum_time_per_choice)
       success = true
     }
   }
@@ -362,7 +389,7 @@ function set_name(player, json_message) {
     console.log("set_name does not have 'version' field")
     return false
   }
-  var version = json_message.version
+  var player_version = json_message.version
 
   var desired_name = json_message.player_name.trim()
   if (desired_name.length == 0 || player.name.toLowerCase() == desired_name.toLowerCase()) {
@@ -377,7 +404,7 @@ function set_name(player, json_message) {
   while (already_has_player_with_name(player, desired_name)) {
     name_to_set = desired_name + "_" + get_next_id()
   }
-  player.set_name(version, name_to_set)
+  player.set_name(player_version, name_to_set)
   console.log("Player name set to " + name_to_set)
   broadcast_players_update()
 }
