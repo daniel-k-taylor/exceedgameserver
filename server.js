@@ -56,7 +56,7 @@ function join_custom_room(ws, join_room_json) {
   // database - Global variable for logging
   // starting_timer - Initial game timer for both players. Only the room creator's setting matters.
   // enforce_timer - Trigger a game loss when the timer runs out. Only the room creator's setting matters.
-  // minimum_time_per_turn - The minimum nonzero time a player will have at the start of each turn.
+  // minimum_time_per_choice - The minimum nonzero time a player will have at the start of each turn.
   if (typeof join_room_json !== 'object' || join_room_json === null) {
     console.log("join_room_json is not an object")
     return false
@@ -106,9 +106,25 @@ function join_custom_room(ws, join_room_json) {
 
     // Extract room settings from the passed in json.
     var deck_id = join_room_json.deck_id
-    var starting_timer = join_room_json.starting_timer
-    var enforce_timer = join_room_json.enforce_timer
-    var minimum_time_per_turn = join_room_json.minimum_time_per_turn
+    if (join_room_json.hasOwnProperty('starting_timer') && isFinite(join_room_json.starting_timer)) {
+      var starting_timer = join_room_json.starting_timer
+    }
+    else {
+      var starting_timer = 15 * 60
+    }
+    if (join_room_json.hasOwnProperty('enforce_timer')) {
+      var enforce_timer = join_room_json.enforce_timer
+    }
+    else {
+      var enforce_timer = false
+    }
+    if (join_room_json.hasOwnProperty('minimum_time_per_choice') && isFinite(join_room_json.minimum_time_per_choice)) {
+      var minimum_time_per_choice = join_room_json.minimum_time_per_choice
+    }
+    else {
+      var minimum_time_per_choice = 30
+    }
+    
     var player = active_connections.get(ws)
     player.set_deck_id(deck_id)
     var success = false
@@ -123,7 +139,7 @@ function join_custom_room(ws, join_room_json) {
       success = room.join(player)
     } else {
       // The room doesn't exist, so start a new custom game room.
-      const new_room = new GameRoom(player_join_version, room_id, database, starting_timer, enforce_timer, minimum_time_per_turn)
+      const new_room = new GameRoom(player_join_version, room_id, database, starting_timer, enforce_timer, minimum_time_per_choice)
       new_room.join(player)
       game_rooms[room_id] = new_room
       success = true
@@ -237,9 +253,9 @@ function get_next_match_id() {
   return value
 }
 
-function create_new_match_room(player_join_version, player, starting_timer, enforce_timer, minimum_time_per_turn) {
+function create_new_match_room(player_join_version, player, starting_timer, enforce_timer, minimum_time_per_choice) {
   const room_id = "Match_" + get_next_match_id()
-  const new_room = new GameRoom(player_join_version, room_id, database, starting_timer, enforce_timer, minimum_time_per_turn)
+  const new_room = new GameRoom(player_join_version, room_id, database, starting_timer, enforce_timer, minimum_time_per_choice)
   new_room.join(player)
   game_rooms[room_id] = new_room
   awaiting_match_room = room_id
@@ -279,13 +295,13 @@ function join_matchmaking(ws, json_data) {
   var deck_id = json_data.deck_id
   var starting_timer = json_data.starting_timer
   var enforce_timer = json_data.enforce_timer
-  var minimum_time_per_turn = json_data.minimum_time_per_turn
+  var minimum_time_per_choice = json_data.minimum_time_per_choice
   var player = active_connections.get(ws)
   player.set_deck_id(deck_id)
   var success = false
   if (awaiting_match_room === null) {
     // Create a new room and join it.
-    create_new_match_room(player_join_version, player, starting_timer, enforce_timer, minimum_time_per_turn)
+    create_new_match_room(player_join_version, player, starting_timer, enforce_timer, minimum_time_per_choice)
     success = true
   } else {
     if (game_rooms.hasOwnProperty(awaiting_match_room)) {
@@ -310,7 +326,7 @@ function join_matchmaking(ws, json_data) {
       }
     } else {
       // They must have disconnected.
-      create_new_match_room(player_join_version, player, starting_timer, enforce_timer, minimum_time_per_turn)
+      create_new_match_room(player_join_version, player, starting_timer, enforce_timer, minimum_time_per_choice)
       success = true
     }
   }
