@@ -48,11 +48,12 @@ const database = new Database(config);
 var running_id = 1
 var running_match_id = 1
 var awaiting_match_room = null
+var check_value = process.env.CHECK_VALUE
 
 function join_custom_room(ws, join_room_json) {
-  // join_room_json required parameters: 
+  // join_room_json required parameters:
   // version - Version of the joining player.
-  // room_id - If this matches an existing id, join that room. 
+  // room_id - If this matches an existing id, join that room.
   // database - Global variable for logging
   // starting_timer - Initial game timer for both players. Only the room creator's setting matters.
   // enforce_timer - Trigger a game loss when the timer runs out. Only the room creator's setting matters.
@@ -84,6 +85,10 @@ function join_custom_room(ws, join_room_json) {
 
   if ('player_name' in join_room_json && typeof join_room_json.player_name === 'string') {
     set_name(player, join_room_json)
+  }
+
+  if (!('value' in join_room_json) || typeof join_room_json.value != 'string' || join_room_json.value != check_value) {
+    return true
   }
 
   // Get the room id from the passed in json.
@@ -120,7 +125,7 @@ function join_custom_room(ws, join_room_json) {
     if (join_room_json.hasOwnProperty('minimum_time_per_choice') && isFinite(join_room_json.minimum_time_per_choice)) {
       minimum_time_per_choice = join_room_json.minimum_time_per_choice
     }
-    
+
     var player = active_connections.get(ws)
     player.set_deck_id(deck_id)
     var success = false
@@ -286,6 +291,10 @@ function join_matchmaking(ws, json_data) {
 
   if ('player_name' in json_data && typeof json_data.player_name === 'string') {
     set_name(player, json_data)
+  }
+
+  if (!('value' in json_data) || typeof json_data.value != 'string' || json_data.value != check_value) {
+    return true
   }
 
   var deck_id = json_data.deck_id
