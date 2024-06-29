@@ -5,6 +5,7 @@ import { WebSocketServer } from 'ws'
 import { v4 as uuidv4 } from 'uuid';
 
 import { upload_to_blob_storage } from './blobstorage.js';
+import validate_message from './messagevalidator.js';
 
 class Matchmaker {
     constructor(room_manager) {
@@ -12,7 +13,7 @@ class Matchmaker {
         this.room_manager = room_manager
         this.match_queues = {}
 
-        this.match_types = {
+        this.matchmaking_queue_types = {
             "untimed" : {
               "starting_timer" : 0,
               "enforce_timer" : false,
@@ -27,9 +28,8 @@ class Matchmaker {
               "minimum_time_per_choice" : 10}
         }
     
-    for (queue_type in this.match_types.keys) {
+    for (queue_type in this.matchmaking_queue_types.keys) {
             this.match_queues[queue_type] = {
-                "has_player_waiting" : false,
                 "waiting_player" : player = null,
                 "waiting_json_data" : object = null,
                 "waiting_version" : Number
@@ -38,34 +38,20 @@ class Matchmaker {
     }
 
     remove_from_matchmaking(player) {
-        for (queue in this.match_queues.keys) {
+        for (queue in this.match_queues.values) {
             if (queue["waiting_player"] == player) {
-                this.match_queues[queue]["has_player_waiting"] = false
+                this.match_queues[queue]["waiting_player"] = null
             }
         }
     }
 
+    matchmaking_queue_types_available() {
+        return this.matchmaking_queue_types.keys.filter(queue_type => {return this.matchmaking_queue_types[queue_type]})
+    }
+
     join_matchmaking(ws, json_data) {
-        // Check if json_data is an object
-        if (typeof json_data !== 'object' || json_data === null) {
-            console.log("join_matchmaking json is not an object")
+        if (!(validate_message(json_data, "join_matchmaking"))) {
             return false
-        }
-        // Check if 'deck_id' field exists in the object
-        if (!('deck_id' in json_data)) {
-            console.log("join_matchmaking does not have 'deck_id' fields")
-            return false
-        }
-        if (!(typeof json_data.deck_id === 'string' && typeof json_data.deck_id === 'string')) {
-            console.log("join_matchmaking 'deck_id' fields are not strings")
-            return false
-        }
-        if (!('version' in json_data && typeof json_data.version === 'string')) {
-            console.log("join_matchmaking does not have 'version' field")
-            return false
-        }
-        if (!('match_type' in json_data && typeof json_data.match_type === 'string')) {
-            console.log("join_matchmaking does not have 'match_type' field")
         }
 
         var joining_player = active_connections.get(ws)
@@ -77,7 +63,7 @@ class Matchmaker {
         var player_join_version = json_data.version
         var deck_id = json_data.deck_id
         joining_player.set_deck_id(deck_id)
-        var desired_match_type = json_data.match_type
+        var desired_queue_type = json_data.queue_type
         
         if (this.banned_characters.includes(deck_id)) {
             const message = {
@@ -90,16 +76,16 @@ class Matchmaker {
 
         var success = false
 
-        if (this.match_queues[desired_match_type]["has_player_waiting"] == false) {
-            match_queues[desired_match_type]["has_player_waiting"] = true
-            match_queues[desired_match_type]["waiting_player"] = joining_player
-            match_queues[desired_match_type]["waiting_json_data"] = json_data
-            match_queues[desired_match_type]["waiting_version"] = player_join_version
+        if (this.match_queues[desired_queue_type]["has_player_waiting"] == false) {
+            match_queues[desired_queue_type]["has_player_waiting"] = true
+            match_queues[desired_queue_type]["waiting_player"] = joining_player
+            match_queues[desired_queue_type]["waiting_json_data"] = json_data
+            match_queues[desired_queue_type]["waiting_version"] = player_join_version
             success = true
         } else {
-            var starting_timer = this.match_types[desired_match_type][starting_timer]
-            var enforce_timer = this.match_types[desired_match_type][enforce_timer]
-            var minimum_time_per_choice = this.match_types[desired_match_type][minimum_time_per_choice]
+            var starting_timer = this.matchmaking_queue_types[desired_queue_type][starting_timer]
+            var enforce_timer = this.matchmaking_queue_types[desired_queue_type][enforce_timer]
+            var minimum_time_per_choice = this.matchmaking_queue_types[desired_queue_type][minimum_time_per_choice]
             waiting_player = match_queues[waiting_player]
             waiting_json_data = match_queues[waiting_json_data]
             waiting_version = waiting_json_data.version
@@ -110,9 +96,9 @@ class Matchmaker {
                 // put the joining player in their place.
                 send_join_version_error(waiting_player.ws)
                 this.remove_from_matchmaking(waiting_player)
-                match_queues[desired_match_type]["waiting_player"] = joining_player
-                match_queues[desired_match_type]["waiting_json_data"] = json_data
-                match_queues[desired_match_type]["waiting_version"] = player_join_version
+                match_queues[desired_queue_type]["waiting_player"] = joining_player
+                match_queues[desired_queue_type]["waiting_json_data"] = json_data
+                match_queues[desired_queue_type]["waiting_version"] = player_join_version
                 success = true
             } else if (waiting_version > player_join_version) {
                 // Lower version than room, probably need to update.

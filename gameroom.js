@@ -20,6 +20,7 @@ class GameRoom {
     this.starting_timer = starting_timer
     this.enforce_timer = enforce_timer
     this.minimum_time_per_choice = minimum_time_per_choice
+    this.accepted_match_types = {}
   }
 
   get_observer_count() {
