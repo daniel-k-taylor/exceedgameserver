@@ -281,6 +281,11 @@ function join_matchmaking(ws, json_data) {
     console.log("join_matchmaking does not have 'version' field")
     return false
   }
+  var minimum_time_per_choice = 30
+  if (json_data.hasOwnProperty('minimum_time_per_choice') && isFinite(json_data.minimum_time_per_choice)) {
+    minimum_time_per_choice = json_data.minimum_time_per_choice
+  }
+
   var player_join_version = json_data.version
 
   var player = active_connections.get(ws)
@@ -293,14 +298,16 @@ function join_matchmaking(ws, json_data) {
     set_name(player, json_data)
   }
 
-  if (!('value' in json_data) || typeof json_data.value != 'string' || json_data.value != check_value) {
-    return true
+  // If version starts with dev_ skip this check.
+  if (!player_join_version.startsWith("dev_")) {
+    if (!('value' in json_data) || typeof json_data.value != 'string' || json_data.value != check_value) {
+      return true
+    }
   }
 
   var deck_id = json_data.deck_id
   var starting_timer = json_data.starting_timer
   var enforce_timer = json_data.enforce_timer
-  var minimum_time_per_choice = json_data.minimum_time_per_choice
   var player = active_connections.get(ws)
   player.set_deck_id(deck_id)
   var success = false
