@@ -51,8 +51,7 @@ const game_rooms = {}
 const room_manager = new RoomManager(database)
 const matchmaker = new Matchmaker(room_manager)
 
-var running_id = 1
-var running_match_id = 1
+var running_player_id = 1
 
 function handle_disconnect(ws) {
   const player = active_connections.get(ws)
@@ -147,9 +146,9 @@ function set_player_timeout(player) {
 }
 
 function get_next_id() {
-  var value = running_id++
-  if (running_id > 999) {
-    running_id = 1
+  var value = running_player_id++
+  if (running_player_id > 999) {
+    running_player_id = 1
   }
   return value
 }
@@ -167,12 +166,10 @@ wss.on('connection', function connection(ws) {
     try {
       const json_data = JSON.parse(data)
       const message_type = json_data.type
-      if (message_type == 'join_room') {
-        handled = room_manager.join_custom_room(ws, json_data)
+      if (message_type == 'join_queue') {
+        handled = queue_manager.join_queue(ws, json_data)
       } else if (message_type == "observe_room") {
         handled = room_manager.observe_room(ws, json_data)
-      } else if (message_type == "join_matchmaking") {
-        handled = matchmaker.join_matchmaking(ws, json_data)
       } else if (message_type == "set_name") {
         set_name(player, json_data)
         handled = true
