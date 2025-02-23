@@ -8,6 +8,7 @@ import {
 import Player from './player.js'
 import GameRoom from './gameroom.js'
 import Database from './dbaccess.js'
+import DiscordConnection from './discordconnection.js';
 import * as dotenv from 'dotenv';
 dotenv.config({ path: `.env`, debug: true });
 
@@ -44,6 +45,8 @@ const config = {
   }
 };
 const database = new Database(config);
+
+const discord_connection = new DiscordConnection()
 
 var running_id = 1
 var running_match_id = 1
@@ -315,6 +318,7 @@ function join_matchmaking(ws, json_data) {
     // Create a new room and join it.
     create_new_match_room(player_join_version, player, starting_timer, enforce_timer, minimum_time_per_choice)
     success = true
+    discord_connection.sendMatchmakingNotification(player.name)
   } else {
     if (game_rooms.hasOwnProperty(awaiting_match_room)) {
       const room = game_rooms[awaiting_match_room]
