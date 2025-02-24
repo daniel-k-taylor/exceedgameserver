@@ -3,6 +3,7 @@ import  { ChannelType, Client, GatewayIntentBits } from "discord.js";
 export default class DiscordConnection {
 
     client = null;
+    last_notification_timestamp = null;
 
     constructor() {
         // If the DISCORD_TOKEN env variable is set, create the client.
@@ -19,10 +20,18 @@ export default class DiscordConnection {
     }
 
     sendMatchmakingNotification(playerName) {
+        const timestamp = Math.floor(Date.now() / 1000); // Get current timestamp
+
+        // Only send notification if at least 60 seconds have passed since the last one
+        if (this.last_notification_timestamp && (timestamp - this.last_notification_timestamp < 60)) {
+            console.log("Notification suppressed: waiting for 60 seconds interval.");
+            return;
+        }
+        this.last_notification_timestamp = timestamp;
+
         // Get all the guilds (servers) the bot is in
         const desired_channel = process.env.DISCORD_CHANNEL_NAME
         const gameUrl = process.env.GAME_URL;
-        const timestamp = Math.floor(Date.now() / 1000); // Get current timestamp
         const message = `<t:${timestamp}:t> Player is looking for a match! [Play now!](<${gameUrl}>)`
         if (desired_channel)
         {
