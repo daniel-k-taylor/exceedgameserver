@@ -8,6 +8,8 @@ import {
 import Player from './player.js'
 import GameRoom from './gameroom.js'
 import Database from './dbaccess.js'
+import QueueManager from './queue_manager.js'
+import RoomManager from './room_manager.js';
 import DiscordConnection from './discordconnection.js';
 import * as dotenv from 'dotenv';
 dotenv.config({ path: `.env`, debug: true });
@@ -21,9 +23,8 @@ const matcher = new RegExpMatcher({
 });
 const censor = new TextCensor();
 
-// Set player timeout to 10 minutes
-const PlayerTimeoutMs = 10 * 60 * 1000 * 99
-const game_rooms = {}
+// Set player timeout to 15 minutes
+const PlayerTimeoutMs = 15 * 60 * 1000 * 99
 const active_connections = new Map()
 
 const sqltimeout = 30000
@@ -44,14 +45,14 @@ const config = {
     idleTimeoutMillis: sqltimeout,
   }
 };
-const database = new Database(config);
-
 const discord_connection = new DiscordConnection()
+const database = new Database(config);
+const room_manager = new RoomManager()
+const queue_manager = new QueueManager(database, discord_connection, room_manager)
 
 var running_id = 1
-var running_match_id = 1
-var awaiting_match_room = null
 var check_value = process.env.CHECK_VALUE
+
 
 function join_custom_room(ws, join_room_json) {
   // join_room_json required parameters:
@@ -95,8 +96,8 @@ function join_custom_room(ws, join_room_json) {
   }
 
   // Get the room id from the passed in json.
-  var room_id = join_room_json.room_id.trim()
-  if (room_id == "Lobby") {
+  var room_name = join_room_json.room_id.trim()
+  if (room_name == "Lobby") {
     const message = {
       type: 'room_join_failed',
       reason: "cannot_join_lobby"
@@ -106,11 +107,13 @@ function join_custom_room(ws, join_room_json) {
   }
 
   // If this is the awaiting match room, let them join it.
-  if (awaiting_match_room == room_id) {
-    join_matchmaking(ws, join_room_json)
+  const queue_with_open_room = queue_manager.findQueueWithRoom(room_name)
+  var success = false
+  if (queue_with_open_room) {
+    success = queue_manager.addPlayer(queue_with_open_room, player, player_join_version)
   } else {
     // Add a prefix to the room id to indicate custom match.
-    room_id = "custom_" + room_id
+    room_name = "custom_" + room_name
 
     // More or less arbitrary default values
     var starting_timer = 15 * 60
@@ -131,35 +134,33 @@ function join_custom_room(ws, join_room_json) {
 
     var player = active_connections.get(ws)
     player.set_deck_id(deck_id)
-    var success = false
 
-    if (game_rooms.hasOwnProperty(room_id)) {
+    const existing_room = room_manager.findRoom(room_name)
+    if (existing_room) {
       // The room the player wants to join already exists.
-      const room = game_rooms[room_id]
-      if (room.version != player_join_version) {
+      if (existing_room.version != player_join_version) {
         send_join_version_error(ws)
         return true
       }
-      success = room.join(player)
+      success = existing_room.join(player)
     } else {
       // The room doesn't exist, so start a new custom game room.
-      const new_room = new GameRoom(player_join_version, room_id, database, starting_timer, enforce_timer, minimum_time_per_choice)
+      const new_room = room_manager.addRoom(player_join_version, room_name, database, starting_timer, enforce_timer, minimum_time_per_choice)
       new_room.join(player)
-      game_rooms[room_id] = new_room
       success = true
     }
-
-    if (!success) {
-      const message = {
-        type: 'room_join_failed',
-        reason: 'room_full'
-      }
-      ws.send(JSON.stringify(message))
-    }
-    broadcast_players_update()
-
-    return true
   }
+
+  if (!success) {
+    const message = {
+      type: 'room_join_failed',
+      reason: 'room_full'
+    }
+    ws.send(JSON.stringify(message))
+  }
+  broadcast_players_update()
+
+  return true
 }
 
 function observe_room(ws, json_data) {
@@ -194,8 +195,8 @@ function observe_room(ws, json_data) {
     set_name(player, json_data)
   }
 
-  var room_id = json_data.room_id.trim()
-  if (room_id == "Lobby") {
+  var room_name = json_data.room_id.trim()
+  if (room_name == "Lobby") {
     const message = {
       type: 'room_join_failed',
       reason: "cannot_join_lobby"
@@ -206,14 +207,12 @@ function observe_room(ws, json_data) {
 
   // Find the match.
   // Search for the match as is, or with the custom_ prefix.
-  var room = null
-  if (game_rooms.hasOwnProperty(room_id)) {
-    room = game_rooms[room_id]
-  } else if (game_rooms.hasOwnProperty("custom_" + room_id)) {
-    room = game_rooms["custom_" + room_id]
+  var room = room_manager.findRoom(room_name)
+  if (!room) {
+    room = room_manager.findRoom("custom_" + room_name)
   }
 
-  if (room != null) {
+  if (room) {
     if (room.version != player_join_version) {
       // Player/Room version mismatch.
       send_join_version_error(ws)
@@ -249,22 +248,6 @@ function send_join_version_error(ws) {
   ws.send(JSON.stringify(message))
 }
 
-function get_next_match_id() {
-  var value = running_match_id++
-  if (running_match_id > 999) {
-    running_match_id = 1
-  }
-  return value
-}
-
-function create_new_match_room(player_join_version, player, starting_timer, enforce_timer, minimum_time_per_choice) {
-  const room_id = "Match_" + get_next_match_id()
-  const new_room = new GameRoom(player_join_version, room_id, database, starting_timer, enforce_timer, minimum_time_per_choice)
-  new_room.join(player)
-  game_rooms[room_id] = new_room
-  awaiting_match_room = room_id
-}
-
 function join_matchmaking(ws, json_data) {
   // Check if jsonObj is an object
   if (typeof json_data !== 'object' || json_data === null) {
@@ -282,6 +265,10 @@ function join_matchmaking(ws, json_data) {
   }
   if (!('version' in json_data && typeof json_data.version === 'string')) {
     console.log("join_matchmaking does not have 'version' field")
+    return false
+  }
+  if (!('queue_id' in json_data && typeof json_data.version === 'string')) {
+    console.log("join_matchmaking does not have 'queue_id' field")
     return false
   }
   var minimum_time_per_choice = 30
@@ -308,44 +295,20 @@ function join_matchmaking(ws, json_data) {
     }
   }
 
-  var deck_id = json_data.deck_id
-  var starting_timer = json_data.starting_timer
-  var enforce_timer = json_data.enforce_timer
+  const queue_id = json_data.queue_id
+  const deck_id = json_data.deck_id
+  if (queue_manager.validateDeck(queue_id, deck_id) == false) {
+    console.log("join_matchmaking invalid deck for queue")
+    const message = {
+      type: 'room_join_failed',
+      reason: 'invalid_deck_for_queue'
+    }
+    ws.send(JSON.stringify(message))
+    return true
+  }
   var player = active_connections.get(ws)
   player.set_deck_id(deck_id)
-  var success = false
-  if (awaiting_match_room === null) {
-    // Create a new room and join it.
-    create_new_match_room(player_join_version, player, starting_timer, enforce_timer, minimum_time_per_choice)
-    success = true
-    discord_connection.sendMatchmakingNotification(player.name)
-  } else {
-    if (game_rooms.hasOwnProperty(awaiting_match_room)) {
-      const room = game_rooms[awaiting_match_room]
-      if (room.version < player_join_version) {
-        // The player joining has a larger version,
-        // kick the player in the room and make a new one.
-        var player_in_room = room.players[0]
-        send_join_version_error(player_in_room.ws)
-        leave_room(player_in_room, false)
-        create_new_match_room(player_join_version, player)
-        success = true
-      } else if (room.version > player_join_version) {
-        // Lower version than room, probably need to update.
-        // Send error message.
-        send_join_version_error(ws)
-        return true
-      } else {
-        // Join the room successfully.
-        success = room.join(player)
-        awaiting_match_room = null
-      }
-    } else {
-      // They must have disconnected.
-      create_new_match_room(player_join_version, player, starting_timer, enforce_timer, minimum_time_per_choice)
-      success = true
-    }
-  }
+  var success = queue_manager.addPlayer(queue_id, player, player_join_version)
 
   if (!success) {
     const message = {
@@ -361,20 +324,8 @@ function join_matchmaking(ws, json_data) {
 }
 
 function leave_room(player, disconnect) {
-  if (player.room !== null) {
-    var room_id = player.room.name
-    if (awaiting_match_room == room_id) {
-      awaiting_match_room = null
-    }
-    player.room.player_quit(player, disconnect)
-    if (player.room.is_game_over) {
-      console.log("Closing room " + room_id)
-      game_rooms[room_id].close_room()
-      delete game_rooms[room_id]
-    }
-    player.room = null
-    broadcast_players_update()
-  }
+  this.queue_manager.leaveRoom(player, disconnect)
+  this.room_manager.leaveRoom(player, disconnect)
 }
 
 function handle_disconnect(ws) {
@@ -434,7 +385,7 @@ function broadcast_players_update() {
     type: 'players_update',
     players: [],
     rooms: [],
-    match_available: awaiting_match_room !== null
+    queues: queue_manager.getQueueInfos(),
   }
   for (const player of active_connections.values()) {
     message.players.push({
@@ -445,18 +396,7 @@ function broadcast_players_update() {
       room_name: player.room === null ? "Lobby" : player.room.name
     })
   }
-  for (const room_id of Object.keys(game_rooms)) {
-    var room = game_rooms[room_id]
-    message.rooms.push({
-      room_name: room.name,
-      room_version: room.version,
-      player_count: room.players.length,
-      observer_count: room.get_observer_count(),
-      game_started: room.gameStarted,
-      player_names: [room.get_player_name(0), room.get_player_name(1)],
-      player_decks: [room.get_player_deck(0), room.get_player_deck(1)]
-    })
-  }
+  message.rooms = this.room_manager.getRoomInfos()
   for (const player of active_connections.values()) {
     player.ws.send(JSON.stringify(message))
   }
