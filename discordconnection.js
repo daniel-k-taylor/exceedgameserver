@@ -19,7 +19,10 @@ export default class DiscordConnection {
         }
     }
 
-    sendMatchmakingNotification(playerName) {
+    sendMatchmakingNotification(playerName, queueName) {
+        if (!this.client) {
+            return
+        }
         const timestamp = Math.floor(Date.now() / 1000); // Get current timestamp
 
         // Only send notification if at least 60 seconds have passed since the last one
@@ -32,7 +35,7 @@ export default class DiscordConnection {
         // Get all the guilds (servers) the bot is in
         const desired_channel = process.env.DISCORD_CHANNEL_NAME
         const gameUrl = process.env.GAME_URL;
-        const message = `<t:${timestamp}:t> Player is looking for a match! [Play now!](<${gameUrl}>)`
+        const message = `<t:${timestamp}:t> Player is looking for a match (${queueName})! [Play now!](<${gameUrl}>)`
         if (desired_channel)
         {
             this.client.guilds.cache.forEach(async (guild) => {
