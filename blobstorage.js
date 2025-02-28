@@ -6,7 +6,8 @@ export async function upload_to_blob_storage(matchData) {
         const AZURE_STORAGE_CONNECTION_STRING = process.env.AZURE_STORAGE_CONNECTION_STRING;
 
         if (!AZURE_STORAGE_CONNECTION_STRING) {
-            throw Error('Azure Storage Connection string not found');
+            console.log('Azure Storage Connection string not found');
+            return
         }
 
         // Create the BlobServiceClient object with connection string

@@ -6,7 +6,6 @@ import {
 	englishRecommendedTransformers,
 } from 'obscenity';
 import Player from './player.js'
-import GameRoom from './gameroom.js'
 import Database from './dbaccess.js'
 import QueueManager from './queue_manager.js'
 import RoomManager from './room_manager.js';
@@ -91,7 +90,7 @@ function join_custom_room(ws, join_room_json) {
     set_name(player, join_room_json)
   }
 
-  if (!('value' in join_room_json) || typeof join_room_json.value != 'string' || join_room_json.value != check_value) {
+  if (check_value && (!('value' in join_room_json) || typeof join_room_json.value != 'string' || join_room_json.value != check_value)) {
     return true
   }
 
@@ -110,7 +109,8 @@ function join_custom_room(ws, join_room_json) {
   const queue_with_open_room = queue_manager.findQueueWithRoom(room_name)
   var success = false
   if (queue_with_open_room) {
-    success = queue_manager.addPlayer(queue_with_open_room, player, player_join_version)
+    join_room_json['queue_id'] = queue_with_open_room.id
+    return join_matchmaking(ws, join_room_json)
   } else {
     // Add a prefix to the room id to indicate custom match.
     room_name = "custom_" + room_name
@@ -132,7 +132,6 @@ function join_custom_room(ws, join_room_json) {
       minimum_time_per_choice = join_room_json.minimum_time_per_choice
     }
 
-    var player = active_connections.get(ws)
     player.set_deck_id(deck_id)
 
     const existing_room = room_manager.findRoom(room_name)
@@ -271,10 +270,6 @@ function join_matchmaking(ws, json_data) {
     console.log("join_matchmaking does not have 'queue_id' field")
     return false
   }
-  var minimum_time_per_choice = 30
-  if (json_data.hasOwnProperty('minimum_time_per_choice') && isFinite(json_data.minimum_time_per_choice)) {
-    minimum_time_per_choice = json_data.minimum_time_per_choice
-  }
 
   var player_join_version = json_data.version
 
@@ -324,8 +319,9 @@ function join_matchmaking(ws, json_data) {
 }
 
 function leave_room(player, disconnect) {
-  this.queue_manager.leaveRoom(player, disconnect)
-  this.room_manager.leaveRoom(player, disconnect)
+  queue_manager.leaveRoom(player)
+  room_manager.leaveRoom(player, disconnect)
+  broadcast_players_update()
 }
 
 function handle_disconnect(ws) {
@@ -339,11 +335,10 @@ function handle_disconnect(ws) {
 }
 
 function already_has_player_with_name(player_to_ignore, name) {
-  for (const player in active_connections.values()) {
+  for (const player of active_connections.values()) {
     if (player === player_to_ignore) {
       continue
     }
-
     if (player.name.toLowerCase() == name.toLowerCase()) {
       return true
     }
@@ -372,11 +367,24 @@ function set_name(player, json_message) {
   desired_name = censor.applyTo(desired_name, matches)
 
   var name_to_set = desired_name
-  while (already_has_player_with_name(player, desired_name)) {
-    name_to_set = desired_name + "_" + get_next_id()
+  if (already_has_player_with_name(player, name_to_set)) {
+    name_to_set = "Anon_" + get_next_id()
   }
   player.set_name(player_version, name_to_set)
-  console.log("Player name set to " + name_to_set)
+  broadcast_players_update()
+}
+
+function set_lobby_state(player, json_message) {
+  if (!('lobby_state' in json_message && typeof json_message.lobby_state === 'string')) {
+    console.log("set_lobby_state does not have 'lobby_state' field")
+    return false
+  }
+  var lobby_state = json_message.lobby_state
+  if (lobby_state == "AI") {
+    player.set_playing_AI(true)
+  } else {
+    player.set_playing_AI(false)
+  }
   broadcast_players_update()
 }
 
@@ -388,15 +396,21 @@ function broadcast_players_update() {
     queues: queue_manager.getQueueInfos(),
   }
   for (const player of active_connections.values()) {
+    var room_name = "Lobby"
+    if (player.room !== null) {
+      room_name = player.room.name
+    } else if (player.playing_AI) {
+      room_name = "AI Match"
+    }
     message.players.push({
       player_id: player.id,
       player_version: player.version,
       player_name: player.name,
       player_deck: player.deck_id,
-      room_name: player.room === null ? "Lobby" : player.room.name
+      room_name: room_name
     })
   }
-  message.rooms = this.room_manager.getRoomInfos()
+  message.rooms = room_manager.getRoomInfos()
   for (const player of active_connections.values()) {
     player.ws.send(JSON.stringify(message))
   }
@@ -442,6 +456,9 @@ wss.on('connection', function connection(ws) {
         handled = join_matchmaking(ws, json_data)
       } else if (message_type == "set_name") {
         set_name(player, json_data)
+        handled = true
+      } else if (message_type == "set_lobby_state") {
+        set_lobby_state(player, json_data)
         handled = true
       } else if (message_type == "leave_room") {
         leave_room(player, false)

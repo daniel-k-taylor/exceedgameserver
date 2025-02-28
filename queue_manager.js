@@ -8,7 +8,7 @@ const MatchmakingBestOf = 1
 const queue_config = [
     {
         id: "season3to7",
-        name: "Season 3-7\nOnly",
+        name: "Season 3-7 Only",
         season_restriction: { "min": 3, "max": 7 },
         custom_allowed: false,
         banned: [
@@ -21,7 +21,7 @@ const queue_config = [
     },
     {
         id: "allseasons",
-        name: "All\nSeasons",
+        name: "All Seasons",
         season_restriction: { "min": 1, "max": 7 },
         custom_allowed: false,
         banned: [
@@ -34,7 +34,7 @@ const queue_config = [
     },
     {
         id: "anything",
-        name: "Anything\nGoes",
+        name: "Anything Goes",
         season_restriction: { "min": 1, "max": 7 },
         custom_allowed: true,
         banned: [],
@@ -45,7 +45,7 @@ const queue_config = [
     }
 ]
 
-decks = [
+const decks = [
     { "character": "akuma", "season": 3 },
     { "character": "anji", "season": 7 },
     { "character": "arakune", "season": 5 },
@@ -201,33 +201,35 @@ export default class QueueManager {
     addPlayer(queue_id, player, player_join_version) {
         const queue = this.getQueueById(queue_id)
         if (!queue) {
+            console.log(`Couldn't find queue ${queue_id}`)
             return false
         }
 
+        var success = false
         if (queue.waiting_room) {
             // A room already exists for this match.
-            if (room.version < player_join_version) {
+            if (queue.waiting_room.version < player_join_version) {
                 // The player joining has a larger version,
                 // kick the player in the room and make a new one.
-                var player_in_room = room.players[0]
+                var player_in_room = queue.waiting_room.players[0]
                 send_join_version_error(player_in_room.ws)
                 this.room_manager.leaveRoom(player_in_room, false)
-                queue.waiting_room = create_new_match_room(queue, player_join_version, player)
+                queue.waiting_room = this.createNewMatchRoom(queue, player_join_version, player)
                 success = true
-            } else if (room.version > player_join_version) {
+            } else if (queue.waiting_room.version > player_join_version) {
                 // Lower version than room, probably need to update.
                 // Send error message.
                 send_join_version_error(ws)
                 return true
             } else {
                 // Join the room successfully.
-                success = room.join(player)
+                success = queue.waiting_room.join(player)
                 // QueueManager is no longer managing this room.
                 queue.waiting_room = null
             }
         } else {
             // No room exists, create a new one for this match.
-            queue.waiting_room = create_new_match_room(queue, player_join_version, player)
+            queue.waiting_room = this.createNewMatchRoom(queue, player_join_version, player)
             success = true
         }
         return success
@@ -246,19 +248,18 @@ export default class QueueManager {
 
     leaveRoom(player) {
         // Find if this player was queued in any of the queue waiting rooms.
-        // If so, remove them.
+        // If so, remove that waiting room.
         for (const queue of this.queues) {
             if (queue.waiting_room) {
                 if (queue.waiting_room.is_player(player)) {
-                    queue.waiting_room.close_room()
                     queue.waiting_room = null
                 }
             }
         }
     }
 
-    create_new_match_room(queue, version, player) {
-        const room_name = "Match_" + get_next_match_id()
+    createNewMatchRoom(queue, version, player) {
+        const room_name = "Match_" + this.getNextMatchId()
         const new_room = this.room_manager.addRoom(
             version,
             room_name,
@@ -268,7 +269,7 @@ export default class QueueManager {
             queue.minimum_time_per_choice
         )
         new_room.join(player)
-        this.discord_connection.sendMatchmakingNotification(player.name)
+        this.discord_connection.sendMatchmakingNotification(player.name, queue.name)
         return new_room
     }
 
@@ -276,14 +277,10 @@ export default class QueueManager {
         return this.queues.find(queue => queue.id === id)
     }
 
-    getAllQueues() {
-        return this.queues
-    }
-
-    get_next_match_id() {
-        var value = running_match_id++
-        if (running_match_id > 999) {
-            running_match_id = 1
+    getNextMatchId() {
+        var value = this.running_match_id++
+        if (this.running_match_id > 999) {
+            this.running_match_id = 1
         }
         return value
     }
