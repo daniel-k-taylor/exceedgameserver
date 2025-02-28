@@ -10,6 +10,7 @@ import Database from './dbaccess.js'
 import QueueManager from './queue_manager.js'
 import RoomManager from './room_manager.js';
 import DiscordConnection from './discordconnection.js';
+import { get_server_config } from './blobstorage.js'
 import * as dotenv from 'dotenv';
 dotenv.config({ path: `.env`, debug: true });
 
@@ -46,8 +47,9 @@ const config = {
 };
 const discord_connection = new DiscordConnection()
 const database = new Database(config);
+const server_config = await get_server_config()
 const room_manager = new RoomManager()
-const queue_manager = new QueueManager(database, discord_connection, room_manager)
+const queue_manager = new QueueManager(database, server_config, discord_connection, room_manager)
 
 var running_id = 1
 var check_value = process.env.CHECK_VALUE
