@@ -3,11 +3,15 @@ export default class QueueManager {
         this.database = database
         this.discord_connection = discord_connection
         this.room_manager = room_manager
-        this.queues = []
         this.running_match_id = 1
         this.queue_config = server_config["queue_config"]
         this.decks = server_config["decks"]
 
+        this.initQueues()
+    }
+
+    initQueues() {
+        this.queues = []
         for (const config of this.queue_config) {
             var queue = {
                 id: config["id"],
@@ -24,6 +28,29 @@ export default class QueueManager {
             }
             this.queues.push(queue)
         }
+    }
+
+    updateServerConfig(server_config) {
+        this.decks = server_config["decks"]
+
+        // Check if the queue config has changed by looking
+        // at the queue ids. If the ids are the same, do nothing.
+        const old_ids = this.queue_config.map(config => config.id)
+        const new_ids = server_config["queue_config"].map(config => config.id)
+        if (JSON.stringify(old_ids) === JSON.stringify(new_ids)) {
+            return
+        }
+
+        // Queues are different, delete the old queues.
+        for (const queue of this.queues) {
+            if (queue.waiting_room) {
+                this.room_manager.deleteRoom(queue.waiting_room.name)
+            }
+        }
+
+        // Create new queues.
+        this.queue_config = server_config["queue_config"]
+        this.initQueues()
     }
 
     validateDeck(queue_id, deck_id) {

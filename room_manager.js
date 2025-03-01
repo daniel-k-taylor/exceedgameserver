@@ -57,4 +57,11 @@ export default class RoomManager {
             player.room = null
         }
     }
+
+    deleteRoom(room_name) {
+        if (this.rooms[room_name]) {
+            this.rooms[room_name].close_room()
+            delete this.rooms[room_name]
+        }
+    }
 }
