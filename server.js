@@ -51,6 +51,14 @@ const server_config = await get_server_config()
 const room_manager = new RoomManager()
 const queue_manager = new QueueManager(database, server_config, discord_connection, room_manager)
 
+// Create a task to run every 10 minutes ot update the server config.
+setInterval(async () => {
+  console.log("Updating server config")
+  const server_config = await get_server_config()
+  queue_manager.updateServerConfig(server_config)
+}, 10 * 60 * 1000)
+
+
 var running_id = 1
 var check_value = process.env.CHECK_VALUE
 
