@@ -303,7 +303,7 @@ function join_matchmaking(ws, json_data) {
   const queue_id = json_data.queue_id
   const deck_id = json_data.deck_id
   if (queue_manager.validateDeck(queue_id, deck_id) == false) {
-    console.log("join_matchmaking invalid deck for queue")
+    console.log(`join_matchmaking Invalid deck ${deck_id} for queue ${queue_id}`)
     const message = {
       type: 'room_join_failed',
       reason: 'invalid_deck_for_queue'
