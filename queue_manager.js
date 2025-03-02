@@ -54,6 +54,12 @@ export default class QueueManager {
     }
 
     validateDeck(queue_id, deck_id) {
+        // If the player picks random, their deck_id is random_*#deck_id
+        // Where * is either s1, s2, etc. or just plain random#deck_id if all season random.
+        // Just remove the # and everything before it if it is there.
+        if (deck_id.startsWith("random")) {
+            deck_id = deck_id.split("#")[1]
+        }
         const queue = this.getQueueById(queue_id)
         if (!queue) {
             return false
