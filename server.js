@@ -87,6 +87,10 @@ function join_custom_room(ws, join_room_json) {
     console.log("join_room_json does not have 'version' field")
     return false
   }
+  if (!('custom_deck_definition' in join_room_json)) {
+    console.log("join_room_json does not have 'custom_deck_definition' field")
+    return false
+  }
   var player_join_version = join_room_json.version
 
   var player = active_connections.get(ws)
@@ -142,7 +146,19 @@ function join_custom_room(ws, join_room_json) {
       minimum_time_per_choice = join_room_json.minimum_time_per_choice
     }
 
-    player.set_deck_id(deck_id)
+    var custom_deck_definition = null
+    if (deck_id.startsWith("custom_")) {
+      custom_deck_definition = join_room_json.custom_deck_definition
+      if (queue_manager.validateCustomDeck(custom_deck_definition) == false) {
+        const message = {
+          type: 'room_join_failed',
+          reason: 'invalid_custom_deck'
+        }
+        ws.send(JSON.stringify(message))
+        return true
+      }
+    }
+    player.set_deck_id(deck_id, custom_deck_definition)
 
     const existing_room = room_manager.findRoom(room_name)
     if (existing_room) {
@@ -280,6 +296,10 @@ function join_matchmaking(ws, json_data) {
     console.log("join_matchmaking does not have 'queue_id' field")
     return false
   }
+  if (!('custom_deck_definition' in json_data)) {
+    console.log("join_matchmaking does not have 'custom_deck_definition' field")
+    return false
+  }
 
   var player_join_version = json_data.version
 
@@ -311,8 +331,23 @@ function join_matchmaking(ws, json_data) {
     ws.send(JSON.stringify(message))
     return true
   }
+
+  // Check if the deck_id starts with "custom_" and if so validate the custom deck definition.
+  var custom_deck_definition = null
+  if (deck_id.startsWith("custom_")) {
+    custom_deck_definition = json_data.custom_deck_definition
+    if (queue_manager.validateCustomDeck(custom_deck_definition) == false) {
+      const message = {
+        type: 'room_join_failed',
+        reason: 'invalid_custom_deck'
+      }
+      ws.send(JSON.stringify(message))
+      return true
+    }
+  }
+
   var player = active_connections.get(ws)
-  player.set_deck_id(deck_id)
+  player.set_deck_id(deck_id, custom_deck_definition)
   var success = queue_manager.addPlayer(queue_id, player, player_join_version)
 
   if (!success) {

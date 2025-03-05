@@ -62,15 +62,18 @@ export default class QueueManager {
         }
         const queue = this.getQueueById(queue_id)
         if (!queue) {
-            return false
-        }
-        const deck = this.decks.find(deck => deck.character === deck_id)
-        if (!deck) {
+            console.log(`Couldn't find queue ${queue_id}`)
             return false
         }
 
-        if (queue.custom_allowed) {
+        if (queue.custom_allowed && deck_id.startsWith("custom")) {
             return true
+        }
+
+        const deck = this.decks.find(deck => deck.character === deck_id)
+        if (!deck) {
+            console.log(`Couldn't find deck ${deck_id}`)
+            return false
         }
 
         if (deck.season < queue.season_restriction.min || deck.season > queue.season_restriction.max) {
@@ -78,6 +81,14 @@ export default class QueueManager {
         }
 
         if (queue.banned.includes(deck_id)) {
+            return false
+        }
+
+        return true
+    }
+
+    validateCustomDeck(deck_definition) {
+        if (!deck_definition) {
             return false
         }
 

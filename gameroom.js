@@ -185,9 +185,11 @@ class GameRoom {
         player1_name: this.players[0].name,
         player1_id: this.players[0].id,
         player1_deck_id: this.players[0].deck_id,
+        player1_custom_deck: this.players[0].custom_deck_definition,
         player2_name: this.players[1].name,
         player2_id: this.players[1].id,
         player2_deck_id: this.players[1].deck_id,
+        player2_custom_deck: this.players[1].custom_deck_definition,
         starting_timer: this.starting_timer,
         enforce_timer: this.enforce_timer,
         minimum_time_per_choice: this.minimum_time_per_choice
