@@ -5,6 +5,7 @@ class Player {
       this.name = name
       this.timeout = null
       this.deck_id = ""
+      this.custom_deck_definition = null
       this.room = null
       this.version = "?"
       this.playing_AI = false
@@ -24,8 +25,9 @@ class Player {
       this.playing_AI = playing
     }
 
-    set_deck_id(deck_id) {
+    set_deck_id(deck_id, custom_deck_definition) {
       this.deck_id = deck_id
+      this.custom_deck_definition = custom_deck_definition
     }
 
     set_room(room) {
