@@ -1,0 +1,1013 @@
+{
+	"id": "terry",
+	"season": -1,
+	"display_name": "Terry Bogard",
+	"exceed_cost": 3,
+	"on_exceed": {
+		"effect_type": "draw",
+		"amount": 1,
+		"and": {
+			"effect_type": "choice",
+			"choice": [
+				{ "effect_type": "advance", "amount": 1, "and": { "effect_type": "strike" } },
+				{ "effect_type": "retreat", "amount": 1, "and": { "effect_type": "strike" } },
+				{ "effect_type": "strike" }
+			]
+		}
+	},
+	"ability_effects": [
+		{
+			"timing": "set_strike",
+			"effect_type": "gauge_for_effect",
+			"per_gauge_effect": null,
+			"overall_effect": {
+				"effect_type": "critical",
+				"character_effect": true
+			},
+			"gauge_max": 1
+		},
+		{
+			"timing": "set_strike",
+			"condition": "initiated_strike",
+			"effect_type": "gauge_for_effect",
+			"per_gauge_effect": null,
+			"overall_effect": {
+				"effect_type": "add_attack_effect",
+				"character_effect": true,
+				"added_effect": {
+					"timing": "hit",
+					"effect_type": "powerup",
+					"amount": 2
+				}
+			},
+			"gauge_max": 1
+		}
+	],
+	"exceed_ability_effects": [
+		{
+			"timing": "set_strike",
+			"effect_type": "gauge_for_effect",
+			"per_gauge_effect": null,
+			"overall_effect": {
+				"effect_type": "critical",
+				"character_effect": true
+			},
+			"gauge_max": 1
+		},
+		{
+			"timing": "set_strike",
+			"condition": "initiated_strike",
+			"effect_type": "gauge_for_effect",
+			"per_gauge_effect": null,
+			"overall_effect": {
+				"effect_type": "add_attack_effect",
+				"character_effect": true,
+				"added_effect": {
+					"timing": "hit",
+					"effect_type": "powerup",
+					"amount": 2,
+					"and": {
+						"effect_type": "opponent_discard_choose",
+						"amount": 1
+					}
+				}
+			},
+			"gauge_max": 1
+		}
+	],
+	"image_resources": {
+		"character_default": {
+			"url": "https://i.imgur.com/7xLOKWM.jpeg",
+			"multiple_cards": false
+		},
+		"character_exceeded": {
+			"url": "https://i.imgur.com/q8NjXSb.jpeg",
+			"multiple_cards": false
+		},
+		"cardback": {
+			"url": "https://i.imgur.com/s6wpKBq.jpeg",
+			"multiple_cards": false
+		},
+		"specials": {
+			"url": "https://i.imgur.com/1StsMqC.jpeg",
+			"multiple_cards": true
+		},
+		"normals": {
+			"url": "https://i.imgur.com/kxbiSwW.jpeg",
+			"multiple_cards": true
+		}
+	},
+	"cards": [
+		{
+			"definition_id": "terry_powergeyser",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "terry_powergeyser",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "terry_busterwolf",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "terry_busterwolf",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "terry_burningknuckle",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "terry_burningknuckle",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "terry_crackshoot",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "terry_crackshoot",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "terry_powerdunk",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "terry_powerdunk",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "terry_powercharge",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "terry_powercharge",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "terry_powerwave",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "terry_powerwave",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "terry_risingtackle",
+			"image_name": "specials",
+			"image_index": 7
+		},
+		{
+			"definition_id": "terry_risingtackle",
+			"image_name": "specials",
+			"image_index": 7
+		},
+		{
+			"definition_id": "kof_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "kof_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "kof_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "kof_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "kof_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "kof_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "kof_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "kof_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "kof_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "kof_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "kof_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "kof_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "kof_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "kof_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "kof_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		},
+		{
+			"definition_id": "kof_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		}
+	],
+	"custom_card_definitions": [
+		{
+			"id": "terry_powergeyser",
+			"type": "ultra",
+			"display_name": "Power Geyser",
+			"force_cost": 0,
+			"gauge_cost": 2,
+			"range_min": 1,
+			"range_max": 3,
+			"power": 6,
+			"speed": 3,
+			"armor": 0,
+			"guard": 6,
+			"effects": [
+				{
+					"timing": "hit",
+					"condition": "range",
+					"condition_amount": 2,
+					"effect_type": "powerup",
+					"amount": 2
+				},
+				{
+					"timing": "hit",
+					"effect_type": "draw",
+					"amount": 3
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 2,
+				"cancel_cost": 1,
+				"display_name": "Hungry Wolf",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 1,
+						"and": {
+							"effect_type": "speedup",
+							"amount": 1
+						}
+					},
+					{
+						"timing": "now",
+						"effect_type": "choice",
+						"choice": [
+							{ "effect_type": "advance", "amount": 1 },
+							{ "effect_type": "retreat", "amount": 1 }
+						]
+					},
+					{
+						"timing": "now",
+						"effect_type": "draw",
+						"amount": 1
+					},
+					{
+						"timing": "hit",
+						"effect_type": "gain_advantage"
+					}
+				]
+			}
+		},
+		{
+			"id": "terry_busterwolf",
+			"type": "ultra",
+			"display_name": "Buster Wolf",
+			"force_cost": 0,
+			"gauge_cost": 2,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 5,
+			"speed": 5,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 3,
+					"save_spaces_not_closed_as_strike_x": true,
+					"and": {
+						"effect_type": "powerup",
+						"amount": "strike_x",
+						"multiplier": 1
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": 1,
+				"display_name": "Stardust Ignition",
+				"effects": [
+					{
+						"timing": "before",
+						"effect_type": "close",
+						"amount": 1,
+						"bonus_effect": {
+							"effect_type": "powerup",
+							"condition": "not_full_close",
+							"amount": 2
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "terry_burningknuckle",
+			"type": "special",
+			"display_name": "Burning Knuckle",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 5,
+			"speed": 3,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"condition": "is_critical",
+					"effect_type": "rangeup",
+					"amount": 0,
+					"amount2": 1,
+					"and": {
+						"effect_type": "speedup",
+						"amount": 1
+					}
+				},
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 3
+				},
+				{
+					"timing": "hit",
+					"condition": "moved_during_strike",
+					"condition_amount": 3,
+					"effect_type": "gain_advantage"
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Wild Street Wolf",
+				"effects": [
+					{
+						"timing": "immediate",
+						"effect_type": "advance",
+						"amount": 3,
+						"bonus_effect": {
+							"condition": "advanced_through",
+							"effect_type": "opponent_discard_choose",
+							"amount": 1
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "terry_crackshoot",
+			"type": "special",
+			"display_name": "Crack Shoot",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 4,
+			"speed": 4,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "hit",
+					"condition": "is_critical",
+					"effect_type": "close",
+					"amount": 1,
+					"and": {
+						"effect_type": "ignore_armor"
+					}
+				},
+				{
+					"timing": "hit",
+					"effect_type": "advance",
+					"amount": 1,
+					"bonus_effect": {
+						"condition": "advanced_through",
+						"effect_type": "ignore_guard",
+						"and": {
+							"effect_type": "draw",
+							"amount": 1
+						}
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Blowback",
+				"effects": [
+					{
+						"timing": "immediate",
+						"condition": "range",
+						"condition_amount": 1,
+						"effect_type": "discard_continuous_boost",
+						"required": true,
+						"amount": 1
+					},
+					{
+						"timing": "immediate",
+						"condition": "range",
+						"condition_amount": 1,
+						"effect_type": "push",
+						"amount": 2
+					}
+				]
+			}
+		},
+		{
+			"id": "terry_powerdunk",
+			"type": "special",
+			"display_name": "Power Dunk",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 3,
+			"speed": 6,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"condition": "is_critical",
+					"effect_type": "advance",
+					"amount": 1
+				},
+				{
+					"timing": "hit",
+					"effect_type": "push",
+					"amount": 2,
+					"and": {
+						"effect_type": "opponent_discard_random",
+						"amount": 1
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": 1,
+				"display_name": "Fatal Fury",
+				"effects": [
+					{
+						"timing": "hit",
+						"effect_type": "powerup",
+						"amount": 1,
+						"and": {
+							"effect_type": "add_boost_to_gauge_on_strike_cleanup",
+							"card_name": "Power Dunk"
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "terry_powercharge",
+			"type": "special",
+			"display_name": "Power Charge",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 4,
+			"speed": 4,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"effect_type": "ignore_armor"
+				},
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 1
+				},
+				{
+					"timing": "after",
+					"condition": "opponent_stunned",
+					"effect_type": "draw",
+					"amount": 2
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": 1,
+				"display_name": "Hey C'mon, C'mon!",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "guardup",
+						"amount": 4
+					},
+					{
+						"timing": "start_of_next_turn",
+						"effect_type": "draw",
+						"amount": 2,
+						"and": {
+							"effect_type": "add_to_gauge_immediately"
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "terry_powerwave",
+			"type": "special",
+			"display_name": "Power Wave",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 2,
+			"range_max": 5,
+			"power": 4,
+			"speed": 3,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"condition": "is_critical",
+					"effect_type": "speedup",
+					"amount": 2
+				},
+				{
+					"timing": "hit",
+					"effect_type": "close",
+					"amount": 3,
+					"and": {
+						"effect_type": "gain_advantage"
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Big Shot!",
+				"effects": [
+					{
+						"timing": "immediate",
+						"effect_type": "gauge_from_hand",
+						"min_amount": 1,
+						"max_amount": 1
+					},
+					{
+						"timing": "immediate",
+						"effect_type": "strike"
+					}
+				]
+			}
+		},
+		{
+			"id": "terry_risingtackle",
+			"type": "special",
+			"display_name": "Rising Tackle",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 3,
+			"speed": 3,
+			"armor": 2,
+			"guard": 3,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"condition": "is_critical",
+					"effect_type": "armorup",
+					"amount": 2
+				},
+				{
+					"timing": "after",
+					"effect_type": "lose_all_armor",
+					"and": {
+						"condition": "opponent_stunned",
+						"effect_type": "opponent_discard_random",
+						"amount": 1
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Quick Burning",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 1,
+						"and": {
+							"effect_type": "ignore_armor"
+						}
+					}
+				]
+			}
+		},
+
+
+
+
+		{
+			"id": "kof_normal_grasp",
+			"type": "normal",
+			"display_name": "Grasp",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 3,
+			"speed": 7,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "hit",
+					"effect_type": "choice",
+					"choice": [
+						{ "effect_type": "push", "amount": 1 },
+						{ "effect_type": "push", "amount": 2 },
+						{ "effect_type": "pull", "amount": 1 },
+						{ "effect_type": "pull", "amount": 2 }
+					]
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Rivalry",
+				"effects": [
+					{
+						"timing": "now",
+						"effect_type": "draw",
+						"amount": 1
+					},
+					{
+						"timing": "hit",
+						"effect_type": "powerup",
+						"amount": 1,
+						"and": {
+							"effect_type": "add_boost_to_gauge_on_strike_cleanup",
+							"card_name": "Grasp"
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "kof_normal_cross",
+			"type": "normal",
+			"display_name": "Cross",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 3,
+			"speed": 6,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "after",
+					"effect_type": "retreat",
+					"amount": 3
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 0,
+				"cancel_cost": 1,
+				"display_name": "Hop",
+				"effects": [
+					{
+						"timing": "immediate",
+						"effect_type": "choice",
+						"choice": [
+							{ "effect_type": "advance", "amount": 2 },
+							{ "effect_type": "advance", "amount": 3 }
+						]
+					}
+				]
+			}
+		},
+		{
+			"id": "kof_normal_assault",
+			"type": "normal",
+			"display_name": "Assault",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 4,
+			"speed": 5,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 2
+				},
+				{
+					"timing": "hit",
+					"effect_type": "gain_advantage"
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Roll",
+				"effects": [
+					{
+						"timing": "immediate",
+						"effect_type": "choice",
+						"choice": [
+							{ "effect_type": "advance", "amount": 3 },
+							{ "effect_type": "retreat", "amount": 3 }
+						]
+					}
+				]
+			}
+		},
+		{
+			"id": "kof_normal_dive",
+			"type": "normal",
+			"display_name": "Dive",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 5,
+			"speed": 4,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "advance",
+					"amount": 3,
+					"bonus_effect": {
+						"effect_type": "dodge_attacks",
+						"condition": "advanced_through"
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 0,
+				"cancel_cost": 1,
+				"display_name": "Ukemi",
+				"effects": [
+					{
+						"timing": "immediate",
+						"effect_type": "discard_continuous_boost",
+						"required": true,
+						"amount": 1
+					}
+				]
+			}
+		},
+		{
+			"id": "kof_normal_spike",
+			"type": "normal",
+			"display_name": "Spike",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 2,
+			"range_max": 3,
+			"power": 5,
+			"speed": 3,
+			"armor": 0,
+			"guard": 4,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"effect_type": "ignore_armor",
+					"and": {
+						"effect_type": "ignore_guard"
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Instant Block",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "armorup",
+						"amount": 1,
+						"and": {
+							"effect_type": "guardup",
+							"amount": 3
+						}
+					},
+					{
+						"timing": "hit",
+						"effect_type": "add_boost_to_gauge_on_strike_cleanup",
+						"card_name": "Spike"
+					}
+				]
+			}
+		},
+		{
+			"id": "kof_normal_sweep",
+			"type": "normal",
+			"display_name": "Sweep",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 3,
+			"power": 6,
+			"speed": 2,
+			"armor": 0,
+			"guard": 6,
+			"effects": [
+				{
+					"timing": "hit",
+					"effect_type": "opponent_discard_random",
+					"amount": 1
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Determination",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 1,
+						"and": {
+							"effect_type": "speedup",
+							"amount": 1
+						}
+					},
+					{
+						"timing": "now",
+						"effect_type": "gauge_from_hand",
+						"min_amount": 0,
+						"max_amount": 1
+					}
+				]
+			}
+		},
+		{
+			"id": "kof_normal_focus",
+			"type": "normal",
+			"display_name": "Focus",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 4,
+			"speed": 1,
+			"armor": 2,
+			"guard": 5,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"effect_type": "ignore_push_and_pull"
+				},
+				{
+					"timing": "after",
+					"effect_type": "draw",
+					"amount": 1
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": 1,
+				"display_name": "Scramble",
+				"effects": [
+					{
+						"timing": "on_initiate_strike",
+						"effect_type": "opponent_wild_swings"
+					}
+				]
+			}
+		},
+		{
+			"NOTE": "GG NORMALS END",
+			"id": "kof_normal_block",
+			"type": "normal",
+			"display_name": "Block",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": -1,
+			"range_max": -1,
+			"power": 0,
+			"speed": 0,
+			"armor": 2,
+			"guard": 3,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"effect_type": "set_total_power",
+					"amount": 0,
+					"and": {
+						"effect_type": "attack_does_not_hit",
+						"hide_notice": true
+					}
+				},
+				{
+					"timing": "during_strike",
+					"effect_type": "when_hit_force_for_armor",
+					"amount": 2
+				},
+				{
+					"timing": "after",
+					"effect_type": "add_strike_to_gauge_after_cleanup"
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Aggresive Parry",
+				"effects": [
+					{
+						"timing": "immediate",
+						"effect_type": "name_card_opponent_discards",
+						"discard_effect": {
+							"effect_type": "strike"
+						}
+					}
+				]
+			},
+			"NOTEEND": "GG NORMALS END"
+		}
+	]
+}

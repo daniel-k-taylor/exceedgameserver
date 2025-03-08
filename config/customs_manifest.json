@@ -1,0 +1,9 @@
+{
+    "version": 1,
+    "customs": [
+        "kafka.json",
+        "marisa.json",
+        "reimu.json",
+        "terry.json"
+    ]
+}

@@ -10,7 +10,7 @@ import Database from './dbaccess.js'
 import QueueManager from './queue_manager.js'
 import RoomManager from './room_manager.js';
 import DiscordConnection from './discordconnection.js';
-import { get_server_config } from './blobstorage.js'
+import { get_server_config, update_customs_db } from './blobstorage.js'
 import * as dotenv from 'dotenv';
 dotenv.config({ path: `.env`, debug: true });
 
@@ -50,12 +50,19 @@ const database = new Database(config);
 const server_config = await get_server_config()
 const room_manager = new RoomManager()
 const queue_manager = new QueueManager(database, server_config, discord_connection, room_manager)
+var customs_db = {
+  version: 0,
+  customs: {}
+}
+await update_customs_db(customs_db)
 
-// Create a task to run every 10 minutes ot update the server config.
+// Create a task to run every 10 minutes to update the server config.
 setInterval(async () => {
   console.log("Updating server config")
   const server_config = await get_server_config()
   queue_manager.updateServerConfig(server_config)
+
+  customs_db = await update_customs_db(customs_db)
 }, 10 * 60 * 1000)
 
 
@@ -514,6 +521,13 @@ wss.on('connection', function connection(ws) {
         if (player.room !== null) {
           player.room.handle_game_message(player, json_data)
         }
+        handled = true
+      } else if (message_type == "get_customs") {
+        const message = {
+          type: 'customs_update',
+          customs: customs_db["customs"],
+        }
+        ws.send(JSON.stringify(message))
         handled = true
       }
     }

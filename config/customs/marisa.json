@@ -1,0 +1,590 @@
+{
+	"id": "marisakirisame",
+	"season": -1,
+	"display_name": "Marisa Kirisame",
+	"exceed_cost": 3,
+	"on_exceed": {
+		"effect_type": "draw",
+		"amount": 2,
+		"and": {
+			"effect_type": "choice",
+			"choice": [
+				{ "effect_type": "close", "amount": 1 },
+				{ "effect_type": "close", "amount": 2 },
+				{ "effect_type": "pass" }
+			]
+		}
+	},
+	"ability_effects": [
+		{
+			"timing": "set_strike",
+			"condition": "initiated_strike",
+			"effect_type": "force_for_effect",
+			"per_force_effect": null,
+			"overall_effect": {
+				"character_effect": true,
+				"effect_type": "add_attack_effect",
+				"added_effect": {
+					"timing": "during_strike",
+					"effect_type": "powerup",
+					"amount": 2
+				}
+			},
+			"force_max": 2
+		}
+	],
+	"exceed_ability_effects": [
+		{
+			"timing": "set_strike",
+			"condition": "initiated_strike",
+			"effect_type": "force_for_effect",
+			"per_force_effect": null,
+			"overall_effect": {
+				"character_effect": true,
+				"effect_type": "choice",
+				"choice": [
+					{
+						"effect_type": "close",
+						"amount": 1,
+						"and": {
+							"effect_type": "add_attack_effect",
+							"added_effect": {
+								"timing": "during_strike",
+								"effect_type": "powerup",
+								"amount": 2
+							}
+						}
+					},
+					{
+						"effect_type": "add_attack_effect",
+						"added_effect": {
+							"timing": "during_strike",
+							"effect_type": "powerup",
+							"amount": 2
+						}
+					}
+				]
+			},
+			"force_max": 2
+		}
+	],
+	"image_resources": {
+		"character_default": {
+			"url": "https://i.imgur.com/iCUNMQw.jpeg",
+			"multiple_cards": false
+		},
+		"character_exceeded": {
+			"url": "https://i.imgur.com/5wYgPxn.jpeg",
+			"multiple_cards": false
+		},
+		"cardback": {
+			"url": "https://i.imgur.com/xcHv7VG.jpeg",
+			"multiple_cards": false
+		},
+		"specials": {
+			"url": "https://i.imgur.com/C8LyLD1.jpeg",
+			"multiple_cards": true
+		},
+		"normals": {
+			"url": "https://i.imgur.com/QvGPtfW.jpeg",
+			"multiple_cards": true
+		}
+	},
+	"cards": [
+		{
+			"definition_id": "marisa_blazingstar",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "marisa_blazingstar",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "marisa_masterspark",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "marisa_masterspark",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "marisa_escapevelocity",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "marisa_escapevelocity",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "marisa_illusionlaser",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "marisa_illusionlaser",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "marisa_magicmissile",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "marisa_magicmissile",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "marisa_witchleyline",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "marisa_witchleyline",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "marisa_coldinferno",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "marisa_coldinferno",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		}
+	],
+	"custom_card_definitions": [
+		{
+			"id": "marisa_blazingstar",
+			"type": "ultra",
+			"display_name": "Comet \"Blazing Star\"",
+			"force_cost": 0,
+			"gauge_cost": 2,
+			"range_min": 1,
+			"range_max": 1,
+			"speed": 5,
+			"power": 5,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 3
+				},
+				{
+					"timing": "hit",
+					"effect_type": "push",
+					"amount": 2
+				},
+				{
+					"timing": "after",
+					"effect_type": "advance",
+					"amount": 3
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Mini Hakkero",
+				"effects": [
+					{
+						"timing": "now",
+						"effect_type": "draw",
+						"amount": 1
+					},
+					{
+						"timing": "hit",
+						"effect_type": "powerup",
+						"amount": 2,
+						"and": {
+							"effect_type": "gain_advantage"
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "marisa_masterspark",
+			"type": "ultra",
+			"display_name": "Love Sign \"Master Spark\"",
+			"force_cost": 0,
+			"gauge_cost": 3,
+			"range_min": 1,
+			"range_max": 6,
+			"speed": 0,
+			"power": 8,
+			"armor": 0,
+			"guard": 7,
+			"effects": [
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Love Colored Magic",
+				"effects": [
+					{
+						"timing": "now",
+						"effect_type": "choice",
+						"choice": [
+							{ "effect_type": "advance", "amount": 1 },
+							{ "effect_type": "retreat", "amount": 1 }
+						]
+					},
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 1,
+						"and": {
+							"effect_type": "speedup",
+							"amount": 1
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "marisa_escapevelocity",
+			"type": "special",
+			"display_name": "Escape Velocity",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"speed": 7,
+			"power": 2,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 1
+				},
+				{
+					"timing": "hit",
+					"effect_type": "choice",
+					"choice": [
+						{ "effect_type": "advance", "amount": 1 },
+						{ "effect_type": "advance", "amount": 2 },
+						{ "effect_type": "pass" }
+					]
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Youkai Extermination",
+				"effects": [
+					{
+						"timing": "now",
+						"effect_type": "advance",
+						"amount": 1,
+						"and": {
+							"effect_type": "gauge_for_effect",
+							"per_gauge_effect": null,
+							"overall_effect": {
+								"effect_type": "strike"
+							},
+							"gauge_max": 1
+						}
+					},
+					{
+						"timing": "during_strike",
+						"effect_type": "speedup",
+						"amount": 1
+					}
+				]
+			}
+		},
+		{
+			"id": "marisa_illusionlaser",
+			"type": "special",
+			"display_name": "Illusion Laser",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 3,
+			"range_max": 6,
+			"speed": 3,
+			"power": 4,
+			"armor": 0,
+			"guard": 5,
+			"effects": [
+				{
+					"timing": "after",
+					"effect_type": "choice",
+					"choice": [
+						{ "effect_type": "advance", "amount": 2 },
+						{ "effect_type": "retreat", "amount": 2 }
+					]
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Oriental Dark Flight",
+				"effects": [
+					{
+						"timing": "now",
+						"effect_type": "close",
+						"amount": 1
+					},
+					{
+						"timing": "hit",
+						"effect_type": "powerup",
+						"amount": 1,
+						"and": {
+							"effect_type": "opponent_discard_random",
+							"amount": 1
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "marisa_magicmissile",
+			"type": "special",
+			"display_name": "Magic Missile",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 4,
+			"speed": 3,
+			"power": 4,
+			"armor": 0,
+			"guard": 4,
+			"effects": [
+				{
+					"timing": "after",
+					"effect_type": "draw",
+					"amount": 1,
+					"and": {
+						"effect_type": "advance",
+						"amount": 2
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Stardust Reverie",
+				"effects": [
+					{
+						"timing": "immediate",
+						"effect_type": "choice",
+						"choice": [
+							{ "effect_type": "advance", "amount": 3 },
+							{ "effect_type": "retreat", "amount": 3 }
+						]
+					},
+					{
+						"timing": "immediate",
+						"effect_type": "gauge_for_effect",
+						"per_gauge_effect": null,
+						"overall_effect": {
+							"effect_type": "strike"
+						},
+						"gauge_max": 1
+					}
+				]
+			}
+		},
+		{
+			"id": "marisa_witchleyline",
+			"type": "special",
+			"display_name": "Witch Leyline",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"speed": 5,
+			"power": 3,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 3
+				},
+				{
+					"timing": "hit",
+					"effect_type": "push",
+					"amount": 2,
+					"and": {
+						"effect_type": "gain_advantage"
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Grimoire Research",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 1
+					},
+					{
+						"timing": "now",
+						"effect_type": "draw",
+						"amount": 1
+					},
+					{
+						"timing": "after",
+						"condition": "opponent_stunned",
+						"effect_type": "add_opponent_strike_to_gauge"
+					}
+				]
+			}
+		},
+		{
+			"id": "marisa_coldinferno",
+			"type": "special",
+			"display_name": "Cold Inferno",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"speed": 4,
+			"power": 4,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"effect_type": "ignore_armor"
+				},
+				{
+					"timing": "after",
+					"condition": "opponent_stunned",
+					"effect_type": "draw",
+					"amount": 3
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Orreries Sun",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "armorup",
+						"amount": 1
+					},
+					{
+						"timing": "now",
+						"effect_type": "gauge_for_effect",
+						"per_gauge_effect": null,
+						"overall_effect": {
+							"effect_type": "strike"
+						},
+						"gauge_max": 1
+					},
+					{
+						"timing": "hit",
+						"effect_type": "draw",
+						"amount": 3
+					}
+				]
+			}
+		}
+	]
+}
