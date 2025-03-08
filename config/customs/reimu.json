@@ -1,0 +1,567 @@
+{
+	"id": "reimu",
+	"season": -1,
+	"display_name": "Hakurei Reimu",
+	"exceed_cost": 2,
+	"character_action_default": [{
+		"gauge_cost": 1,
+		"force_cost": 0,
+		"effect": {
+			"effect_type": "choice",
+			"choice": [
+				{ "effect_type": "advance", "amount": 1 },
+				{ "effect_type": "retreat", "amount": 1 }
+			],
+			"and": {
+				"effect_type": "strike"
+			}
+		}
+	}],
+	"character_action_exceeded": [{
+		"gauge_cost": 1,
+		"force_cost": 0,
+		"effect": {
+			"effect_type": "choice",
+			"choice": [
+				{ "effect_type": "advance", "amount": 1 },
+				{ "effect_type": "retreat", "amount": 1 }
+			],
+			"and": {
+				"effect_type": "choice",
+				"choice": [
+					{
+						"effect_type": "boost_or_reveal_hand",
+						"limitation": "",
+						"strike_instead_of_reveal": true
+					},
+					{ "effect_type": "strike" }
+				]
+			}
+		}
+	}],
+	"ability_effects": [],
+	"exceed_ability_effects": [],
+	"image_resources": {
+		"character_default": {
+			"url": "https://i.imgur.com/wDdgCqA.jpeg",
+			"multiple_cards": false
+		},
+		"character_exceeded": {
+			"url": "https://i.imgur.com/LQANnwo.jpeg",
+			"multiple_cards": false
+		},
+		"cardback": {
+			"url": "https://i.imgur.com/wvRonmd.jpeg",
+			"multiple_cards": false
+		},
+		"specials": {
+			"url": "https://i.imgur.com/nfJCtqq.jpeg",
+			"multiple_cards": true
+		},
+		"normals": {
+			"url": "https://i.imgur.com/PN8hUtY.jpeg",
+			"multiple_cards": true
+		}
+	},
+	"cards": [
+		{
+			"definition_id": "reimu_dreamseal",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "reimu_dreamseal",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "reimu_evilsealingcircle",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "reimu_evilsealingcircle",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "reimu_homingamulet",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "reimu_homingamulet",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "reimu_persuasionneedle",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "reimu_persuasionneedle",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "reimu_ascensionkick",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "reimu_ascensionkick",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "reimu_duplexbarrier",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "reimu_duplexbarrier",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "reimu_youkaibuster",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "reimu_youkaibuster",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		}
+	],
+	"custom_card_definitions": [
+		{
+			"id": "reimu_dreamseal",
+			"type": "ultra",
+			"display_name": "Spirit Sign \"Dream Seal\"",
+			"force_cost": 0,
+			"gauge_cost": 3,
+			"range_min": 3,
+			"range_max": 5,
+			"speed": 5,
+			"power": 5,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "hit",
+					"effect_type": "choice",
+					"choice": [
+						{ "effect_type": "push", "amount": 1, "and": {
+							"effect_type": "draw", "amount": 1, "and": {
+								"effect_type": "opponent_discard_choose", "amount": 1
+							}
+						} },
+						{ "effect_type": "push", "amount": 2, "and": {
+							"effect_type": "draw", "amount": 1, "and": {
+								"effect_type": "opponent_discard_choose", "amount": 1
+							}
+						} },
+						{ "effect_type": "pull", "amount": 1, "and": {
+							"effect_type": "draw", "amount": 1, "and": {
+								"effect_type": "opponent_discard_choose", "amount": 1
+							}
+						} },
+						{ "effect_type": "pull", "amount": 2, "and": {
+							"effect_type": "draw", "amount": 1, "and": {
+								"effect_type": "opponent_discard_choose", "amount": 1
+							}
+						} },
+						{ "effect_type": "draw", "amount": 1, "and": {
+							"effect_type": "opponent_discard_choose", "amount": 1
+						} }
+					]
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 2,
+				"cancel_cost": -1,
+				"display_name": "Fantasy Heaven",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "armorup",
+						"amount": 1
+					},
+					{
+						"timing": "during_strike",
+						"effect_type": "guardup",
+						"amount": 3
+					},
+					{
+						"timing": "after",
+						"effect_type": "move_to_any_space",
+						"move_min": 0,
+						"move_max": 3
+					}
+				]
+			}
+		},
+		{
+			"id": "reimu_evilsealingcircle",
+			"type": "ultra",
+			"display_name": "Dream Sign \"Evil Sealing Circle\"",
+			"force_cost": 0,
+			"gauge_cost": 4,
+			"range_min": 1,
+			"range_max": 2,
+			"speed": 2,
+			"power": 7,
+			"armor": 2,
+			"guard": 5,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"effect_type": "ignore_armor"
+				},
+				{
+					"timing": "during_strike",
+					"effect_type": "ignore_push_and_pull"
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Eternal Shrine Maiden",
+				"effects": [
+					{
+						"timing": "immediate",
+						"effect_type": "draw",
+						"amount": 3
+					},
+					{
+						"timing": "immediate",
+						"effect_type": "force_for_effect",
+						"per_force_effect": {
+							"effect_type": "draw",
+							"amount": 1
+						},
+						"overall_effect": null,
+						"force_max": 3
+					}
+				]
+			}
+		},
+		{
+			"id": "reimu_homingamulet",
+			"type": "special",
+			"display_name": "Homing Amulet",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 3,
+			"range_max": 6,
+			"speed": 3,
+			"power": 5,
+			"armor": 0,
+			"guard": 4,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "choice",
+					"choice": [
+						{ "effect_type": "advance", "amount": 1 },
+						{ "effect_type": "retreat", "amount": 1 },
+						{ "effect_type": "pass" }
+					]
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Dichromatic Butterfly",
+				"effects": [
+					{
+						"timing": "now",
+						"effect_type": "gauge_for_effect",
+						"per_gauge_effect": null,
+						"overall_effect": {
+							"effect_type": "draw",
+							"amount": 2
+						},
+						"gauge_max": 1
+					},
+					{
+						"timing": "during_strike",
+						"effect_type": "speedup",
+						"amount": 1,
+						"and": {
+							"effect_type": "armorup",
+							"amount": 1
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "reimu_persuasionneedle",
+			"type": "special",
+			"display_name": "Persuasion Needle",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"speed": 5,
+			"power": 4,
+			"armor": 0,
+			"guard": 4,
+			"effects": [
+				{
+					"timing": "hit",
+					"effect_type": "push",
+					"amount": 2,
+					"and": {
+						"effect_type": "draw",
+						"amount": 1
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Incident Resolution",
+				"effects": [
+					{
+						"timing": "now",
+						"effect_type": "close",
+						"amount": 1
+					},
+					{
+						"timing": "during_strike",
+						"effect_type": "rangeup",
+						"amount": 0,
+						"amount2": 1
+					}
+				]
+			}
+		},
+		{
+			"id": "reimu_ascensionkick",
+			"type": "special",
+			"display_name": "Ascension Kick",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"speed": 7,
+			"power": 4,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "hit",
+					"effect_type": "push",
+					"amount": 1
+				},
+				{
+					"timing": "after",
+					"effect_type": "advance",
+					"amount": 3
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Maiden's Capriccio",
+				"effects": [
+					{
+						"timing": "immediate",
+						"effect_type": "choice",
+						"choice": [
+							{ "effect_type": "advance", "amount": 2 },
+							{ "effect_type": "retreat", "amount": 2 }
+						]
+					},
+					{
+						"timing": "immediate",
+						"effect_type": "draw",
+						"amount": 1
+					}
+				]
+			}
+		},
+		{
+			"id": "reimu_duplexbarrier",
+			"type": "special",
+			"display_name": "Duplex Barrier",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 3,
+			"range_max": 4,
+			"speed": 6,
+			"power": 2,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "hit",
+					"effect_type": "pull",
+					"amount": 1,
+					"and": {
+						"effect_type": "draw",
+						"amount": 1,
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Yin-Yang Orb",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 2,
+						"and": {
+							"effect_type": "armorup",
+							"amount": 1
+						}
+					},
+					{
+						"timing": "hit",
+						"effect_type": "choice",
+						"choice": [
+							{ "effect_type": "push", "amount": 1 },
+							{ "effect_type": "pull", "amount": 1 },
+							{ "effect_type": "pass" }
+						]
+					}
+				]
+			}
+		},
+		{
+			"id": "reimu_youkaibuster",
+			"type": "special",
+			"display_name": "Youkai Buster",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"speed": 3,
+			"power": 5,
+			"armor": 0,
+			"guard": 6,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 1
+				},
+				{
+					"timing": "hit",
+					"effect_type": "draw",
+					"amount": 1
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Hakurei Amulet",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "rangeup",
+						"amount": 0,
+						"amount2": 1,
+						"and": {
+							"effect_type": "speedup",
+							"amount": 1
+						}
+					}
+				]
+			}
+		}
+	]
+}
