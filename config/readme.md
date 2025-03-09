@@ -21,3 +21,8 @@ When adding a custom:
 3. Increment the manifest version
 4. venv\scripts\activate
 5. python upload_customs.py
+
+
+# Uploading game zip
+1. venv\scripts\activate
+2. python upload_game_zip.py -g <path to game.zip from client branch export script>
