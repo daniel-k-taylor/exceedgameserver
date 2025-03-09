@@ -1,4 +1,6 @@
-
+import path from 'path';
+import fs from 'fs';
+import unzipper from 'unzipper';
 import { BlobServiceClient } from "@azure/storage-blob";
 
 const JSON5 = await import('json5');
@@ -8,6 +10,9 @@ const CONFIG_BLOB_NAME = 'server_config.json';
 
 const CUSTOMS_CONTAINER_NAME = 'exceed-customs';
 const CUSTOMS_MANIFEST_BLOB_NAME = 'customs_manifest.json';
+
+const GAME_ZIP_CONTAINER_NAME = 'exceed-game-files';
+const GAME_ZIP_BLOB_NAME = 'game.zip';
 
 // Helper function to convert a stream to a string
 async function streamToString(readableStream) {
@@ -23,19 +28,23 @@ async function streamToString(readableStream) {
     });
 }
 
+function getContainerClient(containerName) {
+    const AZURE_STORAGE_CONNECTION_STRING = process.env.AZURE_STORAGE_CONNECTION_STRING;
+
+    if (!AZURE_STORAGE_CONNECTION_STRING) {
+        throw new Error('Azure Storage Connection string not found');
+    }
+
+    // Create the BlobServiceClient object with connection string
+    const blobServiceClient = BlobServiceClient.fromConnectionString(AZURE_STORAGE_CONNECTION_STRING);
+
+    // Get a reference to a container
+    return blobServiceClient.getContainerClient(containerName);
+}
+
 async function download_file_from_blob_storage(container, filename) {
     try {
-        const AZURE_STORAGE_CONNECTION_STRING = process.env.AZURE_STORAGE_CONNECTION_STRING;
-
-        if (!AZURE_STORAGE_CONNECTION_STRING) {
-            throw new Error('Azure Storage Connection string not found');
-        }
-
-        // Create the BlobServiceClient object with connection string
-        const blobServiceClient = BlobServiceClient.fromConnectionString(AZURE_STORAGE_CONNECTION_STRING);
-
-        // Get a reference to a container
-        const containerClient = blobServiceClient.getContainerClient(container);
+        const containerClient = getContainerClient(container);
 
         // Download the server config json blob.
         const blockBlobClient = containerClient.getBlockBlobClient(filename);
@@ -127,5 +136,50 @@ export async function upload_to_blob_storage(matchData) {
     }
     catch (error) {
         console.error('Error:', error);
+    }
+}
+
+export async function checkAndDownloadUpdatedGameZip(gamePath) {
+    const localPath = path.join(gamePath, GAME_ZIP_BLOB_NAME);
+    try {
+        const containerClient = getContainerClient(GAME_ZIP_CONTAINER_NAME);
+        const blobClient = containerClient.getBlobClient(GAME_ZIP_BLOB_NAME);
+        const properties = await blobClient.getProperties();
+        const remoteLastModified = new Date(properties.lastModified);
+
+        // Check local file's last modified time if it exists
+        let localLastModified = null;
+        if (fs.existsSync(localPath)) {
+            const stats = fs.statSync(localPath);
+            localLastModified = stats.mtime;
+        }
+
+        if (!localLastModified || remoteLastModified > localLastModified) {
+            console.log('Newer version found, downloading...');
+
+            fs.mkdirSync(gamePath, { recursive: true });
+
+            await blobClient.downloadToFile(localPath);
+            console.log('Download complete');
+
+            // Extract the zip to gamePath, ovewriting anything.
+            if (fs.existsSync(gamePath)) {
+                fs.readdirSync(gamePath).forEach(file => {
+                    if (file !== 'game.zip') { // Skip the zip file
+                        fs.rmSync(path.join(gamePath, file), { recursive: true, force: true });
+                    }
+                });
+            }
+
+            // Extract the zip
+            fs.createReadStream(localPath)
+                .pipe(unzipper.Extract({ path: gamePath }))
+                .on('close', () => console.log('Game zip extracted successfully'))
+                .on('error', (err) => console.error('Error extracting game zip:', err));
+        } else {
+            console.log('Local version is up to date');
+        }
+    } catch (error) {
+        console.error('Error checking or downloading game zip:', error);
     }
 }

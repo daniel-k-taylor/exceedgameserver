@@ -10,12 +10,36 @@ import Database from './dbaccess.js'
 import QueueManager from './queue_manager.js'
 import RoomManager from './room_manager.js';
 import DiscordConnection from './discordconnection.js';
-import { get_server_config, update_customs_db } from './blobstorage.js'
+import { get_server_config, update_customs_db, checkAndDownloadUpdatedGameZip } from './blobstorage.js'
 import * as dotenv from 'dotenv';
 dotenv.config({ path: `.env`, debug: true });
 
+
+import express from 'express';
+import { createServer } from 'http';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Helper to get the current directory in an ES module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const app = express();
+const server = createServer(app);
+
+const gamePath = path.join(__dirname, 'public');
+
+// Serve your Godot game files
+app.use('/', express.static(gamePath));
+
 const port = process.env.PORT || 8080
-const wss = new WebSocketServer({ port: port })
+const wss = new WebSocketServer({ server: server })
+server.listen(port, () => console.log(`Server running on http://localhost:${port}`));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
 
 const matcher = new RegExpMatcher({
 	...englishDataset.build(),
@@ -55,6 +79,7 @@ var customs_db = {
   customs: {}
 }
 await update_customs_db(customs_db)
+await checkAndDownloadUpdatedGameZip(gamePath)
 
 // Create a task to run every 10 minutes to update the server config.
 setInterval(async () => {
@@ -63,12 +88,12 @@ setInterval(async () => {
   queue_manager.updateServerConfig(server_config)
 
   customs_db = await update_customs_db(customs_db)
+  await checkAndDownloadUpdatedGameZip(gamePath)
 }, 10 * 60 * 1000)
 
 
 var running_id = 1
 var check_value = process.env.CHECK_VALUE
-
 
 function join_custom_room(ws, join_room_json) {
   // join_room_json required parameters:
