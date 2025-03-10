@@ -23,8 +23,18 @@ export default class RoomManager {
                 player_count: room.players.length,
                 observer_count: room.get_observer_count(),
                 game_started: room.gameStarted,
-                player_names: [room.get_player_name(0), room.get_player_name(1)],
-                player_decks: [room.get_player_deck(0), room.get_player_deck(1)]
+                player_names: [
+                    room.get_player_name(0),
+                    room.get_player_name(1)
+                ],
+                player_decks: [
+                    room.get_player_deck(0),
+                    room.get_player_deck(1)
+                ],
+                player_custom_decks: [
+                    room.get_player_custom_deck(0),
+                    room.get_player_custom_deck(1),
+                ],
             }
         })
     }

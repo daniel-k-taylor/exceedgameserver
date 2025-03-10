@@ -40,6 +40,13 @@ class GameRoom {
     return ""
   }
 
+  get_player_custom_deck(index) {
+    if (index < this.players.length) {
+      return this.players[index].custom_deck_definition
+    }
+    return null
+  }
+
   join(player) {
     if (this.players.length < 2 && !this.gameStarted) {
       this.players.push(player)
