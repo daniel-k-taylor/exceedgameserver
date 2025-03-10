@@ -40,6 +40,23 @@ class GameRoom {
     return ""
   }
 
+  get_player_custom_deck_portrait(index) {
+    if (index < this.players.length) {
+      if (this.players[index].custom_deck_definition) {
+        // If this player has a custom deck definition,
+        // get their portrait field if it exists.
+        // Double check that it is actually a string too.
+        if (typeof this.players[index].custom_deck_definition.portrait_image_url === 'string') {
+          // If the portrait field is a string, return it.
+          // This is a URL to the image.
+          return this.players[index].custom_deck_definition.portrait_image_url
+        }
+      }
+      return this.players[index].custom_deck_definition
+    }
+    return null
+  }
+
   join(player) {
     if (this.players.length < 2 && !this.gameStarted) {
       this.players.push(player)
