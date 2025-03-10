@@ -31,9 +31,9 @@ export default class RoomManager {
                     room.get_player_deck(0),
                     room.get_player_deck(1)
                 ],
-                player_custom_decks: [
-                    room.get_player_custom_deck(0),
-                    room.get_player_custom_deck(1),
+                player_custom_deck_portraits: [
+                    room.get_player_custom_deck_portrait(0),
+                    room.get_player_custom_deck_portrait(1),
                 ],
             }
         })
