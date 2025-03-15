@@ -1,6 +1,8 @@
 {
 	"id": "terry",
 	"season": -1,
+	"author": "Moriatti",
+	"difficulty": "*",
 	"display_name": "Terry Bogard",
 	"exceed_cost": 3,
 	"on_exceed": {
@@ -75,6 +77,28 @@
 			"gauge_max": 1
 		}
 	],
+	"custom_animations": {
+		"terry": {
+			"idle": {
+				"url": "https://i.imgur.com/UsufW6z.png",
+				"frame_count": 7
+			},
+			"walk_backward": {
+				"url": "https://i.imgur.com/rCrtgxN.png",
+				"frame_count": 6
+			},
+			"walk_forward": {
+				"url": "https://i.imgur.com/f8KMrnP.png",
+				"frame_count": 6
+			},
+			"metadata": {
+				"scaling": 2.5,
+				"flip": true
+			}
+
+		},
+	},
+	"portrait_image_url": "https://i.imgur.com/VVJvQEC.png",
 	"image_resources": {
 		"character_default": {
 			"url": "https://i.imgur.com/7xLOKWM.jpeg",
@@ -875,6 +899,7 @@
 					{
 						"timing": "hit",
 						"effect_type": "add_boost_to_gauge_on_strike_cleanup",
+						"not_immediate": true,
 						"card_name": "Spike"
 					}
 				]
