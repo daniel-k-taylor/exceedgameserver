@@ -94,6 +94,29 @@
 			"multiple_cards": true
 		}
 	},
+	"custom_animations": {
+		"vane": {
+			"idle": {
+				"url": "https://i.imgur.com/8cac5Aa.png",
+				"frame_count": 6
+			},
+			"walk_backward": {
+				"url": "https://i.imgur.com/QSrVc3l.png",
+				"frame_count": 6
+			},
+			"walk_forward": {
+				"url": "https://i.imgur.com/QSrVc3l.png",
+				"frame_count": 6
+			},
+			"metadata": {
+				"scaling": 0.3,
+				"flip": true,
+				"horizontal_offset": 110
+			}
+
+		}
+	},
+	"portrait_image_url": "https://i.imgur.com/YlpKSJY.png",
 	"cards": [
 		{
 			"definition_id": "customer_lowenbeinjagd",
@@ -300,7 +323,7 @@
 								"amount": 1
 							},
 							"overall_effect": null,
-							"force_max": 99
+							"force_max": -1
 						}
 					}
 				]
