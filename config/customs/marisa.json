@@ -1,7 +1,9 @@
 {
 	"id": "marisakirisame",
 	"season": -1,
-	"display_name": "Marisa Kirisame",
+	"author": "Serp",
+	"difficulty": "*",
+	"display_name": "Kirisame Marisa",
 	"exceed_cost": 3,
 	"on_exceed": {
 		"effect_type": "draw",
@@ -90,6 +92,28 @@
 			"multiple_cards": true
 		}
 	},
+	"custom_animations": {
+		"marisakirisame": {
+			"idle": {
+				"url": "https://i.imgur.com/GQWZ2RB.png",
+				"frame_count": 10
+			},
+			"walk_backward": {
+				"url": "https://i.imgur.com/qXSbhi3.png",
+				"frame_count": 6
+			},
+			"walk_forward": {
+				"url": "https://i.imgur.com/ZmiuOLT.png",
+				"frame_count": 8
+			},
+			"metadata": {
+				"scaling": 2.2,
+				"flip": true
+			}
+
+		},
+	},
+	"portrait_image_url": "https://i.imgur.com/cU8RI5S.png",
 	"cards": [
 		{
 			"definition_id": "marisa_blazingstar",

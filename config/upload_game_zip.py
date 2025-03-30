@@ -18,12 +18,14 @@ CONTAINER_NAME = "exceed-game-files"
 BLOB_NAME = "game.zip"
 
 
-
+DT_GAME_ZIP_PATH = r"E:\Projects\godot\cardgame\export\game.zip"
 
 # Create a main func and if
 # __name__ == "__main__": call main
 
 def main(game_zip_path):
+    if not game_zip_path:
+        game_zip_path = DT_GAME_ZIP_PATH
     if not os.path.isfile(game_zip_path):
         print(f"Error: File {game_zip_path} not found")
         return

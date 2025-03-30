@@ -1,0 +1,644 @@
+{
+	"id": "percival",
+	"season": -1,
+	"author": "Ter_",
+	"difficulty": "**",
+	"display_name": "Percival",
+	"exceed_cost": 3,
+	"ability_effects": [
+		{
+			"timing": "set_strike",
+			"effect_type": "gauge_for_effect",
+			"per_gauge_effect": null,
+			"overall_effect": {
+				"effect_type": "critical",
+				"character_effect": true
+			},
+			"gauge_max": 1
+		},
+		{
+			"timing": "set_strike",
+			"condition": "initiated_strike",
+			"effect_type": "gauge_for_effect",
+			"per_gauge_effect": null,
+			"overall_effect": {
+				"character_effect": true,
+				"timing": "during_strike",
+				"effect_type": "powerup",
+				"amount": 1,
+				"and": {
+					"effect_type": "add_attack_effect",
+					"added_effect": {
+						"timing": "hit",
+						"effect_type": "draw",
+						"amount": 1
+					}
+				}
+			},
+			"gauge_max": 1
+		}
+	],
+	"exceed_ability_effects": [
+		{
+			"timing": "set_strike",
+			"effect_type": "gauge_for_effect",
+			"per_gauge_effect": null,
+			"overall_effect": {
+				"effect_type": "critical",
+				"character_effect": true
+			},
+			"gauge_max": 1
+		},
+		{
+			"timing": "set_strike",
+			"character_effect": true,
+			"effect_type": "gauge_for_effect",
+			"per_gauge_effect": null,
+			"overall_effect": {
+				"effect_type": "add_attack_effect",
+				"added_effect": {
+					"timing": "during_strike",
+					"effect_type": "powerup",
+					"amount": 2
+				},
+				"and": {
+					"effect_type": "add_attack_effect",
+					"added_effect": {
+						"timing": "after",
+						"effect_type": "draw",
+						"amount": 1
+					}
+
+				}
+			},
+			"gauge_max": 1
+		}
+	],
+	"image_resources": {
+		"character_default": {
+			"url": "https://i.imgur.com/XQB2Q3o.png",
+			"multiple_cards": false
+		},
+		"character_exceeded": {
+			"url": "https://i.imgur.com/lcfvflM.png",
+			"multiple_cards": false
+		},
+		"cardback": {
+			"url": "https://svgdb.me/assets/sleeves/sleeve_3016003.png",
+			"multiple_cards": false
+		},
+		"specials": {
+			"url": "https://i.imgur.com/xunFUiC.png",
+			"multiple_cards": true
+		},
+		"normals": {
+			"url": "https://i.imgur.com/URBY0D2.jpeg",
+			"multiple_cards": true
+		}
+	},
+	"custom_animations": {
+		"percival": {
+			"idle": {
+				"url": "https://i.imgur.com/nRVJFzH.png",
+				"frame_count": 1
+			},
+			"metadata": {
+				"scaling": 0.11,
+				"flip": true,
+				"horizontal_offset": 20
+			}
+
+		}
+	},
+	"portrait_image_url": "https://i.imgur.com/Xm9oKSH.png",
+	"cards": [
+		{
+			"definition_id": "percival_lohenwolf",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "percival_lohenwolf",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "percival_feuerrotekrone",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "percival_feuerrotekrone",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "percival_andzunden",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "percival_andzunden",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "percival_platzen",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "percival_platzen",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "percival_schneiden",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "percival_schneiden",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "percival_macht",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "percival_macht",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "percival_zerreissen",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "percival_zerreissen",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		}
+	],
+	"custom_card_definitions": [
+		{
+			"id": "percival_lohenwolf",
+			"type": "ultra",
+			"display_name": "Lohenwolf",
+			"force_cost": 0,
+			"gauge_cost": 2,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 5,
+			"speed": 5,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 2
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "X-Seele",
+				"effects": [
+					{
+						"timing": "immediate",
+						"condition": "range",
+						"condition_amount": 1,
+						"effect_type": "draw",
+						"amount": 2,
+						"and": {
+							"effect_type": "choice",
+							"choice": [
+								{
+									"effect_type": "strike"
+								},
+								{
+									"effect_type": "add_to_gauge_boost_play_cleanup"
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "percival_feuerrotekrone",
+			"type": "ultra",
+			"display_name": "Feuerrote Krone",
+			"force_cost": 0,
+			"gauge_cost": 3,
+			"range_min": 1,
+			"range_max": 6,
+			"power": 4,
+			"speed": 2,
+			"armor": 2,
+			"guard": 5,
+			"effects": [
+				{
+					"timing": "hit",
+					"condition": "range_multiple",
+					"condition_amount_min": 1,
+					"condition_amount_max": 2,
+					"effect_type": "powerup",
+					"amount": 3
+				},
+				{
+					"timing": "hit",
+					"condition": "is_critical",
+					"effect_type": "pass",
+					"and": {
+						"condition": "range_multiple",
+						"condition_amount_min": 1,
+						"condition_amount_max": 3,
+						"effect_type": "powerup",
+						"amount": 3
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Lohengrin",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 2,
+						"and": {
+							"effect_type": "armorup",
+							"amount": 2,
+							"and": {
+								"effect_type": "guardup",
+								"amount": 2
+							}
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "percival_andzunden",
+			"type": "special",
+			"display_name": "Andzünden",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 2,
+			"range_max": 4,
+			"power": 5,
+			"speed": 3,
+			"armor": 0,
+			"guard": 4,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"condition": "is_critical",
+					"effect_type": "rangeup",
+					"amount": 0,
+					"amount2": 2
+				},
+				{
+					"timing": "hit",
+					"effect_type": "close",
+					"amount": 2
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"gauge_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Roter Wirbel",
+				"effects": [
+					{
+						"timing": "now",
+						"effect_type": "gauge_for_effect",
+						"per_gauge_effect": null,
+						"overall_effect": {
+							"effect_type": "strike"
+						},
+						"gauge_max": 1
+					},
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 1
+					},
+					{
+						"timing": "hit",
+						"effect_type": "opponent_discard_random",
+						"amount": 1
+					},
+					{
+						"timing": "end_of_turn",
+						"effect_type": "discard_this",
+						"and": {
+							"effect_type": "draw",
+							"amount": 1
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "percival_platzen",
+			"type": "special",
+			"display_name": "Platzen",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 3,
+			"speed": 4,
+			"armor": 2,
+			"guard": 3,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"condition": "is_critical",
+					"effect_type": "powerup",
+					"amount": 1,
+					"and": {
+						"effect_type": "armorup",
+						"amount": 2
+					}
+				},
+				{
+					"timing": "hit",
+					"effect_type": "push",
+					"amount": 1
+				},
+				{
+					"timing": "after",
+					"effect_type": "lose_all_armor"
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Royal Authority",
+				"effects": [
+					{
+						"timing": "now",
+						"effect_type": "strike"
+					},
+					{
+						"timing": "during_strike",
+						"effect_type": "rangeup",
+						"amount": 0,
+						"amount2": 1
+					}
+				]
+			}
+		},
+		{
+			"id": "percival_schneiden",
+			"type": "special",
+			"display_name": "Schneiden",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 3,
+			"speed": 6,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"condition": "is_critical",
+					"effect_type": "rangeup",
+					"amount": 0,
+					"amount2": 1
+				},
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 1
+				},
+				{
+					"timing": "hit",
+					"condition": "is_critical",
+					"effect_type": "draw",
+					"amount": 1
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Träumerei",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 1,
+						"and": {
+							"effect_type": "armorup",
+							"amount": 1
+						}
+					},
+					{
+						"timing": "cleanup",
+						"condition": "hit_opponent",
+						"effect_type": "add_boost_to_gauge_on_strike_cleanup",
+						"card_name": "Schneiden"
+					}
+				]
+			}
+		},
+		{
+			"id": "percival_macht",
+			"type": "special",
+			"display_name": "Macht",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 3,
+			"power": 5,
+			"speed": 3,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "hit",
+					"effect_type": "gain_advantage"
+				},
+				{
+					"timing": "hit",
+					"condition": "is_critical",
+					"effect_type": "draw",
+					"amount": 2,
+					"and": {
+						"effect_type": "opponent_discard_random",
+						"amount": 1
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Flammenmarsch",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 1,
+						"and": {
+							"effect_type": "guardup",
+							"amount": 4
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "percival_zerreissen",
+			"type": "special",
+			"display_name": "Zerreissen",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 4,
+			"speed": 4,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 2
+				},
+				{
+					"timing": "hit",
+					"condition": "is_critical",
+					"effect_type": "pass",
+					"and": {
+						"condition": "range",
+						"condition_amount": 1,
+						"effect_type": "powerup",
+						"amount": 2,
+						"and": {
+							"effect_type": "push",
+							"amount": 2
+						}
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Lord's Strike",
+				"effects": [
+					{
+						"timing": "now",
+						"effect_type": "gauge_for_effect",
+						"per_gauge_effect": null,
+						"overall_effect": {
+							"effect_type": "strike"
+						},
+						"gauge_max": 1
+					},
+					{
+						"timing": "before",
+						"effect_type": "close",
+						"amount": 1
+					}
+				]
+			}
+		}
+	]
+}

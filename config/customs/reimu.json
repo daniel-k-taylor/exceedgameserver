@@ -1,6 +1,8 @@
 {
 	"id": "reimu",
 	"season": -1,
+	"author": "Aevusonian",
+	"difficulty": "*",
 	"display_name": "Hakurei Reimu",
 	"exceed_cost": 2,
 	"character_action_default": [{
@@ -61,8 +63,31 @@
 		"normals": {
 			"url": "https://i.imgur.com/PN8hUtY.jpeg",
 			"multiple_cards": true
-		}
+		},
 	},
+	"custom_animations": {
+		"reimu": {
+			"idle": {
+				"url": "https://i.imgur.com/Q9EHYKJ.png",
+				"frame_count": 10
+			},
+			"walk_backward": {
+				"url": "https://i.imgur.com/XPOcUta.png",
+				"frame_count": 8
+			},
+			"walk_forward": {
+				"url": "https://i.imgur.com/xPfMo12.png",
+				"frame_count": 8
+			},
+			"metadata": {
+				"scaling": 2.2,
+				"flip": true,
+				"horizontal_offset": 20
+			}
+
+		},
+	},
+	"portrait_image_url": "https://i.imgur.com/cCFxd2d.png",
 	"cards": [
 		{
 			"definition_id": "reimu_dreamseal",

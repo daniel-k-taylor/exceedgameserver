@@ -1,6 +1,9 @@
 {
 	"id": "kafka",
 	"season": -1,
+	"exceed_animation": "kafka_exceed",
+	"author": "CrimsonFoxtail",
+	"difficulty": "*",
 	"display_name": "Francesca Kafka",
 	"exceed_cost": 4,
 	"exceed_to_overdrive": true,
@@ -93,10 +96,32 @@
 			"multiple_cards": true
 		},
 		"normals": {
-			"url": "https://i.imgur.com/pj92BQ0.jpeg",
+			"url": "https://i.imgur.com/TO9kuBp.png",
 			"multiple_cards": true
 		}
 	},
+	"custom_animations": {
+		"kafka": {
+			"idle": {
+				"url": "https://i.imgur.com/GR8CPn6.png",
+				"frame_count": 1
+			},
+			"metadata": {
+				"scaling": 0.28
+			}
+
+		},
+		"kafka_exceed": {
+			"idle": {
+				"url": "https://i.imgur.com/Lq6KBqR.png",
+				"frame_count": 1
+			},
+			"metadata": {
+				"scaling": 0.28
+			}
+		}
+	},
+	"portrait_image_url": "https://i.imgur.com/5OpcC29.png",
 	"cards": [
 		{
 			"set_aside": true,

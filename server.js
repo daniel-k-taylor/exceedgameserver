@@ -395,6 +395,30 @@ function join_matchmaking(ws, json_data) {
   return true
 }
 
+function send_paged_customs(ws) {
+  // Send a customs_update for every 3 custom decks.
+  const all_customs = customs_db["customs"]
+  // all_customs is an map of deck_id to custom.
+  // Get all the keys in the map.
+  const all_customs_keys = Object.keys(all_customs)
+  const page_size = 3
+  // Iterate over the keys in the map and send them in pages of page_size.
+  for (let i = 0; i < all_customs_keys.length; i += page_size) {
+    const page = all_customs_keys.slice(i, i + page_size)
+    const customs_in_message = {}
+    for (const key of page) {
+      customs_in_message[key] = all_customs[key]
+    }
+    const message = {
+      type: 'customs_update',
+      customs: customs_in_message,
+    }
+    ws.send(JSON.stringify(message))
+  }
+
+  return true
+}
+
 function leave_room(player, disconnect) {
   queue_manager.leaveRoom(player)
   room_manager.leaveRoom(player, disconnect)
@@ -548,12 +572,7 @@ wss.on('connection', function connection(ws) {
         }
         handled = true
       } else if (message_type == "get_customs") {
-        const message = {
-          type: 'customs_update',
-          customs: customs_db["customs"],
-        }
-        ws.send(JSON.stringify(message))
-        handled = true
+        handled = send_paged_customs(ws)
       }
     }
     catch (e) {
