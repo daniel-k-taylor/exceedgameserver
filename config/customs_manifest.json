@@ -1,8 +1,10 @@
 {
-    "version": 4,
+    "version": 5,
     "customs": [
         "kafka.json",
+        "lancelot.json",
         "marisa.json",
+        "percival.json",
         "reimu.json",
         "terry.json",
         "tevi.json",

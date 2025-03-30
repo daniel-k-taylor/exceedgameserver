@@ -1,0 +1,700 @@
+{
+	"id": "lancelot",
+	"season": -1,
+	"author": "Ter_",
+	"difficulty": "**",
+	"display_name": "Lancelot",
+	"exceed_cost": 3,
+	"on_exceed": {
+		"effect_type": "choice",
+		"choice": [
+			{
+				"effect_type": "close",
+				"amount": 1,
+				"and": {
+					"effect_type": "strike"
+				}
+			},
+			{
+				"effect_type": "close",
+				"amount": 2,
+				"and": {
+					"effect_type": "strike"
+				}
+			},
+			{ "effect_type": "strike" }
+		]
+	},
+	"ability_effects": [
+		{
+			"timing": "set_strike",
+			"effect_type": "gauge_for_effect",
+			"per_gauge_effect": null,
+			"overall_effect": {
+				"effect_type": "critical",
+				"character_effect": true
+			},
+			"gauge_max": 1
+		},
+		{
+			"timing": "set_strike",
+			"condition": "initiated_strike",
+			"effect_type": "gauge_for_effect",
+			"per_gauge_effect": null,
+			"overall_effect": {
+				"character_effect": true,
+				"effect_type": "speedup",
+				"amount": 1
+			},
+			"gauge_max": 1
+		}
+	],
+	"exceed_ability_effects": [
+		{
+			"timing": "set_strike",
+			"effect_type": "gauge_for_effect",
+			"per_gauge_effect": null,
+			"overall_effect": {
+				"effect_type": "critical",
+				"character_effect": true
+			},
+			"gauge_max": 1
+		},
+		{
+			"timing": "set_strike",
+			"condition": "initiated_strike",
+			"character_effect": true,
+			"effect_type": "gauge_for_effect",
+			"per_gauge_effect": null,
+			"overall_effect": {
+				"effect_type": "add_attack_effect",
+				"added_effect": {
+					"timing": "during_strike",
+					"effect_type": "speedup",
+					"amount": 1
+				}
+			},
+			"gauge_max": 1
+		},
+		{
+			"timing": "hit",
+			"condition": "is_critical",
+			"character_effect": true,
+			"effect_type": "draw",
+			"amount": 1
+		}
+	],
+	"image_resources": {
+		"character_default": {
+			"url": "https://i.imgur.com/VL9a7AZ.png",
+			"multiple_cards": false
+		},
+		"character_exceeded": {
+			"url": "https://i.imgur.com/EPZOfHi.png",
+			"multiple_cards": false
+		},
+		"cardback": {
+			"url": "https://svgdb.me/assets/sleeves/sleeve_705214010.png",
+			"multiple_cards": false
+		},
+		"specials": {
+			"url": "https://i.imgur.com/OTmFvVq.png",
+			"multiple_cards": true
+		},
+		"normals": {
+			"url": "https://i.imgur.com/ORP1a7h.png",
+			"multiple_cards": true
+		}
+	},
+	"custom_animations": {
+		"lancelot": {
+			"idle": {
+				"url": "https://i.imgur.com/8P4X2Ta.png",
+				"frame_count": 1
+			},
+			"metadata": {
+				"scaling": 0.11,
+				"flip": true,
+				"horizontal_offset": 20
+			}
+
+		}
+	},
+	"portrait_image_url": "https://i.imgur.com/P4JJWbV.png",
+	"cards": [
+		{
+			"definition_id": "lancelot_weissflugel",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "lancelot_weissflugel",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "lancelot_schonerwinterhugel",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "lancelot_schonerwinterhugel",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "lancelot_wogenstrom",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "lancelot_wogenstrom",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "lancelot_bladeimpulse",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "lancelot_bladeimpulse",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "lancelot_southerncross",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "lancelot_southerncross",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "lancelot_twinbladedance",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "lancelot_twinbladedance",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "lancelot_turbulenz",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "lancelot_turbulenz",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		}
+	],
+	"custom_card_definitions": [
+		{
+			"id": "lancelot_weissflugel",
+			"type": "ultra",
+			"display_name": "Weiss Flugel",
+			"force_cost": 0,
+			"gauge_cost": 2,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 3,
+			"speed": 6,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 3
+				},
+				{
+					"timing": "hit",
+					"effect_type": "draw",
+					"amount": 2,
+					"and": {
+						"effect_type": "push",
+						"amount": 1
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Luftspiegelung",
+				"effects": [
+					{
+						"timing": "after",
+						"effect_type": "choice",
+						"choice": [
+							{
+								"effect_type": "advance",
+								"amount": 2
+							},
+							{
+								"effect_type": "retreat",
+								"amount": 2
+							},
+							{
+								"effect_type": "pass"
+							}
+						]
+						
+					}
+				]
+			}
+		},
+		{
+			"id": "lancelot_schonerwinterhugel",
+			"type": "ultra",
+			"display_name": "Schöner Winterhügel",
+			"force_cost": 0,
+			"gauge_cost": 3,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 7,
+			"speed": 4,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "choice",
+					"choice": [
+						{
+							"effect_type": "advance",
+							"amount": 2
+						},
+						{
+							"effect_type": "advance",
+							"amount": 3
+						}
+					]
+				},
+				{
+					"timing": "hit",
+					"effect_type": "push",
+					"amount": 1,
+					"and": {
+						"effect_type": "opponent_discard_random",
+						"amount": 2
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Weißer Drache",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "speedup",
+						"amount": 2
+					},
+					{
+						"timing": "hit",
+						"effect_type": "gain_advantage"
+					}
+				]
+			}
+		},
+		{
+			"id": "lancelot_wogenstrom",
+			"type": "special",
+			"display_name": "Wogenstrom",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 2,
+			"range_max": 5,
+			"power": 4,
+			"speed": 3,
+			"armor": 0,
+			"guard": 4,
+			"effects": [
+				{
+					"timing": "hit",
+					"effect_type": "choice",
+					"choice": [
+						{
+							"effect_type": "close",
+							"amount": 2,
+							"and": {
+								"effect_type": "draw",
+								"amount": 1
+							}
+						},
+						{
+							"effect_type": "close",
+							"amount": 1,
+							"and": {
+								"effect_type": "draw",
+								"amount": 1
+							}
+						},
+						{
+							"effect_type": "draw",
+							"amount": 1
+						}
+					],
+					"and": {
+						"effect_type": "draw",
+						"amount": 1
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"gauge_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Kaltzwinger",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "block_opponent_move"
+					},
+					{
+						"timing": "now",
+						"effect_type": "block_opponent_move"
+					},
+					{
+						"timing": "discarded",
+						"effect_type": "remove_block_opponent_move"
+					},
+					{
+						"timing": "opponent_action",
+						"text": "Add Wogenstrom to opponent's Gauge",
+						"effect_type": "discard_this",
+						"and": {
+							"effect_type": "add_top_discard_to_gauge",
+							"opponent": "true",
+							"amount": 1
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "lancelot_bladeimpulse",
+			"type": "special",
+			"display_name": "Blade Impulse",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 3,
+			"speed": 5,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 3
+				},
+				{
+					"timing": "hit",
+					"condition": "is_critical",
+					"effect_type": "powerup",
+					"amount": 1,
+					"and": {
+						"effect_type": "gain_advantage",
+						"and": {
+							"effect_type": "advance",
+							"amount": 2
+						}
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Ritterorden",
+				"effects": [
+					{
+						"timing": "now",
+						"effect_type": "draw",
+						"amount": 2
+					},
+					{
+						"timing": "hit",
+						"effect_type": "gain_advantage"
+					}
+				]
+			}
+		},
+		{
+			"id": "lancelot_southerncross",
+			"type": "special",
+			"display_name": "Southern Cross",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 3,
+			"speed": 6,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "hit",
+					"condition": "is_critical",
+					"effect_type": "gain_advantage"
+				},
+				{
+					"timing": "hit",
+					"effect_type": "draw",
+					"amount": 1
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Delta Leap",
+				"effects": [
+					{
+						"timing": "immediate",
+						"condition": "at_edge_of_arena",
+						"effect_type": "choice",
+						"choice": [
+							{
+								"effect_type": "advance",
+								"amount": 3,
+								"and": {
+									"effect_type": "draw",
+									"amount": 2
+								}
+							},
+							{
+								"effect_type": "advance",
+								"amount": 2,
+								"and": {
+									"effect_type": "draw",
+									"amount": 2
+								}
+							},
+							{
+								"effect_type": "advance",
+								"amount": 1,
+								"and": {
+									"effect_type": "draw",
+									"amount": 2
+								}
+							},
+							{
+								"effect_type": "draw",
+								"amount": 2
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"id": "lancelot_twinbladedance",
+			"type": "special",
+			"display_name": "Twin Blade Dance",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 5,
+			"speed": 4,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "hit",
+					"effect_type": "gain_advantage"
+				},
+				{
+					"timing": "hit",
+					"condition": "is_critical",
+					"effect_type": "draw",
+					"amount": 2,
+					"and": {
+						"effect_type": "opponent_discard_random",
+						"amount": 1
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Blauer Dolch",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 1,
+						"and": {
+							"effect_type": "speedup",
+							"amount": 1
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "lancelot_turbulenz",
+			"type": "special",
+			"display_name": "Turbulenz",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 4,
+			"speed": 4,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"condition": "is_critical",
+					"effect_type": "speedup",
+					"amount": 3
+				},
+				{
+					"timing": "hit",
+					"condition": "is_critical",
+					"effect_type": "pass",
+					"negative_condition_effect": {
+						"effect_type": "ignore_armor"
+					}
+				},
+				{
+					"timing": "after",
+					"effect_type": "advance",
+					"amount": 2
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Wirbelwind",
+				"effects": [
+					{
+						"timing": "now",
+						"effect_type": "close",
+						"amount": 1,
+						"and": {
+							"effect_type": "draw",
+							"amount": 1,
+							"and": {
+								"effect_type": "force_for_effect",
+								"per_force_effect": null,
+								"overall_effect": {
+									"effect_type": "choice",
+									"choice": [
+										{
+											"effect_type": "advance",
+											"amount": 2
+										},
+										{
+											"effect_type": "retreat",
+											"amount": 2
+										},
+										{
+											"effect_type": "strike"
+										}
+									]
+								},
+								"force_max": 1
+							}
+						}
+					}
+				]
+			}
+		}
+	]
+}
