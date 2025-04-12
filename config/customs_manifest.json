@@ -1,6 +1,9 @@
 {
-    "version": 5,
+    "version": 8,
     "customs": [
+        "charlotta.json",
+        "djeeta.json",
+        "junko.json",
         "kafka.json",
         "lancelot.json",
         "marisa.json",

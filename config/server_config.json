@@ -1,6 +1,19 @@
 {
     "queue_config": [
         {
+            "id": "season7",
+            "name": "Season 7 Only",
+            "season_restriction": { "min": 7, "max": 7 },
+            "custom_allowed": false,
+            "banned": [
+                "carmine"
+            ],
+            "starting_timer": 900,
+            "enforce_timer": false,
+            "minimum_time_per_choice": 20,
+            "best_of": 1
+        },
+        {
             "id": "season3to7",
             "name": "Season 3-7 Only",
             "season_restriction": { "min": 3, "max": 7 },
