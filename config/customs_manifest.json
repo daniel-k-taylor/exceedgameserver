@@ -1,13 +1,20 @@
 {
-    "version": 5,
+    "version": 14,
     "customs": [
+        "Junko V2.json",
+        "charlotta.json",
+        "djeeta.json",
+        "dlcrider-otleo_browser_v2.0.json",
+        "garland-polter_browser_v1.01.json",
+        "gran.json",
         "kafka.json",
-        "lancelot.json",
+        "lancelot fixed.json",
         "marisa.json",
         "percival.json",
         "reimu.json",
         "terry.json",
         "tevi.json",
         "vane.json"
-    ]
+    ],
+    "last_write_time": "2025-05-04T23:40:53.025937"
 }

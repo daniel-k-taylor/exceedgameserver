@@ -1,0 +1,628 @@
+{
+	"id": "djeeta-rose",
+	"season": -1,
+	"author": "Rose",
+	"difficulty": "*",
+	"display_name": "Djeeta",
+	"exceed_cost": 4,
+	"character_action_default": [
+		{
+			"gauge_cost": 0,
+			"force_cost": 0,
+			"shortcut_effect_type": "strike",
+			"effect": {
+				"effect_type": "strike"
+			}
+		}
+	],
+	"character_action_exceeded": [
+		{
+			"gauge_cost": 0,
+			"force_cost": 0,
+			"effect": {
+				"effect_type": "strike"
+			}
+		}
+	],
+	"ability_effects": [
+		{
+			"timing": "set_strike",
+			"effect_type": "gauge_for_effect",
+			"per_gauge_effect": null,
+			"overall_effect": {
+				"effect_type": "critical",
+				"character_effect": true
+			},
+			"gauge_max": 1
+		},
+		{
+			"timing": "set_strike",
+			"condition": "used_character_action",
+			"condition_details": [ "default", 0 ],
+			"character_effect": true,
+			"effect_type": "add_attack_effect",
+			"added_effect": {
+				"timing": "hit",
+				"condition": "opponent_at_edge_of_arena",
+				"effect_type": "powerup",
+				"amount": 1,
+				"negative_condition_effect": {
+					"is_negative_effect": true,
+					"effect_type": "push",
+					"amount": 1,
+					"and": {
+						"effect_type": "close",
+						"amount": 1
+					}
+				}
+			}
+		}
+	],
+	"exceed_ability_effects": [
+		{
+			"timing": "set_strike",
+			"effect_type": "gauge_for_effect",
+			"per_gauge_effect": null,
+			"overall_effect": {
+				"effect_type": "critical",
+				"character_effect": true
+			},
+			"gauge_max": 1
+		},
+		{
+			"character_effect": true,
+			"timing": "set_strike",
+			"condition": "used_character_action",
+			"condition_details": [ "exceed", 0 ],
+			"effect_type": "add_attack_effect",
+			"added_effect": {
+				"timing": "hit",
+				"condition": "opponent_at_edge_of_arena",
+				"effect_type": "powerup",
+				"amount": 2,
+				"negative_condition_effect": {
+					"is_negative_effect": true,
+					"effect_type": "push",
+					"amount": 2,
+					"and": {
+						"effect_type": "close",
+						"amount": 2
+					}
+				}
+			}
+		}
+	],
+	"image_resources": {
+		"character_default": {
+			"url": "https://i.imgur.com/z88RdjE.png",
+			"multiple_cards": false
+		},
+		"character_exceeded": {
+			"url": "https://i.imgur.com/PZogckj.png",
+			"multiple_cards": false
+		},
+		"cardback": {
+			"url": "https://i.imgur.com/rLoCDcU.png",
+			"multiple_cards": false
+		},
+		"specials": {
+			"url": "https://i.imgur.com/6RRmzyX.png",
+			"multiple_cards": true
+		},
+		"normals": {
+			"url": "https://i.imgur.com/fLanz6E.png",
+			"multiple_cards": true
+		}
+	},
+	"custom_animations": {
+		"djeeta-rose": {
+			"idle": {
+				"url": "https://i.imgur.com/VWXdunc.png",
+				"frame_count": 1
+			},
+			"metadata": {
+				"scaling": 0.11,
+				"flip": true,
+				"horizontal_offset": 20
+			}
+
+		}
+	},
+	"portrait_image_url": "https://i.imgur.com/NKzdDWp.png",
+	"cards": [
+		{
+			"definition_id": "djeeta-rose_eternalascendancy",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "djeeta-rose_eternalascendancy",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "djeeta-rose_skyfall",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "djeeta-rose_skyfall",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "djeeta-rose_vorpalblade",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "djeeta-rose_vorpalblade",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "djeeta-rose_reginleiv",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "djeeta-rose_reginleiv",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "djeeta-rose_reginleivrecidive",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "djeeta-rose_reginleivrecidive",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "djeeta-rose_risingsword",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "djeeta-rose_risingsword",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "djeeta-rose_overdrivesurge",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "djeeta-rose_overdrivesurge",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		}
+	],
+	"custom_card_definitions": [
+		{
+			"id": "djeeta-rose_eternalascendancy",
+			"type": "ultra",
+			"display_name": "Eternal Ascendancy",
+			"force_cost": 0,
+			"gauge_cost": 3,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 5,
+			"speed": 5,
+			"armor": 0,
+			"guard": 5,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 2
+				},
+				{
+					"timing": "hit",
+					"condition": "is_critical",
+					"effect_type": "gain_advantage"
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Skyfarer",
+				"effects": [
+					{
+						"timing": "immediate",
+						"effect_type": "choice",
+						"choice": [
+							{
+								"effect_type": "advance",
+								"amount": 2
+							},
+							{
+								"effect_type": "retreat",
+								"amount": 2
+							}
+						]
+					},
+					{
+						"timing": "immediate",
+						"effect_type": "bonus_action"
+					}
+				]
+			}
+		},
+		{
+			"id": "djeeta-rose_skyfall",
+			"type": "ultra",
+			"display_name": "Skyfall",
+			"force_cost": 0,
+			"gauge_cost": 4,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 6,
+			"speed": 1,
+			"armor": 2,
+			"guard": 6,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"effect_type": "opponent_cant_move_past"
+				},
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 2
+				},
+				{
+					"timing": "cleanup",
+					"effect_type": "remove_opponent_cant_move_past"
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Fearless Heart",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "speedup",
+						"amount": 1,
+						"and": {
+							"effect_type": "guardup",
+							"amount": 4
+						}
+					},
+					{
+						"timing": "now",
+						"effect_type": "draw",
+						"amount": 1
+					}
+				]
+			}
+		},
+		{
+			"id": "djeeta-rose_vorpalblade",
+			"type": "special",
+			"display_name": "Vorpal Blade",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 4,
+			"speed": 4,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 3
+				},
+				{
+					"timing": "hit",
+					"effect_type": "push",
+					"amount": 2,
+					"and": {
+						"effect_type": "gain_advantage"
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"gauge_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Power Attack",
+				"effects": [
+					{
+						"timing": "hit",
+						"effect_type": "powerup",
+						"amount": 1,
+						"and": {
+							"effect_type": "gain_advantage",
+							"and": {
+								"effect_type": "add_boost_to_gauge_on_strike_cleanup",
+								"card_name": "Vorpal Blade"
+							}
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "djeeta-rose_reginleiv",
+			"type": "special",
+			"display_name": "Reginleiv",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 2,
+			"range_max": 5,
+			"power": 3,
+			"speed": 5,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "hit",
+					"effect_type": "draw",
+					"amount": 1
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Quick Step",
+				"effects": [
+					{
+						"timing": "immediate",
+						"effect_type": "choice",
+						"choice": [
+							{
+								"effect_type": "advance",
+								"amount": 1
+							},
+							{
+								"effect_type": "retreat",
+								"amount": 1
+							}
+						]
+					},
+					{
+						"timing": "immediate",
+						"effect_type": "bonus_action"
+					}
+				]
+			}
+		},
+		{
+			"id": "djeeta-rose_reginleivrecidive",
+			"type": "special",
+			"display_name": "Reginleiv Recidive",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 3,
+			"range_max": 6,
+			"power": 5,
+			"speed": 2,
+			"armor": 0,
+			"guard": 6,
+			"effects": [
+
+				{
+					"timing": "after",
+					"effect_type": "close",
+					"amount": 3
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Bravery",
+				"effects": [
+					{
+						"timing": "immediate",
+						"effect_type": "push",
+						"amount": 2,
+						"and": {
+							"effect_type": "choice",
+							"choice": [
+								{
+									"effect_type": "close",
+									"amount": 1
+								},
+								{
+									"effect_type": "close",
+									"amount": 2
+								}
+							],
+							"and": {
+								"effect_type": "draw",
+								"amount": 1
+							}
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "djeeta-rose_risingsword",
+			"type": "special",
+			"display_name": "Rising Sword",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 4,
+			"speed": 7,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"condition": "is_critical",
+					"effect_type": "close",
+					"amount": 1
+				},
+				{
+					"timing": "hit",
+					"effect_type": "push",
+					"amount": 2
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Phalanx",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 1,
+						"and": {
+							"effect_type": "guardup",
+							"amount": 4
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "djeeta-rose_overdrivesurge",
+			"type": "special",
+			"display_name": "Overdrive Surge",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 5,
+			"speed": 4,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"condition": "is_critical",
+					"effect_type": "guardup",
+					"amount": 4
+				},
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 2
+				},
+				{
+					"timing": "hit",
+					"effect_type": "push",
+					"amount": 2,
+					"and": {
+						"effect_type": "opponent_discard_random",
+						"amount": 1
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Triple Attack",
+				"effects": [
+					{
+						"timing": "now",
+						"effect_type": "draw",
+						"amount": 2
+					},
+					{
+						"timing": "hit",
+						"effect_type": "gain_advantage"
+					}
+				]
+			}
+		}
+	]
+}

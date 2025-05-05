@@ -1,0 +1,461 @@
+{
+	"id": "junko",
+	"season": -1,
+	"author": "Serp",
+	"difficulty": "*",
+	"display_name": "Junko",
+	"exceed_cost": 5,
+	"ability_effects": [
+		{
+		
+		}
+	],
+	"exceed_ability_effects": [
+		{
+			"timing": "during_strike",
+			"effect_type": "powerup",
+			"amount": 2
+		}
+	],
+	"image_resources": {
+		"character_default": {
+			"url": "https://i.imgur.com/L9awujo.png",
+			"multiple_cards": false
+		},
+		"character_exceeded": {
+			"url": "https://i.imgur.com/1GB6Ka7.png",
+			"multiple_cards": false
+		},
+		"cardback": {
+			"url": "https://i.imgur.com/bjfenRg.png",
+			"multiple_cards": false
+		},
+		"specials": {
+			"url": "https://i.imgur.com/7XkGXW4.png",
+			"multiple_cards": true
+		},
+		"normals": {
+			"url": "https://i.imgur.com/PN8hUtY.jpeg",
+			"multiple_cards": true
+		}
+	},
+	"custom_animations": {
+		"junko": {
+			"idle": {
+				"url": "https://i.imgur.com/owXCcSq.png",
+				"frame_count": 1
+			},
+			"metadata": {
+				"scaling": 1,
+				"flip": true,
+				"horizontal_offset": 0
+			}
+
+		}
+	},
+	"portrait_image_url": "https://i.imgur.com/lvh4Z0s.png",
+	"cards": [
+		{
+			"definition_id": "junko_pure_danmaku_hell",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "junko_pure_danmaku_hell",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "junko_pristine_danmaku",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "junko_pristine_danmaku",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "junko_pure_light_of_the_palm",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "junko_pure_light_of_the_palm",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "junko_lillies_of_murder",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "junko_lillies_of_murder",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "junko_mdsw",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "junko_mdsw",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "junko_ts_star",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "junko_ts_star",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "junko_pristine_lunacy",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "junko_pristine_lunacy",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		}
+	],
+	"custom_card_definitions": [
+		{
+			"id": "junko_pure_light_of_the_palm",
+			"type": "special",
+			"display_name": "Pure Light of the Palm",
+			"force_cost": 1,
+			"gauge_cost": 0,
+			"range_min": 2,
+			"range_max": 6,
+			"power": 6,
+			"speed": 4,
+			"armor": 0,
+			"guard": 0,
+			"effects": [],
+			"boost": {
+				"boost_type": "instant",
+				"force_cost": 2,
+				"cancel_cost": -1,
+				"display_name": "Purification",
+				"effects": [
+				{
+					"timing": "immediate",
+					"effect_type": "choice",
+					"choice": [
+						{ "effect_type": "discard_continuous_boost", "amount": 1 },
+						{ "effect_type": "pass"}
+					]
+				},
+				{
+					"timing": "immediate",
+					"effect_type": "move_to_any_space"
+				}
+				]
+			}
+		},
+		{
+			"id": "junko_lillies_of_murder",
+			"type": "special",
+			"display_name": "Lillies of Murderous Intent",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 3,
+			"power": 6,
+			"speed": 2,
+			"armor": 2,
+			"guard": 5,
+			"effects": [ ],
+			"boost": {
+				"boost_type": "instant",
+				"force_cost": 2,
+				"cancel_cost": -1,
+				"display_name": "Refinement of Earthen Impurity",
+				"effects": [
+				{
+					"timing": "immediate",
+					"effect_type": "draw_or_discard_to",
+					"amount": 4
+				},
+				{
+					"timing": "immediate",
+					"effect_type": "opponent_draw_or_discard_to",
+					"amount": 4
+				},
+				{
+					"timing": "immediate",
+					"effect_type": "draw",
+					"amount": 1
+				},
+				{
+					"timing": "immediate",
+					"effect_type": "choice",
+					"choice": [
+						{ "effect_type": "strike" },
+						{ "effect_type": "pass" }
+					]
+				}
+			]
+		}
+		},
+		{
+			"id": "junko_mdsw",
+			"type": "special",
+			"display_name": "Modern Divine Spirit World",
+			"force_cost": 1,
+			"gauge_cost": 0,
+			"range_min": 3,
+			"range_max": 8,
+			"power": 7,
+			"speed": 3,
+			"armor": 0,
+			"guard": 5,
+			"effects": [ ],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 2,
+				"cancel_cost": -1,
+				"display_name": "Cornering a Trapped Rat",
+				"effects": [
+					{
+						"timing": "now",
+						"effect_type": "strike"
+					},
+					{
+					"timing": "hit",
+					"effect_type": "draw",
+					"amount": 3,
+					"and": {
+						"timing": "hit",
+						"effect_type": "choice",
+						"choice": [
+							{ "effect_type": "push", "amount": 1 },
+							{ "effect_type": "push", "amount": 2 },
+							{ "effect_type": "pull", "amount": 1 },
+							{ "effect_type": "pull", "amount": 2 },
+							{ "effect_type": "pass" }
+						]
+						}
+					}
+					
+				]
+			}
+			},
+		{
+			"id": "junko_ts_star",
+			"type": "special",
+			"display_name": "Trembling, Shivering Star",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 3,
+			"power": 5,
+			"speed": 5,
+			"armor": 0,
+			"guard": 0,
+			"effects": [ ],
+			"boost": {
+				"boost_type": "instant",
+				"force_cost": 2,
+				"cancel_cost": -1,
+				"display_name": "Overwhelming Blemishes",
+				"effects": [
+					{
+						"timing": "immediate",
+						"effect_type": "opponent_discard_random",
+						"amount": 2,
+						"and":
+						{
+							"effect_type": "strike"
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "junko_pristine_lunacy",
+			"type": "special",
+			"display_name": "Pristine Lunacy",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 4,
+			"speed": 7,
+			"armor": 0,
+			"guard": 0,
+			"effects": [ ],
+			"boost": {
+				"boost_type": "instant",
+				"force_cost": 2,
+				"cancel_cost": -1,
+				"display_name": "Sea of Tranquility",
+				"effects": [
+					{
+						"timing": "immediate",
+						"effect_type": "discard_hand"
+					},
+					{
+						"timing": "immediate",
+						"effect_type": "draw",
+						"amount": 4
+					},
+					{
+						"timing": "immediate",
+						"effect_type": "bonus_action"
+					}
+				]
+			}
+		},
+		{
+			"id": "junko_pure_danmaku_hell",
+			"type": "ultra",
+			"display_name": "A Pure Danmaku Hell",
+			"force_cost": 0,
+			"gauge_cost": 5,
+			"range_min": 3,
+			"range_max": 6,
+			"power": 13,
+			"speed": 5,
+			"armor": 0,
+			"guard": 0,
+			"effects": [],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 4,
+				"cancel_cost": -1,
+				"display_name": "Whereabouts of the Heart",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "speedup",
+						"amount": 4
+					},
+					{
+						"timing": "now",
+						"effect_type": "strike"
+					}
+				]
+			}
+		},
+		{
+			"id": "junko_pristine_danmaku",
+			"type": "ultra",
+			"display_name": "Pristine Danmaku for Killing a Person",
+			"force_cost": 0,
+			"gauge_cost": 4,
+			"range_min": 1,
+			"range_max": 8,
+			"power": 8,
+			"speed": 4,
+			"armor": 0,
+			"guard": 4,
+			"effects": [ ],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 4,
+				"cancel_cost": -1,
+				"display_name": "Pure Fury",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 4
+					},
+					{
+						"timing": "now",
+						"effect_type": "strike"
+					}
+				]
+			}
+		}
+	]
+}

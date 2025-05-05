@@ -1,0 +1,777 @@
+{
+	"id": "garland-polter",
+	"season": -1,
+	"author": "PolterGhost",
+	"difficulty": "**",
+	"display_name": "Garland",
+	"buddy_cards": [
+		"dissidia_bravery_reference"
+	],
+	"no_buddy_card_graphics": false,
+	"exceed_cost": 4,
+	"on_exceed": {
+		"effect_type": "draw",
+		"amount": 1,
+		"and": {
+			"effect_type": "choice",
+			"choice": [
+				{
+					"effect_type": "pull",
+					"amount": 1
+				},
+				{
+					"effect_type": "pass"
+				}
+			]
+		}
+	},
+	"ability_effects": [
+		{
+			"timing": "set_strike",
+			"effect_type": "gauge_for_effect",
+			"per_gauge_effect": null,
+			"overall_effect": {
+				"character_effect": true,
+				"effect_type": "add_attack_effect",
+				"added_effect": {
+					"timing": "during_strike",
+					"effect_type": "guardup",
+					"amount": 3
+				}
+			},
+			"gauge_max": 1
+		}
+	],
+	"exceed_ability_effects": [
+		{
+			"character_effect": true,
+			"timing": "during_strike",
+			"effect_type": "stun_immunity"
+		}
+	],
+	"image_resources": {
+		"character_default": {
+			"url": "https://i.imgur.com/XuHM5T0.png",
+			"multiple_cards": false
+		},
+		"character_exceeded": {
+			"url": "https://i.imgur.com/ltUQMYz.png",
+			"multiple_cards": false
+		},
+		"cardback": {
+			"url": "https://i.imgur.com/Yq7iMBt.jpeg",
+			"multiple_cards": false
+		},
+		"specials": {
+			"url": "https://i.imgur.com/T24rCSm.jpeg",
+			"multiple_cards": true
+		},
+		"normals": {
+			"url": "https://i.imgur.com/pJw6uZi.png",
+			"multiple_cards": true
+		},
+		"dissidia_bravery_reference": {
+			"url": "https://i.imgur.com/GGjkL5w.png",
+			"multiple_cards": false
+		},
+		"garland-polter_rendingwinds": {
+			"url": "https://i.imgur.com/kE2egv8.png",
+			"multiple_cards": false
+		},
+		"garland-polter_blazingwave": {
+			"url": "https://i.imgur.com/wDsyXUa.png",
+			"multiple_cards": false
+		},
+		"garland-polter_chaincast": {
+			"url": "https://i.imgur.com/psVqGjf.png",
+			"multiple_cards": false
+		},
+		"garland-polter_twistingdrill": {
+			"url": "https://i.imgur.com/cjjOgol.png",
+			"multiple_cards": false
+		},
+		"garland-polter_roundedge": {
+			"url": "https://i.imgur.com/HQNsiH4.png",
+			"multiple_cards": false
+		},
+		"garland-polter_deathblow": {
+			"url": "https://i.imgur.com/Gv6cuXZ.png",
+			"multiple_cards": false
+		},
+		"garland-polter_bardiche": {
+			"url": "https://i.imgur.com/39UUyyl.png",
+			"multiple_cards": false
+		}
+	},
+	"custom_animations": {
+		"garland-polter": {
+			"idle": {
+				"url": "https://i.imgur.com/NZKn7Rw.png",
+				"frame_count": 1
+			},
+			"metadata": {
+				"scaling": 0.38,
+				"flip": true,
+				"horizontal_offset": -30
+			}
+
+		}
+	},
+	"portrait_image_url": "https://i.imgur.com/2w8x6zh.png",
+	"cards": [
+		{
+			"definition_id": "garland-polter_rendingwinds",
+			"image_name": "garland-polter_rendingwinds",
+			"image_index": 0
+		},
+		{
+			"definition_id": "garland-polter_rendingwinds",
+			"image_name": "garland-polter_rendingwinds",
+			"image_index": 0
+		},
+		{
+			"definition_id": "garland-polter_blazingwave",
+			"image_name": "garland-polter_blazingwave",
+			"image_index": 0
+		},
+		{
+			"definition_id": "garland-polter_blazingwave",
+			"image_name": "garland-polter_blazingwave",
+			"image_index": 0
+		},
+		{
+			"definition_id": "garland-polter_chaincast",
+			"image_name": "garland-polter_chaincast",
+			"image_index": 0
+		},
+		{
+			"definition_id": "garland-polter_chaincast",
+			"image_name": "garland-polter_chaincast",
+			"image_index": 0
+		},
+		{
+			"definition_id": "garland-polter_twistingdrill",
+			"image_name": "garland-polter_twistingdrill",
+			"image_index": 0
+		},
+		{
+			"definition_id": "garland-polter_twistingdrill",
+			"image_name": "garland-polter_twistingdrill",
+			"image_index": 0
+		},
+		{
+			"definition_id": "garland-polter_roundedge",
+			"image_name": "garland-polter_roundedge",
+			"image_index": 0
+		},
+		{
+			"definition_id": "garland-polter_roundedge",
+			"image_name": "garland-polter_roundedge",
+			"image_index": 0
+		},
+		{
+			"definition_id": "garland-polter_deathblow",
+			"image_name": "garland-polter_deathblow",
+			"image_index": 0
+		},
+		{
+			"definition_id": "garland-polter_deathblow",
+			"image_name": "garland-polter_deathblow",
+			"image_index": 0
+		},
+		{
+			"definition_id": "garland-polter_bardiche",
+			"image_name": "garland-polter_bardiche",
+			"image_index": 0
+		},
+		{
+			"definition_id": "garland-polter_bardiche",
+			"image_name": "garland-polter_bardiche",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		}
+	],
+	"custom_card_definitions": [
+		{
+			"id": "garland-polter_rendingwinds",
+			"type": "ultra",
+			"display_name": "Rending Winds",
+			"force_cost": 0,
+			"gauge_cost": 5,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 10,
+			"speed": 2,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"effect_type": "dodge_at_range",
+					"range_min": 3,
+					"range_max": 9
+				},
+				{
+					"timing": "during_strike",
+					"effect_type": "ignore_armor"
+				},
+				{
+					"timing": "before",
+					"effect_type": "choice",
+					"choice": [
+						{
+							"effect_type": "pull",
+							"amount": 1
+						},
+						{
+							"effect_type": "pull",
+							"amount": 2
+						},
+						{
+							"effect_type": "pass"
+						}
+					]
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Bloodcurdling",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "armorup",
+						"amount": 2
+					},
+					{
+						"timing": "now",
+						"condition": "range",
+						"condition_amount": 1,
+						"effect_type": "opponent_discard_random",
+						"amount": 2,
+						"and": {
+							"effect_type": "strike"
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "garland-polter_blazingwave",
+			"type": "ultra",
+			"display_name": "Blazing Wave",
+			"force_cost": 0,
+			"gauge_cost": 3,
+			"range_min": 3,
+			"range_max": 8,
+			"power": 4,
+			"speed": 4,
+			"armor": 3,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"condition": "range_multiple",
+					"condition_amount_min": 5,
+					"condition_amount_max": 6,
+					"effect_type": "powerup",
+					"amount": 4
+				},
+				{
+					"timing": "hit",
+					"effect_type": "choice",
+					"choice": [
+						{
+							"effect_type": "advance",
+							"amount": 1
+						},
+						{
+							"effect_type": "advance",
+							"amount": 2
+						},
+						{
+							"effect_type": "advance",
+							"amount": 3
+						},
+						{
+							"effect_type": "pass"
+						}
+					]
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Flare Blade",
+				"effects": [
+					{
+						"timing": "hit",
+						"condition": "min_cards_in_gauge",
+						"condition_amount": 3,
+						"effect_type": "choice",
+						"choice": [
+							{
+								"effect_type": "gauge_for_effect",
+								"required": true,
+								"per_gauge_effect": null,
+								"overall_effect": {
+									"effect_type": "powerup",
+									"amount": 3,
+									"and": {
+										"effect_type": "push",
+										"amount": 3,
+										"and": {
+											"effect_type": "ignore_armor"
+										}
+									}
+								},
+								"gauge_max": 3
+							},
+							{
+								"effect_type": "gauge_for_effect",
+								"per_gauge_effect": {
+									"effect_type": "powerup",
+									"amount": 1,
+									"and": {
+										"effect_type": "push",
+										"amount": 1
+									}
+								},
+								"overall_effect": null,
+								"gauge_max": 2
+							}
+						],
+						"negative_condition_effect": {
+							"is_negative_effect": true,
+							"effect_type": "gauge_for_effect",
+							"per_gauge_effect": {
+								"effect_type": "powerup",
+								"amount": 1,
+								"and": {
+									"effect_type": "push",
+									"amount": 1
+								}
+							},
+							"overall_effect": null,
+							"gauge_max": 3
+						},
+						"override_description": "Hit: Spend up to 3 Gauge. For each gauge spent, +1 Power and Push 1. If you spent 3 Gauge, Ignore Armor."
+					}
+				]
+			}
+		},
+		{
+			"id": "garland-polter_chaincast",
+			"type": "special",
+			"display_name": "Chain Cast",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 4,
+			"range_max": 7,
+			"power": 5,
+			"speed": 3,
+			"armor": 0,
+			"guard": 3,
+			"effects": [
+				{
+					"timing": "before",
+					"condition": "min_cards_in_gauge",
+					"condition_amount": 3,
+					"effect_type": "choice",
+					"choice": [
+						{
+							"effect_type": "retreat",
+							"amount": 2
+						},
+						{
+							"effect_type": "pass"
+						}
+					],
+					"override_description": "Brave 3: You may Retreat 2."
+				},
+				{
+					"timing": "hit",
+					"effect_type": "choice",
+					"choice": [
+						{
+							"effect_type": "push",
+							"amount": 1
+						},
+						{
+							"effect_type": "push",
+							"amount": 2
+						},
+						{
+							"effect_type": "pull",
+							"amount": 1
+						},
+						{
+							"effect_type": "pull",
+							"amount": 2
+						}
+					]
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Break Bravery",
+				"effects": [
+					{
+						"timing": "hit",
+						"effect_type": "choose_discard",
+						"opponent": true,
+						"source": "gauge",
+						"limitation": "",
+						"destination": "discard",
+						"amount": 1,
+						"amount_min": 1,
+						"and": {
+							"effect_type": "add_boost_to_gauge_on_strike_cleanup"
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "garland-polter_twistingdrill",
+			"type": "special",
+			"display_name": "Twisting Drill",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 4,
+			"speed": 2,
+			"armor": 1,
+			"guard": 3,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "advance",
+					"amount": 3
+				},
+				{
+					"timing": "hit",
+					"effect_type": "push",
+					"amount": 2,
+					"bonus_effect": {
+						"condition": "opponent_at_edge_of_arena",
+						"effect_type": "gain_advantage"
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Heavy",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "speedup",
+						"amount": -2,
+						"and": {
+							"effect_type": "armorup",
+							"amount": 4
+						}
+					},
+					{
+						"timing": "during_strike",
+						"effect_type": "ignore_push_and_pull"
+					}
+				]
+			}
+		},
+		{
+			"id": "garland-polter_roundedge",
+			"type": "special",
+			"display_name": "Round Edge",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 3,
+			"power": 5,
+			"speed": 4,
+			"armor": 1,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "hit",
+					"condition": "min_cards_in_gauge",
+					"condition_amount": 2,
+					"effect_type": "pass",
+					"silent_effect": true,
+					"and": {
+						"condition": "opponent_at_edge_of_arena",
+						"effect_type": "opponent_discard_random",
+						"amount": 1,
+						"override_description": "Brave 2: If opponent at arena edge, they discard a random card."
+					}
+				},
+				{
+					"timing": "hit",
+					"effect_type": "choice",
+					"choice": [
+						{
+							"effect_type": "push",
+							"amount": 2
+						},
+						{
+							"effect_type": "close",
+							"amount": 2
+						}
+					]
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Thunga",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"condition": "is_normal_attack",
+						"effect_type": "rangeup",
+						"amount": 2,
+						"amount2": 3,
+						"override_description": "Your Normals have +2 - +3 Range."
+					},
+					{
+						"timing": "hit",
+						"effect_type": "choice",
+						"choice": [
+							{
+								"effect_type": "close",
+								"amount": 1,
+								"and": {
+									"effect_type": "add_boost_to_gauge_on_strike_cleanup"
+								},
+								"override_description": "Close 1"
+							},
+							{
+								"effect_type": "close",
+								"amount": 2,
+								"and": {
+									"effect_type": "add_boost_to_gauge_on_strike_cleanup"
+								},
+								"override_description": "Close 2"
+							},
+							{
+								"effect_type": "close",
+								"amount": 3,
+								"and": {
+									"effect_type": "add_boost_to_gauge_on_strike_cleanup"
+								},
+								"override_description": "Close 3"
+							},
+							{
+								"effect_type": "pass",
+								"override_description": "Pass"
+							}
+						],
+						"override_description": "Hit: Close up to 3 and add this to your gauge."
+					}
+				]
+			}
+		},
+		{
+			"id": "garland-polter_deathblow",
+			"type": "special",
+			"display_name": "Deathblow",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 4,
+			"speed": 4,
+			"armor": 3,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"condition": "min_cards_in_gauge",
+					"condition_amount": 3,
+					"effect_type": "ignore_push_and_pull"
+				},
+				{
+					"timing": "hit",
+					"effect_type": "gain_advantage"
+				},
+				{
+					"timing": "after",
+					"effect_type": "lose_all_armor"
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Pursuit",
+				"effects": [
+					{
+						"timing": "immediate",
+						"condition": "range",
+						"condition_amount": 1,
+						"effect_type": "push",
+						"amount": 2,
+						"and": {
+							"effect_type": "close",
+							"amount": 2,
+							"and": {
+								"effect_type": "gauge_for_effect",
+								"per_gauge_effect": null,
+								"overall_effect": {
+									"effect_type": "bonus_action"
+								},
+								"gauge_max": 1
+							}
+						},
+						"negative_condition_effect": {
+							"is_negative_effect": true,
+							"effect_type": "close",
+							"amount": 2,
+							"and": {
+								"effect_type": "gauge_for_effect",
+								"per_gauge_effect": null,
+								"overall_effect": {
+									"effect_type": "bonus_action"
+								},
+								"gauge_max": 1
+							}
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "garland-polter_bardiche",
+			"type": "special",
+			"display_name": "Bardiche",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 7,
+			"speed": 5,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "hit",
+					"condition": "min_cards_in_gauge",
+					"condition_amount": 2,
+					"effect_type": "opponent_discard_random",
+					"amount": 1,
+					"override_description": "Brave 2: Opponent discards a random card."
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Highbringer",
+				"effects": [
+					{
+						"timing": "before",
+						"effect_type": "close",
+						"amount": 2
+					},
+					{
+						"timing": "hit",
+						"effect_type": "push",
+						"amount": 2,
+						"bonus_effect": {
+							"condition": "opponent_at_edge_of_arena",
+							"effect_type": "add_boost_to_gauge_on_strike_cleanup",
+							"card_name": "Bardiche"
+						}
+					}
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,624 @@
+{
+	"id": "gran-rose",
+	"season": -1,
+	"author": "Rose",
+	"difficulty": "*",
+	"display_name": "Gran Blue",
+	"exceed_cost": 4,
+	"on_exceed": {
+		"effect_type": "choose_discard",
+		"limitation": "",
+		"destination": "gauge",
+		"amount": 1,
+		"amount_min": 1,
+		"discard_effect": {
+			"effect_type": "strike"
+		}
+	},
+	"ability_effects": [
+		{
+			"timing": "set_strike",
+			"effect_type": "gauge_for_effect",
+			"per_gauge_effect": null,
+			"overall_effect": {
+				"effect_type": "critical",
+				"character_effect": true
+			},
+			"gauge_max": 1
+		},
+		{
+			"character_effect": true,
+			"timing": "during_strike",
+			"condition": "is_critical",
+			"effect_type": "powerup",
+			"amount": 1
+		}
+	],
+	"exceed_ability_effects": [
+		{
+			"timing": "set_strike",
+			"effect_type": "gauge_for_effect",
+			"per_gauge_effect": null,
+			"overall_effect": {
+				"effect_type": "critical",
+				"character_effect": true
+			},
+			"gauge_max": 1
+		},
+		{
+			"character_effect": true,
+			"timing": "during_strike",
+			"condition": "is_critical",
+			"effect_type": "powerup",
+			"amount": 2
+		}
+	],
+	"image_resources": {
+		"character_default": {
+			"url": "https://i.imgur.com/BqI6jkQ.png",
+			"multiple_cards": false
+		},
+		"character_exceeded": {
+			"url": "https://i.imgur.com/VjNW2KP.png",
+			"multiple_cards": false
+		},
+		"cardback": {
+			"url": "https://i.imgur.com/9c38a58.png",
+			"multiple_cards": false
+		},
+		"specials": {
+			"url": "https://i.imgur.com/WW21zeO.png",
+			"multiple_cards": true
+		},
+		"normals": {
+			"url": "https://i.imgur.com/WMSw9rf.png",
+			"multiple_cards": true
+		}
+	},
+	"custom_animations": {
+		"gran-rose": {
+			"idle": {
+				"url": "https://i.imgur.com/dKKX2WB.png",
+				"frame_count": 1
+			},
+			"metadata": {
+				"scaling": 0.13,
+				"flip": true,
+				"horizontal_offset": 20
+			}
+
+		}
+	},
+	"portrait_image_url": "https://i.imgur.com/zsdNgID.png",
+	"cards": [
+		{
+			"definition_id": "gran-rose_tempestblade",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "gran-rose_tempestblade",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "gran-rose_catastrophe",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "gran-rose_catastrophe",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "gran-rose_powerraise",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "gran-rose_powerraise",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "gran-rose_ju",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "gran-rose_ju",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "gran-rose_reginleiv",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "gran-rose_reginleiv",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "gran-rose_risingsword",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "gran-rose_risingsword",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "gran-rose_overdrivesurge",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "gran-rose_overdrivesurge",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		}
+	],
+	"custom_card_definitions": [
+		{
+			"id": "gran-rose_tempestblade",
+			"type": "ultra",
+			"display_name": "Tempest Blade",
+			"force_cost": 0,
+			"gauge_cost": 3,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 5,
+			"speed": 4,
+			"armor": 1,
+			"guard": 5,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"condition": "is_critical",
+					"effect_type": "powerup",
+					"amount": 1
+				},
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 3
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Singularity",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 1,
+						"and": {
+							"effect_type": "speedup",
+							"amount": 1
+						}
+					},
+					{
+						"timing": "now",
+						"effect_type": "draw",
+						"amount": 1
+					}
+				]
+			}
+		},
+		{
+			"id": "gran-rose_catastrophe",
+			"type": "ultra",
+			"display_name": "Catastrophe",
+			"force_cost": 0,
+			"gauge_cost": 4,
+			"range_min": 2,
+			"range_max": 5,
+			"power": 8,
+			"speed": 4,
+			"armor": 2,
+			"guard": 5,
+			"effects": [
+				{
+					"timing": "hit",
+					"condition": "range",
+					"condition_amount": 2,
+					"effect_type": "opponent_discard_choose",
+					"amount": 2
+				},
+				{
+					"timing": "after",
+					"effect_type": "choice",
+					"choice": [
+						{
+							"effect_type": "advance",
+							"amount": 1
+						},
+						{
+							"effect_type": "advance",
+							"amount": 2
+						},
+						{
+							"effect_type": "retreat",
+							"amount": 1
+						},
+						{
+							"effect_type": "retreat",
+							"amount": 2
+						},
+						{ "effect_type": "pass" }
+					]
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Brash",
+				"effects": [
+					{
+						"timing": "immediate",
+						"effect_type": "close",
+						"amount": 3,
+						"and": {
+							"effect_type": "strike"
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "gran-rose_powerraise",
+			"type": "special",
+			"display_name": "Power Raise",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 3,
+			"power": 3,
+			"speed": 3,
+			"armor": 0,
+			"guard": 3,
+			"effects": [
+				{
+					"timing": "hit",
+					"effect_type": "force_for_effect",
+					"per_force_effect": null,
+					"overall_effect": {
+						"effect_type": "powerup",
+						"amount": 3
+					},
+					"force_max": 3
+				},
+				{
+					"timing": "after",
+					"condition": "is_critical",
+					"effect_type": "pass",
+					"silent_effect": true,
+					"and": {
+						"condition": "opponent_stunned",
+						"effect_type": "gain_advantage"
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Pressure",
+				"effects": [
+					{
+						"timing": "now",
+						"effect_type": "draw",
+						"amount": 1
+					},
+					{
+						"timing": "hit",
+						"effect_type": "push",
+						"amount": 1,
+						"bonus_effect": {
+							"condition": "not_full_push",
+							"effect_type": "powerup",
+							"amount": 2
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "gran-rose_ju",
+			"type": "special",
+			"display_name": "j.U",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 3,
+			"speed": 5,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "advance",
+					"amount": 2,
+					"bonus_effect": {
+						"condition": "advanced_through",
+						"effect_type": "ignore_armor"
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Quick Attack",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "speedup",
+						"amount": 1
+					},
+					{
+						"timing": "now",
+						"effect_type": "strike"
+					}
+				]
+			}
+		},
+		{
+			"id": "gran-rose_reginleiv",
+			"type": "special",
+			"display_name": "Reginleiv",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 2,
+			"range_max": 6,
+			"power": 4,
+			"speed": 3,
+			"armor": 0,
+			"guard": 5,
+			"effects": [
+
+				{
+					"timing": "hit",
+					"effect_type": "draw",
+					"amount": 1,
+					"and": {
+						"effect_type": "choice",
+						"choice": [
+							{
+								"effect_type": "advance",
+								"amount": 1
+							},
+							{
+								"effect_type": "advance",
+								"amount": 2
+							},
+							{
+								"effect_type": "pass"
+							}
+						]
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Quick Step",
+				"effects": [
+					{
+						"timing": "immediate",
+						"effect_type": "choice",
+						"choice": [
+							{
+								"effect_type": "advance",
+								"amount": 1
+							},
+							{
+								"effect_type": "retreat",
+								"amount": 1
+							}
+						]
+					},
+					{
+						"timing": "immediate",
+						"effect_type": "bonus_action"
+					}
+				]
+			}
+		},
+		{
+			"id": "gran-rose_risingsword",
+			"type": "special",
+			"display_name": "Rising Sword",
+			"force_cost": 1,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 4,
+			"speed": 7,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 1
+				},
+				{
+					"timing": "hit",
+					"effect_type": "push",
+					"amount": 2
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Bravery",
+				"effects": [
+					{
+						"timing": "immediate",
+						"effect_type": "push",
+						"amount": 2,
+						"and": {
+							"effect_type": "choice",
+							"choice": [
+								{
+									"effect_type": "close",
+									"amount": 1,
+									"and": {
+										"effect_type": "draw",
+										"amount": 1
+									},
+									"override_description": "Close 1"
+								},
+								{
+									"effect_type": "close",
+									"amount": 2,
+									"and": {
+										"effect_type": "draw",
+										"amount": 1
+									},
+									"override_description": "Close 2"
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "gran-rose_overdrivesurge",
+			"type": "special",
+			"display_name": "Overdrive Surge",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 5,
+			"speed": 4,
+			"armor": 0,
+			"guard": 4,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 2
+				},
+				{
+					"timing": "hit",
+					"condition": "is_critical",
+					"effect_type": "push",
+					"amount": 2,
+					"and": {
+						"effect_type": "gain_advantage"
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Fearless",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "armorup",
+						"amount": 2,
+						"and": {
+							"effect_type": "stun_immunity"
+						}
+					}
+				]
+			}
+		}
+	]
+}

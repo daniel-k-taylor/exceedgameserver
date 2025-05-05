@@ -84,9 +84,22 @@ export async function update_customs_db(current_customs_db) {
             console.error(`Error downloading ${custom} from blob storage`);
             continue
         }
-        const base_custom_name = custom.split(".")[0]
+        // Remove only the last .json or other extension
+        const base_custom_name = custom.replace(/\.[^/.]+$/, "");
         current_customs_db["customs"][base_custom_name] = character_data
     }
+    // Remove customs that are no longer in the latest manifest.
+    if (latest_customs_manifest["customs"] && Array.isArray(latest_customs_manifest["customs"])) {
+        const latest_custom_names_set = new Set(
+            latest_customs_manifest["customs"].map(c => c.replace(/\.[^/.]+$/, ""))
+        );
+        for (const custom_name of Object.keys(current_customs_db["customs"])) {
+            if (!latest_custom_names_set.has(custom_name)) {
+                delete current_customs_db["customs"][custom_name];
+            }
+        }
+    }
+
     // Update the version.
     current_customs_db["version"] = latest_version
 
