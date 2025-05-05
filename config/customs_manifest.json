@@ -1,10 +1,6 @@
 {
-    "version": 12,
+    "version": 13,
     "customs": [
-        "Cloud_Strife.json",
-        "Emperor.json",
-        "FF4_Dissidia.json",
-        "Firion.json",
         "Junko V2.json",
         "charlotta.json",
         "djeeta.json",
