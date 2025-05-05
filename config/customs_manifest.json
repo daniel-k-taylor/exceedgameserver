@@ -1,8 +1,15 @@
 {
-    "version": 8,
+    "version": 11,
     "customs": [
+        "Cloud_Strife.json",
+        "Emperor.json",
+        "FF4_Dissidia.json",
+        "Firion.json",
         "charlotta.json",
         "djeeta.json",
+        "dlcrider-otleo.json",
+        "garland-polter_browser_v1.0.json",
+        "gran.json",
         "junko.json",
         "kafka.json",
         "lancelot.json",
@@ -12,5 +19,6 @@
         "terry.json",
         "tevi.json",
         "vane.json"
-    ]
+    ],
+    "last_write_time": "2025-05-04T20:44:42.015146"
 }

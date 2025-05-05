@@ -1,0 +1,4018 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
+    {
+      "GUID": "a44208",
+      "Name": "Deck",
+      "Transform": {
+        "posX": -20.4908123,
+        "posY": 1.17599416,
+        "posZ": -36.89489,
+        "rotX": -4.11239171E-06,
+        "rotY": 180.000961,
+        "rotZ": 5.05187472E-06,
+        "scaleX": 1.25,
+        "scaleY": 1.0,
+        "scaleZ": 1.25
+      },
+      "Nickname": "Cecil Harvey",
+      "Description": "By PolterGhost\nArchetype: Normals Zoner",
+      "GMNotes": "",
+      "Memo": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "SidewaysCard": false,
+      "DeckIDs": [
+        654405,
+        578101,
+        654405,
+        654401,
+        654407,
+        578102,
+        654400,
+        578105,
+        654403,
+        578101,
+        578103,
+        654400,
+        654402,
+        578100,
+        654402,
+        578103,
+        654404,
+        654407,
+        578100,
+        654403,
+        654406,
+        578105,
+        654401,
+        578106,
+        654404,
+        578102,
+        578106,
+        578104,
+        654406,
+        578104,
+        578107,
+        654100
+      ],
+      "CustomDeck": {
+        "6544": {
+          "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+          "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+          "NumWidth": 4,
+          "NumHeight": 2,
+          "BackIsHidden": true,
+          "UniqueBack": false,
+          "Type": 0
+        },
+        "5781": {
+          "FaceURL": "https://i.imgur.com/8bzOFew.jpg",
+          "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+          "NumWidth": 4,
+          "NumHeight": 2,
+          "BackIsHidden": true,
+          "UniqueBack": false,
+          "Type": 0
+        },
+        "6541": {
+          "FaceURL": "https://i.imgur.com/w7GjnSh.png",
+          "BackURL": "https://i.imgur.com/ruBso4l.png",
+          "NumWidth": 1,
+          "NumHeight": 1,
+          "BackIsHidden": true,
+          "UniqueBack": false,
+          "Type": 0
+        }
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "ContainedObjects": [
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Sweep ;2 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.05",
+          "Memo": "11",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 654405,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "259224",
+          "Name": "Card",
+          "Transform": {
+            "posX": 20.1370354,
+            "posY": 1.19006741,
+            "posZ": -22.4332314,
+            "rotX": 358.3779,
+            "rotY": 180.006927,
+            "rotZ": 1.88249123E-05,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Soul Eater (U)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 578101,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5781": {
+              "FaceURL": "https://i.imgur.com/8bzOFew.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Sweep ;2 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.05",
+          "Memo": "12",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 654405,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Cross ;6 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.01",
+          "Memo": "4",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 654401,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Block ;0 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.07",
+          "Memo": "15",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 654407,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "199245",
+          "Name": "Card",
+          "Transform": {
+            "posX": 21.0282059,
+            "posY": 1.15036845,
+            "posZ": -21.8262367,
+            "rotX": 358.8875,
+            "rotY": 180.015533,
+            "rotZ": -0.00231317757,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Shadow Lance (S)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 578102,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5781": {
+              "FaceURL": "https://i.imgur.com/8bzOFew.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "bdba75",
+          "Name": "Card",
+          "Transform": {
+            "posX": -18.682106,
+            "posY": 1.33774948,
+            "posZ": -36.8774567,
+            "rotX": 0.00413015438,
+            "rotY": 179.980255,
+            "rotZ": 179.993332,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Grasp ;7 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.00",
+          "Memo": "1",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 654400,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "6540": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "9551aa",
+          "Name": "Card",
+          "Transform": {
+            "posX": 20.2669449,
+            "posY": 1.10742056,
+            "posZ": -22.39297,
+            "rotX": 358.5492,
+            "rotY": 179.998444,
+            "rotZ": -0.00395452557,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Nightfall (S)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 578105,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5781": {
+              "FaceURL": "https://i.imgur.com/8bzOFew.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Dive ;4 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.03",
+          "Memo": "8",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 654403,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "4b8251",
+          "Name": "Card",
+          "Transform": {
+            "posX": 20.0465851,
+            "posY": 1.14127517,
+            "posZ": -22.97074,
+            "rotX": 359.22757,
+            "rotY": 180.010742,
+            "rotZ": 0.000426077924,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Soul Eater (U)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 578101,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5781": {
+              "FaceURL": "https://i.imgur.com/8bzOFew.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "631373",
+          "Name": "Card",
+          "Transform": {
+            "posX": 20.52704,
+            "posY": 1.14887786,
+            "posZ": -22.0375671,
+            "rotX": 358.439758,
+            "rotY": 180.016617,
+            "rotZ": -0.00260767853,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Dark Cannon (S)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 578103,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5781": {
+              "FaceURL": "https://i.imgur.com/8bzOFew.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Grasp ;7 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.00",
+          "Memo": "2",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 654400,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Assault ;5 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.02",
+          "Memo": "5",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 654402,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "26be59",
+          "Name": "Card",
+          "Transform": {
+            "posX": 20.50309,
+            "posY": 1.21358335,
+            "posZ": -22.5505123,
+            "rotX": 357.945221,
+            "rotY": 179.975662,
+            "rotZ": 0.000178786184,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Saint's Fall (U)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 578100,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5781": {
+              "FaceURL": "https://i.imgur.com/8bzOFew.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Assault ;5 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.02",
+          "Memo": "6",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 654402,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "4da151",
+          "Name": "Card",
+          "Transform": {
+            "posX": 19.795269,
+            "posY": 1.13094449,
+            "posZ": -22.6123924,
+            "rotX": 358.61673,
+            "rotY": 180.016617,
+            "rotZ": 4.09982E-05,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Dark Cannon (S)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 578103,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5781": {
+              "FaceURL": "https://i.imgur.com/8bzOFew.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Spike ;3 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.04",
+          "Memo": "9",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 654404,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Block ;0 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.07",
+          "Memo": "16",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 654407,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "2a4fb7",
+          "Name": "Card",
+          "Transform": {
+            "posX": -17.6771984,
+            "posY": 1.35019577,
+            "posZ": -37.45648,
+            "rotX": -0.000257756241,
+            "rotY": 180.0,
+            "rotZ": 0.000405446655,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Saint's Fall (U)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 578100,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5781": {
+              "FaceURL": "https://i.imgur.com/8bzOFew.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Dive ;4 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.03",
+          "Memo": "7",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 654403,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Focus ;1 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.06",
+          "Memo": "14",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 654406,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "00ed9f",
+          "Name": "Card",
+          "Transform": {
+            "posX": 19.7249889,
+            "posY": 1.05958617,
+            "posZ": -22.703783,
+            "rotX": 359.394348,
+            "rotY": 180.591,
+            "rotZ": -0.004118783,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Nightfall (S)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 578105,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5781": {
+              "FaceURL": "https://i.imgur.com/8bzOFew.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Cross ;6 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.01",
+          "Memo": "3",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 654401,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "11cce0",
+          "Name": "Card",
+          "Transform": {
+            "posX": 18.6791649,
+            "posY": 1.04994333,
+            "posZ": -26.12625,
+            "rotX": 357.713928,
+            "rotY": 180.01236,
+            "rotZ": -0.000141277138,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Valiant Blade (S)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 578106,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5781": {
+              "FaceURL": "https://i.imgur.com/8bzOFew.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Spike ;3 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.04",
+          "Memo": "10",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 654404,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "68a41b",
+          "Name": "Card",
+          "Transform": {
+            "posX": 21.0638618,
+            "posY": 1.11873424,
+            "posZ": -21.6029434,
+            "rotX": 359.357269,
+            "rotY": 180.096283,
+            "rotZ": -0.00115013169,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Shadow Lance (S)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 578102,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5781": {
+              "FaceURL": "https://i.imgur.com/8bzOFew.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "53ce41",
+          "Name": "Card",
+          "Transform": {
+            "posX": 18.6627769,
+            "posY": 1.07788,
+            "posZ": -25.7949772,
+            "rotX": 357.7169,
+            "rotY": 180.012375,
+            "rotZ": 0.00115007756,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Valiant Blade (S)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 578106,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5781": {
+              "FaceURL": "https://i.imgur.com/8bzOFew.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "821675",
+          "Name": "Card",
+          "Transform": {
+            "posX": 19.84048,
+            "posY": 1.12659872,
+            "posZ": -21.9777679,
+            "rotX": 358.494141,
+            "rotY": 180.0086,
+            "rotZ": -0.00238173222,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Radiant Wings (S)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 578104,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5781": {
+              "FaceURL": "https://i.imgur.com/8bzOFew.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Focus ;1 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.06",
+          "Memo": "13",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 654406,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "0fe34f",
+          "Name": "Card",
+          "Transform": {
+            "posX": 20.8776684,
+            "posY": 1.0688355,
+            "posZ": -21.4879436,
+            "rotX": 359.557251,
+            "rotY": 180.006592,
+            "rotZ": 0.00309007545,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Radiant Wings (S)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 578104,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5781": {
+              "FaceURL": "https://i.imgur.com/8bzOFew.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "cf6108",
+          "Name": "Card",
+          "Transform": {
+            "posX": -16.87004,
+            "posY": 1.34731591,
+            "posZ": -36.6110535,
+            "rotX": 0.00164594641,
+            "rotY": 179.999573,
+            "rotZ": 7.162634E-05,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Bravery (C)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 578107,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5781": {
+              "FaceURL": "https://i.imgur.com/8bzOFew.jpg",
+              "BackURL": "https://i.imgur.com/Hak9Wzk.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "12b8f7",
+          "Name": "CardCustom",
+          "Transform": {
+            "posX": -16.8975353,
+            "posY": 1.35694122,
+            "posZ": -36.94191,
+            "rotX": -0.0002564312,
+            "rotY": 180.0004,
+            "rotZ": -2.61451114E-05,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 654100,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "6541": {
+              "FaceURL": "https://i.imgur.com/w7GjnSh.png",
+              "BackURL": "https://i.imgur.com/ruBso4l.png",
+              "NumWidth": 1,
+              "NumHeight": 1,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        }
+      ]
+    },
+    {
+      "GUID": "c0206d",
+      "Name": "Deck",
+      "Transform": {
+        "posX": -3.09564972,
+        "posY": 5.96046448E-07,
+        "posZ": -0.027885437,
+        "rotX": -4.385208E-06,
+        "rotY": 180.017731,
+        "rotZ": 5.07897948E-06,
+        "scaleX": 1.25,
+        "scaleY": 1.0,
+        "scaleZ": 1.25
+      },
+      "Nickname": "Golbez",
+      "Description": "By PolterGhost\nArchetype: Chunky Zoner",
+      "GMNotes": "",
+      "Memo": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "SidewaysCard": false,
+      "DeckIDs": [
+        577900,
+        577900,
+        577901,
+        577901,
+        577902,
+        577902,
+        577903,
+        577903,
+        577904,
+        577904,
+        577905,
+        577905,
+        577906,
+        577906,
+        577907,
+        577907,
+        577706,
+        577706,
+        577705,
+        577705,
+        577704,
+        577704,
+        577703,
+        577703,
+        577702,
+        577702,
+        577701,
+        577701,
+        577700,
+        577700,
+        577707,
+        577600
+      ],
+      "CustomDeck": {
+        "5779": {
+          "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+          "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+          "NumWidth": 4,
+          "NumHeight": 2,
+          "BackIsHidden": true,
+          "UniqueBack": false,
+          "Type": 0
+        },
+        "5777": {
+          "FaceURL": "https://i.imgur.com/NBXDwt5.jpg",
+          "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+          "NumWidth": 4,
+          "NumHeight": 2,
+          "BackIsHidden": true,
+          "UniqueBack": false,
+          "Type": 0
+        },
+        "5776": {
+          "FaceURL": "https://i.imgur.com/9EUOGUo.png",
+          "BackURL": "https://i.imgur.com/QadvKxH.png",
+          "NumWidth": 1,
+          "NumHeight": 1,
+          "BackIsHidden": true,
+          "UniqueBack": false,
+          "Type": 0
+        }
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "ContainedObjects": [
+        {
+          "GUID": "d1ff03",
+          "Name": "Card",
+          "Transform": {
+            "posX": -2.32107878,
+            "posY": 1.35019469,
+            "posZ": -34.26109,
+            "rotX": 0.000193383108,
+            "rotY": 180.0,
+            "rotZ": 179.9998,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Grasp ;7 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.00",
+          "Memo": "1",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577900,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Grasp ;7 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.00",
+          "Memo": "2",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577900,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Cross ;6 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.01",
+          "Memo": "3",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577901,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Cross ;6 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.01",
+          "Memo": "4",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577901,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Assault ;5 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.02",
+          "Memo": "5",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577902,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Assault ;5 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.02",
+          "Memo": "6",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577902,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Dive ;4 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.03",
+          "Memo": "7",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577903,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Dive ;4 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.03",
+          "Memo": "8",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577903,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Spike ;3 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.04",
+          "Memo": "9",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577904,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Spike ;3 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.04",
+          "Memo": "10",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577904,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Sweep ;2 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.05",
+          "Memo": "11",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577905,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Sweep ;2 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.05",
+          "Memo": "12",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577905,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Focus ;1 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.06",
+          "Memo": "13",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577906,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Focus ;1 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.06",
+          "Memo": "14",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577906,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Block ;0 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.07",
+          "Memo": "15",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577907,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "",
+          "Name": "Card",
+          "Transform": {
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Block ;0 (N)",
+          "Description": "Final Fantasy",
+          "GMNotes": "Final Fantasy.1.07",
+          "Memo": "16",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": false,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577907,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://i.imgur.com/LsOgd2S.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": []
+        },
+        {
+          "GUID": "636f60",
+          "Name": "Card",
+          "Transform": {
+            "posX": -16.2236214,
+            "posY": 0.97359,
+            "posZ": -19.2545242,
+            "rotX": 0.000123985621,
+            "rotY": 179.96843,
+            "rotZ": -0.0007773463,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Genesis Rock (S)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577706,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5777": {
+              "FaceURL": "https://i.imgur.com/NBXDwt5.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "ace428",
+          "Name": "Card",
+          "Transform": {
+            "posX": -16.13468,
+            "posY": 1.01524377,
+            "posZ": -18.9936848,
+            "rotX": 0.00191069266,
+            "rotY": 179.96843,
+            "rotZ": -0.00278354273,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Genesis Rock (S)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577706,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5777": {
+              "FaceURL": "https://i.imgur.com/NBXDwt5.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "56b018",
+          "Name": "Card",
+          "Transform": {
+            "posX": -19.0360622,
+            "posY": 0.9735778,
+            "posZ": -23.7574959,
+            "rotX": 0.0002246866,
+            "rotY": 180.000015,
+            "rotZ": -0.0014141259,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Glare Hand (S)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577705,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5777": {
+              "FaceURL": "https://i.imgur.com/NBXDwt5.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "a16643",
+          "Name": "Card",
+          "Transform": {
+            "posX": -19.0449219,
+            "posY": 1.01204622,
+            "posZ": -23.3920212,
+            "rotX": 0.002944962,
+            "rotY": 180.000015,
+            "rotZ": -0.0017160608,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Glare Hand (S)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577705,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5777": {
+              "FaceURL": "https://i.imgur.com/NBXDwt5.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "679deb",
+          "Name": "Card",
+          "Transform": {
+            "posX": -16.6391869,
+            "posY": 1.06931341,
+            "posZ": -19.32016,
+            "rotX": -0.00022395952,
+            "rotY": 180.000015,
+            "rotZ": -0.0004480899,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Gravity Force (S)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577704,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5777": {
+              "FaceURL": "https://i.imgur.com/NBXDwt5.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "c9736d",
+          "Name": "Card",
+          "Transform": {
+            "posX": -15.8322477,
+            "posY": 1.07808018,
+            "posZ": -19.0987072,
+            "rotX": -0.000772418338,
+            "rotY": 180.000015,
+            "rotZ": 8.594244E-05,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Gravity Force (S)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577704,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5777": {
+              "FaceURL": "https://i.imgur.com/NBXDwt5.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "ba8de3",
+          "Name": "Card",
+          "Transform": {
+            "posX": -16.6773586,
+            "posY": 1.08470809,
+            "posZ": -19.0180168,
+            "rotX": 0.0003465134,
+            "rotY": 180.0,
+            "rotZ": -0.000761102769,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Rising Wave (S)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577703,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5777": {
+              "FaceURL": "https://i.imgur.com/NBXDwt5.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "acdc4a",
+          "Name": "Card",
+          "Transform": {
+            "posX": -16.18857,
+            "posY": 1.09735548,
+            "posZ": -18.8511276,
+            "rotX": 0.000420857075,
+            "rotY": 180.0,
+            "rotZ": -0.00066550175,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Rising Wave (S)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577703,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5777": {
+              "FaceURL": "https://i.imgur.com/NBXDwt5.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "3542e3",
+          "Name": "Card",
+          "Transform": {
+            "posX": -18.6199341,
+            "posY": 0.973582149,
+            "posZ": -24.0142689,
+            "rotX": 0.000190782914,
+            "rotY": 180.0,
+            "rotZ": -0.00118855014,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Cosmic Ray (U)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577702,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5777": {
+              "FaceURL": "https://i.imgur.com/NBXDwt5.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "13af6d",
+          "Name": "Card",
+          "Transform": {
+            "posX": -18.8628159,
+            "posY": 1.011941,
+            "posZ": -24.1739464,
+            "rotX": 0.006327402,
+            "rotY": 180.0,
+            "rotZ": 359.990875,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Cosmic Ray (U)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577702,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5777": {
+              "FaceURL": "https://i.imgur.com/NBXDwt5.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "ca845e",
+          "Name": "Card",
+          "Transform": {
+            "posX": -16.977066,
+            "posY": 1.11824107,
+            "posZ": -19.27786,
+            "rotX": -0.000283451343,
+            "rotY": 179.997864,
+            "rotZ": 0.110078335,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Nightglow (U)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577701,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5777": {
+              "FaceURL": "https://i.imgur.com/NBXDwt5.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "e2efd6",
+          "Name": "Card",
+          "Transform": {
+            "posX": -16.6779728,
+            "posY": 1.13865972,
+            "posZ": -19.4126339,
+            "rotX": -0.000116580515,
+            "rotY": 179.999741,
+            "rotZ": 0.113174058,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Nightglow (U)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577701,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5777": {
+              "FaceURL": "https://i.imgur.com/NBXDwt5.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "80d5ed",
+          "Name": "Card",
+          "Transform": {
+            "posX": -16.7898865,
+            "posY": 1.14494359,
+            "posZ": -18.88825,
+            "rotX": 0.000106169027,
+            "rotY": 179.999786,
+            "rotZ": -0.0004317394,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Black Fang (U)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577700,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5777": {
+              "FaceURL": "https://i.imgur.com/NBXDwt5.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "75bbfb",
+          "Name": "Card",
+          "Transform": {
+            "posX": -4.16825247,
+            "posY": 1.41797459,
+            "posZ": -25.7101,
+            "rotX": 359.516541,
+            "rotY": 179.999985,
+            "rotZ": -9.33680858E-05,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Black Fang (U)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577700,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5777": {
+              "FaceURL": "https://i.imgur.com/NBXDwt5.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "f2a9a0",
+          "Name": "Card",
+          "Transform": {
+            "posX": -4.40396452,
+            "posY": 1.43948722,
+            "posZ": -26.0246887,
+            "rotX": 359.619751,
+            "rotY": 180.0,
+            "rotZ": -0.000102310783,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Bravery (C)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577707,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5777": {
+              "FaceURL": "https://i.imgur.com/NBXDwt5.jpg",
+              "BackURL": "https://i.imgur.com/JwZjuLQ.png",
+              "NumWidth": 4,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "fb879e",
+          "Name": "CardCustom",
+          "Transform": {
+            "posX": -3.783219,
+            "posY": 1.43209243,
+            "posZ": -25.5030956,
+            "rotX": 359.519958,
+            "rotY": 179.9976,
+            "rotZ": 0.000232225284,
+            "scaleX": 1.25,
+            "scaleY": 1.0,
+            "scaleZ": 1.25
+          },
+          "Nickname": "Golbez (C)",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 577600,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5776": {
+              "FaceURL": "https://i.imgur.com/9EUOGUo.png",
+              "BackURL": "https://i.imgur.com/QadvKxH.png",
+              "NumWidth": 1,
+              "NumHeight": 1,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        }
+      ]
+    }
+  ]
+}

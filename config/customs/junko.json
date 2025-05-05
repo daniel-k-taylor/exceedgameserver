@@ -4,7 +4,7 @@
 	"author": "Serp",
 	"difficulty": "*",
 	"display_name": "Junko",
-	"exceed_cost": 4,
+	"exceed_cost": 5,
 	"ability_effects": [
 		{
 		
@@ -19,7 +19,7 @@
 	],
 	"image_resources": {
 		"character_default": {
-			"url": "https://i.imgur.com/HleYF3p.png",
+			"url": "https://i.imgur.com/L9awujo.png",
 			"multiple_cards": false
 		},
 		"character_exceeded": {
@@ -31,7 +31,7 @@
 			"multiple_cards": false
 		},
 		"specials": {
-			"url": "https://i.imgur.com/GmX5XRd.jpeg",
+			"url": "https://i.imgur.com/7XkGXW4.png",
 			"multiple_cards": true
 		},
 		"normals": {
@@ -350,9 +350,7 @@
 				"effects": [
 					{
 						"timing": "immediate",
-						"effect_type": "name_card_opponent_discards",
-						"reveal_hand_after": true,
-						"discard_all_copies": true,
+						"effect_type": "opponent_discard_random",
 						"amount": 2,
 						"discard_effect": {
 								"effect_type": "strike"
@@ -387,7 +385,7 @@
 					{
 						"timing": "immediate",
 						"effect_type": "draw",
-						"amount": 5
+						"amount": 4
 					},
 					{
 						"timing": "immediate",
