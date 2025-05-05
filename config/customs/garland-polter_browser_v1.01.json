@@ -8,7 +8,7 @@
 		"dissidia_bravery_reference"
 	],
 	"no_buddy_card_graphics": false,
-	"exceed_cost": 1,
+	"exceed_cost": 4,
 	"on_exceed": {
 		"effect_type": "draw",
 		"amount": 1,
@@ -276,7 +276,7 @@
 			"type": "ultra",
 			"display_name": "Rending Winds",
 			"force_cost": 0,
-			"gauge_cost": 1,
+			"gauge_cost": 5,
 			"range_min": 1,
 			"range_max": 1,
 			"power": 10,
@@ -341,7 +341,7 @@
 			"type": "ultra",
 			"display_name": "Blazing Wave",
 			"force_cost": 0,
-			"gauge_cost": 1,
+			"gauge_cost": 3,
 			"range_min": 3,
 			"range_max": 8,
 			"power": 4,
