@@ -352,10 +352,11 @@
 						"timing": "immediate",
 						"effect_type": "opponent_discard_random",
 						"amount": 2,
-						"discard_effect": {
-								"effect_type": "strike"
+						"and":
+						{
+							"effect_type": "strike"
+						}
 					}
-					}	
 				]
 			}
 		},

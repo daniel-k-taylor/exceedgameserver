@@ -1,18 +1,18 @@
 {
-    "version": 11,
+    "version": 12,
     "customs": [
         "Cloud_Strife.json",
         "Emperor.json",
         "FF4_Dissidia.json",
         "Firion.json",
+        "Junko V2.json",
         "charlotta.json",
         "djeeta.json",
-        "dlcrider-otleo.json",
+        "dlcrider-otleo_browser_v2.0.json",
         "garland-polter_browser_v1.0.json",
         "gran.json",
-        "junko.json",
         "kafka.json",
-        "lancelot.json",
+        "lancelot fixed.json",
         "marisa.json",
         "percival.json",
         "reimu.json",
@@ -20,5 +20,5 @@
         "tevi.json",
         "vane.json"
     ],
-    "last_write_time": "2025-05-04T20:44:42.015146"
+    "last_write_time": "2025-05-04T21:38:41.520821"
 }

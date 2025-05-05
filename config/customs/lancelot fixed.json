@@ -22,7 +22,9 @@
 					"effect_type": "strike"
 				}
 			},
-			{ "effect_type": "strike" }
+			{
+				"effect_type": "strike"
+			}
 		]
 	},
 	"ability_effects": [
@@ -117,7 +119,6 @@
 				"flip": true,
 				"horizontal_offset": 20
 			}
-
 		}
 	},
 	"portrait_image_url": "https://i.imgur.com/P4JJWbV.png",
@@ -324,7 +325,6 @@
 								"effect_type": "pass"
 							}
 						]
-						
 					}
 				]
 			}
@@ -593,17 +593,13 @@
 			"effects": [
 				{
 					"timing": "hit",
-					"effect_type": "gain_advantage"
+					"condition": "is_critical",
+					"effect_type": "ignore_guard"
 				},
 				{
 					"timing": "hit",
-					"condition": "is_critical",
-					"effect_type": "draw",
-					"amount": 2,
-					"and": {
-						"effect_type": "opponent_discard_random",
-						"amount": 1
-					}
+					"effect_type": "push",
+					"amount": 2
 				}
 			],
 			"boost": {
