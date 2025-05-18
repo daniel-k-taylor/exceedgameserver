@@ -1,20 +1,27 @@
 {
-    "version": 14,
+    "version": 22,
     "customs": [
+        "Goku.json",
         "Junko V2.json",
         "charlotta.json",
         "djeeta.json",
         "dlcrider-otleo_browser_v2.0.json",
-        "garland-polter_browser_v1.01.json",
+        "felicity-crimsonfoxtail_browser_v1.0.json",
+        "garland-polter_browser_v1.21.json",
         "gran.json",
-        "kafka.json",
+        "haohmaru-bluellama1_browser_v1.0.json",
+        "kafka_v1.01.json",
+        "karatejoe-bluellama1_browser_v1.01.json",
         "lancelot fixed.json",
         "marisa.json",
+        "nemesis-bluellama1_browser_v1.0.json",
+        "peppino-bluellama1_browser_v1.0.json",
         "percival.json",
         "reimu.json",
+        "shelley-crimsonfoxtail_browser_v1.01.json",
         "terry.json",
         "tevi.json",
         "vane.json"
     ],
-    "last_write_time": "2025-05-04T23:40:53.025937"
+    "last_write_time": "2025-05-17T18:41:43.987003"
 }

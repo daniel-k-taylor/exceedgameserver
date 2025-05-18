@@ -1,0 +1,632 @@
+{
+	"id": "nemesis-bluellama1",
+	"season": -1,
+	"author": "Bluellama1",
+	"difficulty": "**",
+	"display_name": "Nemesis",
+	"exceed_cost": 3,
+	"ability_effects": [
+		{
+			"timing": "set_strike",
+			"effect_type": "force_for_effect",
+			"per_force_effect": {
+				"combine_multiple_into_one": true,
+				"character_effect": true,
+				"effect_type": "armorup",
+				"amount": 1
+			},
+			"overall_effect": null,
+			"force_max": 3
+		}
+	],
+	"exceed_ability_effects": [
+		{
+			"timing": "set_strike",
+			"effect_type": "force_for_effect",
+			"per_force_effect": {
+				"combine_multiple_into_one": true,
+				"character_effect": true,
+				"effect_type": "powerup",
+				"amount": 1,
+				"and": {
+					"effect_type": "armorup",
+					"amount": 1
+				}
+			},
+			"overall_effect": null,
+			"force_max": 3
+		}
+	],
+	"image_resources": {
+		"character_default": {
+			"url": "https://i.imgur.com/WHK3HCL.png",
+			"multiple_cards": false
+		},
+		"character_exceeded": {
+			"url": "https://i.imgur.com/QcQBmCi.png",
+			"multiple_cards": false
+		},
+		"cardback": {
+			"url": "https://i.imgur.com/igYZhPh.png",
+			"multiple_cards": false
+		},
+		"specials": {
+			"url": "https://i.imgur.com/ZKM6cQ3.png",
+			"multiple_cards": true
+		},
+		"normals": {
+			"url": "https://i.imgur.com/1pnJnEb.jpeg",
+			"multiple_cards": true
+		}
+	},
+	"custom_animations": {
+		"nemesis-bluellama1": {
+			"idle": {
+				"url": "https://i.imgur.com/spiZny7.png",
+				"frame_count": 1
+			},
+			"metadata": {
+				"scaling": 0.25,
+				"flip": false,
+				"horizontal_offset": 0
+			}
+
+		}
+	},
+	"portrait_image_url": "https://i.imgur.com/kbwNghm.png",
+	"cards": [
+		{
+			"definition_id": "nemesis-bluellama1_doggaming",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "nemesis-bluellama1_doggaming",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "nemesis-bluellama1_youredead",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "nemesis-bluellama1_youredead",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "nemesis-bluellama1_parasitedriver",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "nemesis-bluellama1_parasitedriver",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "nemesis-bluellama1_ihavearocketlauncherbtw",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "nemesis-bluellama1_ihavearocketlauncherbtw",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "nemesis-bluellama1_unkillable",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "nemesis-bluellama1_unkillable",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "nemesis-bluellama1_slam",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "nemesis-bluellama1_slam",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "nemesis-bluellama1_cannon",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "nemesis-bluellama1_cannon",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		}
+	],
+	"custom_card_definitions": [
+		{
+			"id": "nemesis-bluellama1_doggaming",
+			"type": "ultra",
+			"display_name": "Dog Gaming",
+			"force_cost": 0,
+			"gauge_cost": 1,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 3,
+			"speed": 1,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"effect_type": "stun_immunity"
+				},
+				{
+					"timing": "during_strike",
+					"effect_type": "ignore_armor"
+				},
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 8
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Monstrous Strength",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 3
+					},
+					{
+						"timing": "now",
+						"effect_type": "strike"
+					}
+				]
+			}
+		},
+		{
+			"id": "nemesis-bluellama1_youredead",
+			"type": "ultra",
+			"display_name": "You're Dead",
+			"force_cost": 0,
+			"gauge_cost": 6,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 15,
+			"speed": 6,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 2,
+				"cancel_cost": -1,
+				"display_name": "Unstoppable",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "rangeup",
+						"amount": 0,
+						"amount2": 1
+					},
+					{
+						"timing": "now",
+						"effect_type": "choice",
+						"choice": [
+							{
+								"effect_type": "close",
+								"amount": 1,
+								"and": {
+									"effect_type": "strike"
+								}
+							},
+							{
+								"effect_type": "strike"
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"id": "nemesis-bluellama1_parasitedriver",
+			"type": "special",
+			"display_name": "Parasite Driver",
+			"force_cost": 1,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 7,
+			"speed": 5,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "hit",
+					"effect_type": "gain_advantage"
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Can't Escape",
+				"effects": [
+					{
+						"timing": "start_of_next_turn",
+						"effect_type": "draw",
+						"amount": 2,
+						"and": {
+							"effect_type": "close",
+							"amount": 2,
+							"and": {
+								"effect_type": "start_of_turn_strike"
+							}
+						}
+					},
+					{
+						"timing": "now",
+						"effect_type": "close",
+						"amount": 1
+					}
+				]
+			}
+		},
+		{
+			"id": "nemesis-bluellama1_ihavearocketlauncherbtw",
+			"type": "special",
+			"display_name": "I Have a Rocket Launcher btw",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 3,
+			"range_max": 5,
+			"power": 6,
+			"speed": 2,
+			"armor": 0,
+			"guard": 3,
+			"effects": [
+				{
+					"timing": "hit",
+					"effect_type": "push",
+					"amount": 2,
+					"and": {
+						"effect_type": "close",
+						"amount": 4
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Always Approaching",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 1,
+						"and": {
+							"effect_type": "armorup",
+							"amount": 1
+						}
+					},
+					{
+						"timing": "now",
+						"effect_type": "close",
+						"amount": 1
+					}
+				]
+			}
+		},
+		{
+			"id": "nemesis-bluellama1_unkillable",
+			"type": "special",
+			"display_name": "Unkillable",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 3,
+			"speed": 3,
+			"armor": 5,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "after",
+					"effect_type": "lose_all_armor"
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Umbrella's Creation",
+				"effects": [
+					{
+						"timing": "immediate",
+						"effect_type": "choice",
+						"choice": [
+							{
+								"effect_type": "close",
+								"amount": 1,
+								"and": {
+									"effect_type": "choice",
+									"choice": [
+										{
+											"effect_type": "spend_life",
+											"amount": 1,
+											"and": {
+												"effect_type": "draw",
+												"amount": 1
+											}
+										},
+										{
+											"effect_type": "spend_life",
+											"amount": 2,
+											"and": {
+												"effect_type": "draw",
+												"amount": 2
+											}
+										},
+										{
+											"effect_type": "spend_life",
+											"amount": 3,
+											"and": {
+												"effect_type": "draw",
+												"amount": 3
+											}
+										},
+										{
+											"effect_type": "spend_life",
+											"amount": 4,
+											"and": {
+												"effect_type": "draw",
+												"amount": 4
+											}
+										},
+										{
+											"effect_type": "pass"
+										}
+									]
+								},
+								"override_description": "Close 1"
+							},
+
+							{
+								"effect_type": "pass",
+								"and": {
+									"effect_type": "choice",
+									"choice": [
+										{
+											"effect_type": "spend_life",
+											"amount": 1,
+											"and": {
+												"effect_type": "draw",
+												"amount": 1
+											}
+										},
+										{
+											"effect_type": "spend_life",
+											"amount": 2,
+											"and": {
+												"effect_type": "draw",
+												"amount": 2
+											}
+										},
+										{
+											"effect_type": "spend_life",
+											"amount": 3,
+											"and": {
+												"effect_type": "draw",
+												"amount": 3
+											}
+										},
+										{
+											"effect_type": "spend_life",
+											"amount": 4,
+											"and": {
+												"effect_type": "draw",
+												"amount": 4
+											}
+										},
+										{
+											"effect_type": "pass"
+										}
+									]
+								},
+								"override_description": "Pass"
+							}
+						]
+					},
+					{
+						"timing": "hit",
+						"effect_type": "opponent_discard_random",
+						"amount": 1
+					}
+				]
+			}
+		},
+		{
+			"id": "nemesis-bluellama1_slam",
+			"type": "special",
+			"display_name": "Slam",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 7,
+			"speed": 2,
+			"armor": 2,
+			"guard": 2,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"effect_type": "ignore_push_and_pull"
+				},
+				{
+					"timing": "after",
+					"condition": "not_hit_opponent",
+					"effect_type": "take_damage",
+					"amount": 3
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Bullets are Meaningles",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "dodge_at_range",
+						"range_min": 4,
+						"range_max": 9
+					},
+					{
+						"timing": "start_of_next_turn",
+						"effect_type": "close",
+						"amount": 2,
+						"and": {
+							"effect_type": "discard_this"
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "nemesis-bluellama1_cannon",
+			"type": "special",
+			"display_name": "Cannon",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 3,
+			"power": 4,
+			"speed": 5,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"effect_type": "ignore_armor"
+				},
+				{
+					"timing": "hit",
+					"effect_type": "gain_advantage"
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Loud Footsteps",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 2
+					},
+					{
+						"timing": "now",
+						"effect_type": "force_for_effect",
+						"per_force_effect": {
+							"effect_type": "close",
+							"amount": 1
+						},
+						"overall_effect": null,
+						"force_max": 3
+					}
+				]
+			}
+		}
+	]
+}

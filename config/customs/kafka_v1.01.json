@@ -14,9 +14,17 @@
 	"overdrive_effect": {
 		"effect_type": "choice",
 		"choice": [
-			{ "effect_type": "push", "amount": 1 },
-			{ "effect_type": "pull", "amount": 1 },
-			{ "effect_type": "pass" }
+			{
+				"effect_type": "push",
+				"amount": 1
+			},
+			{
+				"effect_type": "pull",
+				"amount": 1
+			},
+			{
+				"effect_type": "pass"
+			}
 		]
 	},
 	"ability_effects": [
@@ -37,9 +45,17 @@
 					"timing": "hit",
 					"effect_type": "choice",
 					"choice": [
-						{ "effect_type": "push", "amount": 1 },
-						{ "effect_type": "pull", "amount": 1 },
-						{ "effect_type": "pass" }
+						{
+							"effect_type": "push",
+							"amount": 1
+						},
+						{
+							"effect_type": "pull",
+							"amount": 1
+						},
+						{
+							"effect_type": "pass"
+						}
 					]
 				}
 			},
@@ -107,9 +123,8 @@
 				"frame_count": 1
 			},
 			"metadata": {
-				"scaling": 0.28
+				"scaling": 0.25
 			}
-
 		},
 		"kafka_exceed": {
 			"idle": {
@@ -117,7 +132,7 @@
 				"frame_count": 1
 			},
 			"metadata": {
-				"scaling": 0.28
+				"scaling": 0.25
 			}
 		}
 	},
@@ -592,8 +607,14 @@
 					"timing": "after",
 					"effect_type": "choice",
 					"choice": [
-						{ "effect_type": "close", "amount": 1 },
-						{ "effect_type": "close", "amount": 2 }
+						{
+							"effect_type": "close",
+							"amount": 1
+						},
+						{
+							"effect_type": "close",
+							"amount": 2
+						}
 					]
 				}
 			],
@@ -607,8 +628,14 @@
 						"timing": "immediate",
 						"effect_type": "choice",
 						"choice": [
-							{ "effect_type": "advance", "amount": 1 },
-							{ "effect_type": "retreat", "amount": 1 }
+							{
+								"effect_type": "advance",
+								"amount": 1
+							},
+							{
+								"effect_type": "retreat",
+								"amount": 1
+							}
 						]
 					},
 					{

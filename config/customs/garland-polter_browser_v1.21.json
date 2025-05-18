@@ -67,7 +67,7 @@
 			"multiple_cards": true
 		},
 		"normals": {
-			"url": "https://i.imgur.com/pJw6uZi.png",
+			"url": "https://i.imgur.com/qe8dsDJ.jpeg",
 			"multiple_cards": true
 		},
 		"dissidia_bravery_reference": {
@@ -501,15 +501,20 @@
 				"effects": [
 					{
 						"timing": "hit",
-						"effect_type": "choose_discard",
-						"opponent": true,
-						"source": "gauge",
-						"limitation": "",
-						"destination": "discard",
-						"amount": 1,
-						"amount_min": 1,
+						"effect_type": "add_attack_effect",
+						"added_effect": {
+							"timing": "hit",
+							"effect_type": "add_boost_to_gauge_on_strike_cleanup",
+							"card_name": "Chain Cast"
+						},
 						"and": {
-							"effect_type": "add_boost_to_gauge_on_strike_cleanup"
+							"effect_type": "choose_discard",
+							"opponent": true,
+							"source": "gauge",
+							"limitation": "",
+							"destination": "discard",
+							"amount": 1,
+							"amount_min": 1
 						}
 					}
 				]
@@ -649,7 +654,7 @@
 								"override_description": "Close 3"
 							},
 							{
-								"effect_type": "pass",
+								"effect_type": "add_boost_to_gauge_on_strike_cleanup",
 								"override_description": "Pass"
 							}
 						],

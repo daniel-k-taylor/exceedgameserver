@@ -1,0 +1,747 @@
+{
+    "id": "felicity-crimsonfoxtail",
+    "season": -1,
+    "author": "CrimsonFoxtail",
+    "difficulty": "**",
+    "display_name": "Felicity Fitzgerald",
+    "exceed_cost": 3,
+    "exceed_to_overdrive": true,
+    "exceed_animation": "felicity-crimsonfoxtail_exceed",
+    "on_exceed": {
+        "effect_type": "choice",
+        "choice": [
+            {
+                "effect_type": "pass",
+                "override_description": "Strike a pose!"
+            }
+        ]
+    },
+    "overdrive_effect": {
+        "effect_type": "choice",
+        "choice": [
+            {
+                "effect_type": "advance",
+                "amount": 2
+            },
+            {
+                "effect_type": "retreat",
+                "amount": 2
+            }
+        ]
+    },
+    "character_action_default": [
+        {
+            "gauge_cost": 1,
+            "force_cost": 0,
+            "effect": {
+                "effect_type": "choice",
+                "choice": [
+                    {
+                        "effect_type": "advance",
+                        "amount": 1,
+                        "and": {
+                            "effect_type": "draw",
+                            "amount": 2
+                        },
+                        "override_description": "Advance 1"
+                    },
+                    {
+                        "effect_type": "retreat",
+                        "amount": 1,
+                        "and": {
+                            "effect_type": "draw",
+                            "amount": 2
+                        },
+                        "override_description": "Retreat 1"
+                    },
+                    {
+                        "effect_type": "pass",
+                        "and": {
+                            "effect_type": "draw",
+                            "amount": 2
+                        },
+                        "override_description": "Pass"
+                    }
+                ]
+            }
+        }
+    ],
+    "ability_effects": [
+        {
+            "timing": "on_reshuffle",
+            "condition": "manual_reshuffle",
+            "effect_type": "add_set_aside_card_to_deck",
+            "id": "felicity-crimsonfoxtail_frappeetincelante"
+        }
+    ],
+    "exceed_ability_effects": [
+        {
+            "timing": "on_reshuffle",
+            "condition": "manual_reshuffle",
+            "effect_type": "add_set_aside_card_to_deck",
+            "id": "felicity-crimsonfoxtail_frappeetincelante"
+        },
+        {
+            "timing": "set_strike",
+            "condition": "initiated_strike",
+            "effect_type": "force_for_effect",
+            "per_force_effect": null,
+            "overall_effect": {
+                "character_effect": true,
+                "effect_type": "add_attack_effect",
+                "added_effect": {
+                    "timing": "hit",
+                    "effect_type": "powerup",
+                    "amount": 1,
+                    "and": {
+                        "effect_type": "draw",
+                        "amount": 2
+                    }
+                }
+            }
+        }
+    ],
+    "image_resources": {
+        "character_default": {
+            "url": "https://i.imgur.com/iKgORiF.png",
+            "multiple_cards": false
+        },
+        "character_exceeded": {
+            "url": "https://i.imgur.com/AoBHJAv.png",
+            "multiple_cards": false
+        },
+        "cardback": {
+            "url": "https://i.imgur.com/33GsulJ.png",
+            "multiple_cards": false
+        },
+        "specials": {
+            "url": "https://i.imgur.com/f22WHO8.png",
+            "multiple_cards": true
+        },
+        "normals": {
+            "url": "https://i.imgur.com/TO9kuBp.png",
+            "multiple_cards": true
+        }
+    },
+    "custom_animations": {
+        "felicity-crimsonfoxtail": {
+            "idle": {
+                "url": "https://i.imgur.com/NMNnq9N.png",
+                "frame_count": 1
+            },
+            "metadata": {
+                "scaling": 0.25,
+                "flip": false,
+                "horizontal_offset": 0
+            }
+        },
+        "felicity-crimsonfoxtail_exceed": {
+            "idle": {
+                "url": "https://i.imgur.com/3cUlFck.png",
+                "frame_count": 1
+            },
+            "metadata": {
+                "scaling": 0.25,
+                "flip": false,
+                "horizontal_offset": -100
+            }
+        }
+    },
+    "portrait_image_url": "https://i.imgur.com/7XsYjGh.png",
+    "cards": [
+        {
+            "set_aside": true,
+            "definition_id": "felicity-crimsonfoxtail_frappeetincelante",
+            "image_name": "specials",
+            "image_index": 7
+        },
+        {
+            "definition_id": "felicity-crimsonfoxtail_coupdetonnerre",
+            "image_name": "specials",
+            "image_index": 5
+        },
+        {
+            "definition_id": "felicity-crimsonfoxtail_coupdetonnerre",
+            "image_name": "specials",
+            "image_index": 5
+        },
+        {
+            "definition_id": "felicity-crimsonfoxtail_coupdeclair",
+            "image_name": "specials",
+            "image_index": 6
+        },
+        {
+            "definition_id": "felicity-crimsonfoxtail_coupdeclair",
+            "image_name": "specials",
+            "image_index": 6
+        },
+        {
+            "definition_id": "felicity-crimsonfoxtail_etincelle",
+            "image_name": "specials",
+            "image_index": 0
+        },
+        {
+            "definition_id": "felicity-crimsonfoxtail_etincelle",
+            "image_name": "specials",
+            "image_index": 0
+        },
+        {
+            "definition_id": "felicity-crimsonfoxtail_lumiere",
+            "image_name": "specials",
+            "image_index": 1
+        },
+        {
+            "definition_id": "felicity-crimsonfoxtail_lumiere",
+            "image_name": "specials",
+            "image_index": 1
+        },
+        {
+            "definition_id": "felicity-crimsonfoxtail_foudre",
+            "image_name": "specials",
+            "image_index": 2
+        },
+        {
+            "definition_id": "felicity-crimsonfoxtail_foudre",
+            "image_name": "specials",
+            "image_index": 2
+        },
+        {
+            "definition_id": "felicity-crimsonfoxtail_arcelectrique",
+            "image_name": "specials",
+            "image_index": 3
+        },
+        {
+            "definition_id": "felicity-crimsonfoxtail_arcelectrique",
+            "image_name": "specials",
+            "image_index": 3
+        },
+        {
+            "definition_id": "felicity-crimsonfoxtail_ampere",
+            "image_name": "specials",
+            "image_index": 4
+        },
+        {
+            "definition_id": "felicity-crimsonfoxtail_ampere",
+            "image_name": "specials",
+            "image_index": 4
+        },
+        {
+            "definition_id": "standard_normal_grasp",
+            "image_name": "normals",
+            "image_index": 0
+        },
+        {
+            "definition_id": "standard_normal_grasp",
+            "image_name": "normals",
+            "image_index": 0
+        },
+        {
+            "definition_id": "standard_normal_cross",
+            "image_name": "normals",
+            "image_index": 1
+        },
+        {
+            "definition_id": "standard_normal_cross",
+            "image_name": "normals",
+            "image_index": 1
+        },
+        {
+            "definition_id": "standard_normal_assault",
+            "image_name": "normals",
+            "image_index": 2
+        },
+        {
+            "definition_id": "standard_normal_assault",
+            "image_name": "normals",
+            "image_index": 2
+        },
+        {
+            "definition_id": "standard_normal_dive",
+            "image_name": "normals",
+            "image_index": 3
+        },
+        {
+            "definition_id": "standard_normal_dive",
+            "image_name": "normals",
+            "image_index": 3
+        },
+        {
+            "definition_id": "standard_normal_spike",
+            "image_name": "normals",
+            "image_index": 4
+        },
+        {
+            "definition_id": "standard_normal_spike",
+            "image_name": "normals",
+            "image_index": 4
+        },
+        {
+            "definition_id": "standard_normal_sweep",
+            "image_name": "normals",
+            "image_index": 5
+        },
+        {
+            "definition_id": "standard_normal_sweep",
+            "image_name": "normals",
+            "image_index": 5
+        },
+        {
+            "definition_id": "standard_normal_focus",
+            "image_name": "normals",
+            "image_index": 6
+        },
+        {
+            "definition_id": "standard_normal_focus",
+            "image_name": "normals",
+            "image_index": 6
+        },
+        {
+            "definition_id": "standard_normal_block",
+            "image_name": "normals",
+            "image_index": 7
+        },
+        {
+            "definition_id": "standard_normal_block",
+            "image_name": "normals",
+            "image_index": 7
+        }
+    ],
+    "custom_card_definitions": [
+        {
+            "id": "felicity-crimsonfoxtail_etincelle",
+            "type": "special",
+            "display_name": "Étincelle",
+            "force_cost": 1,
+            "gauge_cost": 0,
+            "range_min": 2,
+            "range_max": 3,
+            "power": 2,
+            "speed": 6,
+            "armor": 0,
+            "guard": 0,
+            "effects": [
+                {
+                    "timing": "hit",
+                    "effect_type": "add_top_discard_to_gauge",
+                    "amount": 1
+                }
+            ],
+            "boost": {
+                "boost_type": "continuous",
+                "force_cost": 1,
+                "cancel_cost": -1,
+                "display_name": "Portée",
+                "effects": [
+                    {
+                        "timing": "during_strike",
+                        "effect_type": "rangeup",
+                        "amount": 0,
+                        "amount2": 1
+                    },
+                    {
+                        "timing": "now",
+                        "effect_type": "strike"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "felicity-crimsonfoxtail_lumiere",
+            "type": "special",
+            "display_name": "Lumiére",
+            "force_cost": 0,
+            "gauge_cost": 0,
+            "range_min": 3,
+            "range_max": 5,
+            "power": 3,
+            "speed": 3,
+            "armor": 0,
+            "guard": 5,
+            "effects": [
+                {
+                    "timing": "hit",
+                    "effect_type": "force_for_effect",
+                    "per_force_effect": null,
+                    "overall_effect": {
+                        "effect_type": "powerup",
+                        "amount": 2,
+                        "and": {
+                            "effect_type": "opponent_discard_random",
+                            "amount": 1
+                        }
+                    },
+                    "force_max": 2
+                },
+                {
+                    "timing": "after",
+                    "effect_type": "choice",
+                    "choice": [
+                        {
+                            "effect_type": "advance",
+                            "amount": 1
+                        },
+                        {
+                            "effect_type": "advance",
+                            "amount": 2
+                        },
+                        {
+                            "effect_type": "pass"
+                        }
+                    ]
+                }
+            ],
+            "boost": {
+                "boost_type": "immediate",
+                "force_cost": 0,
+                "cancel_cost": -1,
+                "display_name": "Survoltée",
+                "effects": [
+                    {
+                        "timing": "immediate",
+                        "effect_type": "choice",
+                        "choice": [
+                            {
+                                "effect_type": "advance",
+                                "amount": 3,
+                                "bonus_effect": {
+                                    "condition": "advanced_through",
+                                    "effect_type": "gauge_from_hand",
+                                    "min_amount": 0,
+                                    "max_amount": 1
+                                }
+                            },
+                            {
+                                "effect_type": "retreat",
+                                "amount": 3
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "felicity-crimsonfoxtail_foudre",
+            "type": "special",
+            "display_name": "Foudre",
+            "force_cost": 0,
+            "gauge_cost": 0,
+            "range_min": 1,
+            "range_max": 1,
+            "power": 3,
+            "speed": 5,
+            "armor": 0,
+            "guard": 0,
+            "effects": [
+                {
+                    "timing": "before",
+                    "effect_type": "close",
+                    "amount": 3
+                },
+                {
+                    "timing": "hit",
+                    "effect_type": "force_for_effect",
+                    "per_force_effect": null,
+                    "overall_effect": {
+                        "effect_type": "powerup",
+                        "amount": 2,
+                        "and": {
+                            "effect_type": "advance",
+                            "amount": 2
+                        }
+                    },
+                    "force_max": 2
+                }
+            ],
+            "boost": {
+                "boost_type": "continuous",
+                "force_cost": 1,
+                "cancel_cost": -1,
+                "display_name": "Férocité",
+                "effects": [
+                    {
+                        "timing": "during_strike",
+                        "effect_type": "powerup",
+                        "amount": 1
+                    },
+                    {
+                        "timing": "now",
+                        "effect_type": "choice",
+                        "choice": [
+                            {
+                                "effect_type": "advance",
+                                "amount": 1
+                            },
+                            {
+                                "effect_type": "retreat",
+                                "amount": 1
+                            }
+                        ]
+                    },
+                    {
+                        "timing": "hit",
+                        "effect_type": "gain_advantage"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "felicity-crimsonfoxtail_arcelectrique",
+            "type": "special",
+            "display_name": "Arc Électrique",
+            "force_cost": 0,
+            "gauge_cost": 0,
+            "range_min": 2,
+            "range_max": 3,
+            "power": 5,
+            "speed": 3,
+            "armor": 0,
+            "guard": 4,
+            "effects": [
+                {
+                    "timing": "hit",
+                    "effect_type": "push",
+                    "amount": 1
+                },
+                {
+                    "timing": "after",
+                    "effect_type": "choice",
+                    "choice": [
+                        {
+                            "effect_type": "retreat",
+                            "amount": 1
+                        },
+                        {
+                            "effect_type": "pass"
+                        }
+                    ]
+                }
+            ],
+            "boost": {
+                "boost_type": "immediate",
+                "force_cost": 1,
+                "cancel_cost": -1,
+                "display_name": "Légéreté",
+                "effects": [
+                    {
+                        "timing": "during_strike",
+                        "effect_type": "speedup",
+                        "amount": 1
+                    },
+                    {
+                        "timing": "now",
+                        "effect_type": "choice",
+                        "choice": [
+                            {
+                                "effect_type": "advance",
+                                "amount": 1
+                            },
+                            {
+                                "effect_type": "retreat",
+                                "amount": 1
+                            }
+                        ]
+                    },
+                    {
+                        "timing": "hit",
+                        "effect_type": "gain_advantage"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "felicity-crimsonfoxtail_ampere",
+            "type": "special",
+            "display_name": "Ampére",
+            "force_cost": 0,
+            "gauge_cost": 0,
+            "range_min": 1,
+            "range_max": 2,
+            "power": 3,
+            "speed": 3,
+            "armor": 3,
+            "guard": 3,
+            "effects": [
+                {
+                    "timing": "before",
+                    "condition": "was_hit",
+                    "effect_type": "advance",
+                    "amount": 2
+                },
+                {
+                    "timing": "after",
+                    "effect_type": "lose_all_armor"
+                }
+            ],
+            "boost": {
+                "boost_type": "immediate",
+                "force_cost": 0,
+                "cancel_cost": -1,
+                "display_name": "Petit Pas",
+                "effects": [
+                    {
+                        "timing": "immediate",
+                        "effect_type": "choice",
+                        "choice": [
+                            {
+                                "effect_type": "advance",
+                                "amount": 1
+                            },
+                            {
+                                "effect_type": "retreat",
+                                "amount": 1
+                            }
+                        ]
+                    },
+                    {
+                        "timing": "immediate",
+                        "effect_type": "bonus_action"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "felicity-crimsonfoxtail_coupdetonnerre",
+            "type": "ultra",
+            "display_name": "Coup De Tonnerre",
+            "force_cost": 0,
+            "gauge_cost": 4,
+            "range_min": 1,
+            "range_max": 2,
+            "power": 7,
+            "speed": 4,
+            "armor": 0,
+            "guard": 0,
+            "effects": [
+                {
+                    "timing": "before",
+                    "effect_type": "advance",
+                    "amount": 3
+                },
+                {
+                    "timing": "hit",
+                    "effect_type": "force_for_effect",
+                    "per_force_effect": {
+                        "combine_multiple_into_one": true,
+                        "effect_type": "powerup",
+                        "amount": 1
+                    },
+                    "overall_effect": null,
+                    "force_max": 3
+                }
+            ],
+            "boost": {
+                "boost_type": "continuous",
+                "force_cost": 1,
+                "cancel_cost": -1,
+                "display_name": "Élation",
+                "effects": [
+                    {
+                        "timing": "during_strike",
+                        "effect_type": "powerup",
+                        "amount": 1,
+                        "and": {
+                            "effect_type": "speedup",
+                            "amount": 1
+                        }
+                    },
+                    {
+                        "timing": "now",
+                        "effect_type": "strike"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "felicity-crimsonfoxtail_coupdeclair",
+            "type": "ultra",
+            "display_name": "Coup D'éclair",
+            "force_cost": 0,
+            "gauge_cost": 3,
+            "range_min": 1,
+            "range_max": 3,
+            "power": 3,
+            "speed": 7,
+            "armor": 0,
+            "guard": 0,
+            "effects": [
+                {
+                    "timing": "hit",
+                    "effect_type": "force_for_effect",
+                    "per_force_effect": {
+                        "combine_multiple_into_one": true,
+                        "effect_type": "powerup",
+                        "amount": 1
+                    },
+                    "overall_effect": null,
+                    "force_max": 2
+                }
+            ],
+            "boost": {
+                "boost_type": "continuous",
+                "force_cost": 3,
+                "cancel_cost": -1,
+                "display_name": "La Lumiére Verte",
+                "effects": [
+                    {
+                        "timing": "during_strike",
+                        "effect_type": "powerup",
+                        "amount": 1
+                    },
+                    {
+                        "timing": "now",
+                        "effect_type": "draw",
+                        "amount": 9
+                    }
+                ]
+            }
+        },
+        {
+            "id": "felicity-crimsonfoxtail_frappeetincelante",
+            "type": "ultra",
+            "display_name": "Frappe Étincelante",
+            "force_cost": 0,
+            "gauge_cost": 4,
+            "range_min": 1,
+            "range_max": 1,
+            "power": 6,
+            "speed": 5,
+            "armor": 0,
+            "guard": 0,
+            "effects": [
+                {
+                    "timing": "hit",
+                    "effect_type": "force_for_effect",
+                    "per_force_effect": {
+                        "combine_multiple_into_one": true,
+                        "effect_type": "powerup",
+                        "amount": 1
+                    },
+                    "overall_effect": null,
+                    "force_max": 9
+                }
+            ],
+            "boost": {
+                "boost_type": "immediate",
+                "force_cost": 0,
+                "cancel_cost": -1,
+                "display_name": "Burst",
+                "effects": [
+                    {
+                        "timing": "immediate",
+                        "effect_type": "draw",
+                        "amount": 2
+                    },
+                    {
+                        "timing": "immediate",
+                        "effect_type": "seal_this"
+                    },
+                    {
+                        "timing": "immediate",
+                        "effect_type": "bonus_action"
+                    }
+                ]
+            }
+        }
+    ]
+}
+
