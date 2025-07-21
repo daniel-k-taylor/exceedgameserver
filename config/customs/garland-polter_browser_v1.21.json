@@ -7,7 +7,7 @@
 	"buddy_cards": [
 		"dissidia_bravery_reference"
 	],
-	"no_buddy_card_graphics": false,
+	"no_buddy_card_graphics": true,
 	"exceed_cost": 4,
 	"on_exceed": {
 		"effect_type": "draw",

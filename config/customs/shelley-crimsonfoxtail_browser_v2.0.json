@@ -87,11 +87,11 @@
 	],
 	"image_resources": {
 		"character_default": {
-			"url": "https://i.imgur.com/YFz2sse.png",
+			"url": "https://i.imgur.com/O6XoI4d.png",
 			"multiple_cards": false
 		},
 		"character_exceeded": {
-			"url": "https://i.imgur.com/PoJWxOI.png",
+			"url": "https://i.imgur.com/YhCJPLQ.png",
 			"multiple_cards": false
 		},
 		"cardback": {
@@ -99,7 +99,7 @@
 			"multiple_cards": false
 		},
 		"specials": {
-			"url": "https://i.imgur.com/BWreiVI.png",
+			"url": "https://i.imgur.com/XblUdGw.png",
 			"multiple_cards": true
 		},
 		"normals": {
@@ -295,7 +295,7 @@
 			"id": "shelley-crimsonfoxtail_reuniontower",
 			"type": "special",
 			"display_name": "Reunion Tower",
-			"force_cost": 0,
+			"force_cost": 1,
 			"gauge_cost": 0,
 			"range_min": 1,
 			"range_max": 2,
@@ -562,7 +562,7 @@
 			],
 			"boost": {
 				"boost_type": "continuous",
-				"force_cost": 0,
+				"force_cost": 1,
 				"cancel_cost": -1,
 				"display_name": "Prometheus",
 				"effects": [

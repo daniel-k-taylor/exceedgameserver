@@ -1,0 +1,720 @@
+{
+	"id": "yun-rj",
+	"season": -1,
+	"author": "RJ",
+	"difficulty": "**",
+	"display_name": "Yun",
+	"exceed_cost": 3,
+	"on_exceed": {
+		"effect_type": "draw",
+		"amount": 1,
+		"and": {
+			"effect_type": "choice",
+			"choice": [
+				{
+					"effect_type": "advance",
+					"amount": 1
+				},
+				{
+					"effect_type": "pass"
+				}
+			]
+		}
+	},
+	"character_action_default": [
+		{
+			"gauge_cost": 0,
+			"force_cost": 0,
+			"effect": {
+				"effect_type": "advance",
+				"amount": 1,
+				"and": {
+					"effect_type": "force_for_effect",
+					"per_force_effect": {
+						"combine_multiple_into_one": true,
+						"effect_type": "draw",
+						"amount": 1
+					},
+					"overall_effect": null,
+					"force_max": -1
+				}
+			}
+		}
+	],
+	"character_action_exceeded": [
+		{
+			"gauge_cost": 0,
+			"force_cost": 0,
+			"effect": {
+				"effect_type": "advance",
+				"amount": 1,
+				"and": {
+					"effect_type": "force_for_effect",
+					"per_force_effect": {
+						"combine_multiple_into_one": true,
+						"effect_type": "draw",
+						"amount": 1
+					},
+					"overall_effect": null,
+					"force_max": -1,
+					"and": {
+						"effect_type": "choice",
+						"choice": [
+							{
+								"effect_type": "strike"
+							},
+							{
+								"effect_type": "pass"
+							}
+						]
+					}
+				}
+			}
+		}
+	],
+	"ability_effects": [
+		{
+			"NOTE": "CRITICAL",
+			"timing": "set_strike",
+			"effect_type": "gauge_for_effect",
+			"per_gauge_effect": null,
+			"overall_effect": {
+				"effect_type": "critical",
+				"character_effect": true
+			},
+			"gauge_max": 1
+		}
+	],
+	"exceed_ability_effects": [
+		{
+			"NOTE": "CRITICAL",
+			"timing": "set_strike",
+			"effect_type": "gauge_for_effect",
+			"per_gauge_effect": null,
+			"overall_effect": {
+				"effect_type": "critical",
+				"character_effect": true
+			},
+			"gauge_max": 1
+		}
+	],
+	"image_resources": {
+		"character_default": {
+			"url": "https://steamusercontent-a.akamaihd.net/ugc/2022725370120985869/F63E3519D319645B7D70D6CEDF9F7999B64D95A4/",
+			"multiple_cards": false
+		},
+		"character_exceeded": {
+			"url": "https://steamusercontent-a.akamaihd.net/ugc/2022725370120986008/C22135B9E7B0327D59B34E2275358D74E4FDF1A2/",
+			"multiple_cards": false
+		},
+		"cardback": {
+			"url": "https://i.imgur.com/igYZhPh.png",
+			"multiple_cards": false
+		},
+		"specials": {
+			"url": "https://steamusercontent-a.akamaihd.net/ugc/16046846887811331767/820E174B4989801A3BAADB95E8CF996F9F8AE044/",
+			"multiple_cards": true
+		},
+		"yun-rj_sourairengeki": {
+			"url": "https://steamusercontent-a.akamaihd.net/ugc/16177221949318101817/C7275D85EFAB6D0EF47FAC314C7C28C1ED312FFC/",
+			"multiple_cards": false
+		},
+		"yun-rj_youhou": {
+			"url": "https://steamusercontent-a.akamaihd.net/ugc/9388560501181255586/490B5039FC73ADD420A9C072734A65D38CBD2076/",
+			"multiple_cards": false
+		},
+		"yun-rj_zesshouhouhou": {
+			"url": "https://steamusercontent-a.akamaihd.net/ugc/12144192753025765681/AC8454EDC1E1C64967CDE55280258E4D77826C36/",
+			"multiple_cards": false
+		},
+		"normals": {
+			"url": "https://i.imgur.com/tXuqP40.jpeg",
+			"multiple_cards": true
+		}
+	},
+	"custom_animations": {
+		"yun-rj": {
+			"idle": {
+				"url": "https://i.imgur.com/97zCFBN.png",
+				"frame_count": 60
+			},
+			"walk_backward": {
+				"url": "https://i.imgur.com/eQCmgOs.png",
+				"frame_count": 7
+			},
+			"walk_forward": {
+				"url": "https://i.imgur.com/vZYGaNK.png",
+				"frame_count": 7
+			},
+			"metadata": {
+				"scaling": 2.2,
+				"flip": true,
+				"horizontal_offset": 4
+			}
+		}
+	},
+	"portrait_image_url": "https://i.imgur.com/6U1EDnW.png",
+	"cards": [
+		{
+			"definition_id": "yun-rj_sourairengeki",
+			"image_name": "yun-rj_sourairengeki",
+			"image_index": 0
+		},
+		{
+			"definition_id": "yun-rj_sourairengeki",
+			"image_name": "yun-rj_sourairengeki",
+			"image_index": 0
+		},
+		{
+			"definition_id": "yun-rj_youhou",
+			"image_name": "yun-rj_youhou",
+			"image_index": 0
+		},
+		{
+			"definition_id": "yun-rj_youhou",
+			"image_name": "yun-rj_youhou",
+			"image_index": 0
+		},
+		{
+			"definition_id": "yun-rj_zesshouhouhou",
+			"image_name": "yun-rj_zesshouhouhou",
+			"image_index": 0
+		},
+		{
+			"definition_id": "yun-rj_zesshouhouhou",
+			"image_name": "yun-rj_zesshouhouhou",
+			"image_index": 0
+		},
+		{
+			"definition_id": "yun-rj_tetsuzanko",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "yun-rj_tetsuzanko",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "yun-rj_nishoukyaku",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "yun-rj_nishoukyaku",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "yun-rj_kobokushi",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "yun-rj_kobokushi",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "yun-rj_zenpoutenshin",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "yun-rj_zenpoutenshin",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		}
+	],
+	"custom_card_definitions": [
+		{
+			"id": "yun-rj_zesshouhouhou",
+			"type": "special",
+			"display_name": "Zesshou Houhou",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 3,
+			"speed": 5,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"condition": "is_critical",
+					"effect_type": "powerup",
+					"amount": 1,
+					"and": {
+						"effect_type": "speedup",
+						"amount": 1
+					}
+				},
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 2
+				},
+				{
+					"timing": "hit",
+					"effect_type": "gain_advantage"
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Quick Attack",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "speedup",
+						"amount": 1
+					},
+					{
+						"timing": "now",
+						"effect_type": "strike"
+					}
+				]
+			}
+		},
+		{
+			"id": "yun-rj_tetsuzanko",
+			"type": "special",
+			"display_name": "Tetsu Zanko",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 4,
+			"speed": 4,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"condition": "is_critical",
+					"effect_type": "guardup",
+					"amount": 4
+				},
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 3,
+					"bonus_effect": {
+						"condition": "not_full_close",
+						"effect_type": "add_attack_effect",
+						"added_effect": {
+							"timing": "hit",
+							"effect_type": "draw",
+							"amount": 2
+						},
+						"negative_condition_effect": {
+							"is_negative_effect": true,
+							"effect_type": "add_attack_effect",
+							"added_effect": {
+								"timing": "hit",
+								"effect_type": "gain_advantage"
+							}
+						}
+					},
+					"override_description": "Close 3"
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Target Combo",
+				"effects": [
+					{
+						"timing": "now",
+						"effect_type": "draw",
+						"amount": 2
+					},
+					{
+						"timing": "hit",
+						"effect_type": "gain_advantage"
+					}
+				]
+			}
+		},
+		{
+			"id": "yun-rj_nishoukyaku",
+			"type": "special",
+			"display_name": "Nishou Kyaku",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 4,
+			"speed": 7,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"condition": "is_critical",
+					"effect_type": "close",
+					"amount": 1
+				},
+				{
+					"timing": "hit",
+					"effect_type": "gain_advantage",
+					"and": {
+						"effect_type": "push",
+						"amount": 1
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Overhead",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "ignore_armor"
+					},
+					{
+						"timing": "now",
+						"effect_type": "strike"
+					},
+					{
+						"timing": "after",
+						"effect_type": "add_boost_to_gauge_on_strike_cleanup",
+						"card_name": "Nishou Kyaku"
+					}
+				]
+			}
+		},
+		{
+			"id": "yun-rj_kobokushi",
+			"type": "special",
+			"display_name": "Kobokushi",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 6,
+			"speed": 3,
+			"armor": 0,
+			"guard": 5,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"condition": "is_critical",
+					"effect_type": "ignore_armor"
+				},
+				{
+					"timing": "hit",
+					"effect_type": "opponent_discard_random",
+					"amount": 1,
+					"and": {
+						"effect_type": "gain_advantage"
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Ki Charge",
+				"effects": [
+					{
+						"timing": "immediate",
+						"effect_type": "add_to_gauge_boost_play_cleanup"
+					}
+				]
+			}
+		},
+		{
+			"id": "yun-rj_zenpoutenshin",
+			"type": "special",
+			"display_name": "Zenpou Tenshin",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 3,
+			"speed": 5,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"effect_type": "ignore_guard"
+				},
+				{
+					"timing": "hit",
+					"condition": "is_critical",
+					"effect_type": "draw",
+					"amount": 3
+				},
+				{
+					"timing": "hit",
+					"effect_type": "advance",
+					"amount": 1,
+					"and": {
+						"effect_type": "push",
+						"amount": 1
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Taunt",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 1,
+						"and": {
+							"effect_type": "speedup",
+							"amount": 1
+						}
+					},
+					{
+						"timing": "start_of_next_turn",
+						"effect_type": "draw",
+						"amount": 1,
+						"and": {
+							"effect_type": "add_to_gauge_immediately"
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "yun-rj_sourairengeki",
+			"type": "ultra",
+			"display_name": "Sourai Rengeki",
+			"force_cost": 0,
+			"gauge_cost": 2,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 4,
+			"speed": 6,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "advance",
+					"amount": 1
+				},
+				{
+					"timing": "hit",
+					"effect_type": "push",
+					"amount": 2,
+					"and": {
+						"effect_type": "opponent_discard_random",
+						"amount": 1
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Senpuukyaku",
+				"effects": [
+					{
+						"timing": "before",
+						"effect_type": "choice",
+						"choice": [
+							{
+								"effect_type": "close",
+								"amount": 1
+							},
+							{
+								"effect_type": "pass"
+							}
+						]
+					},
+					{
+						"timing": "after",
+						"condition": "opponent_stunned",
+						"effect_type": "push",
+						"amount": 1,
+						"and": {
+							"effect_type": "close",
+							"amount": 1
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "yun-rj_youhou",
+			"type": "ultra",
+			"display_name": "You Hou",
+			"force_cost": 0,
+			"gauge_cost": 4,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 7,
+			"speed": 5,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 1
+				},
+				{
+					"timing": "hit",
+					"effect_type": "push",
+					"amount": 2
+				},
+				{
+					"timing": "after",
+					"condition": "opponent_stunned",
+					"effect_type": "gain_advantage"
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Genei Jin",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "speedup",
+						"amount": 2
+					},
+					{
+						"timing": "hit",
+						"effect_type": "gain_advantage",
+						"and": {
+							"effect_type": "choice",
+							"choice": [
+								{
+									"effect_type": "push",
+									"amount": 1,
+									"and": {
+										"effect_type": "choice",
+										"choice": [
+											{
+												"effect_type": "close",
+												"amount": 1
+											},
+											{
+												"effect_type": "retreat",
+												"amount": 1
+											}
+										]
+									},
+									"override_description": "Push 1"
+								},
+								{
+									"effect_type": "pull",
+									"amount": 1,
+									"and": {
+										"effect_type": "choice",
+										"choice": [
+											{
+												"effect_type": "close",
+												"amount": 1
+											},
+											{
+												"effect_type": "retreat",
+												"amount": 1
+											}
+										]
+									},
+									"override_description": "Pull 1"
+								}
+							]
+						}
+					}
+				]
+			}
+		}
+	]
+}

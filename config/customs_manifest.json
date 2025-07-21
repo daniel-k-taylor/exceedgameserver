@@ -1,12 +1,14 @@
 {
-    "version": 22,
+    "version": 28,
     "customs": [
         "Goku.json",
         "Junko V2.json",
-        "charlotta.json",
+        "charlotta-vigmatu_browser_v3.0.json",
         "djeeta.json",
+        "dk-boateye_browser_v1.0.json",
         "dlcrider-otleo_browser_v2.0.json",
-        "felicity-crimsonfoxtail_browser_v1.0.json",
+        "emiko-vigmatu_browser_v1.0.json",
+        "felicity-crimsonfoxtail_browser_v2.01.json",
         "garland-polter_browser_v1.21.json",
         "gran.json",
         "haohmaru-bluellama1_browser_v1.0.json",
@@ -18,10 +20,11 @@
         "peppino-bluellama1_browser_v1.0.json",
         "percival.json",
         "reimu.json",
-        "shelley-crimsonfoxtail_browser_v1.01.json",
+        "shelley-crimsonfoxtail_browser_v2.0.json",
         "terry.json",
         "tevi.json",
-        "vane.json"
+        "vane.json",
+        "yun-rj_browser_v2.0.json"
     ],
-    "last_write_time": "2025-05-17T18:41:43.987003"
+    "last_write_time": "2025-07-20T21:37:06.300019"
 }

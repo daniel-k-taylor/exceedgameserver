@@ -8,13 +8,11 @@
     "exceed_to_overdrive": true,
     "exceed_animation": "felicity-crimsonfoxtail_exceed",
     "on_exceed": {
-        "effect_type": "choice",
-        "choice": [
-            {
-                "effect_type": "pass",
-                "override_description": "Strike a pose!"
-            }
-        ]
+        "effect_type": "draw",
+        "amount": 1,
+        "and": {
+            "effect_type": "strike"
+        }
     },
     "overdrive_effect": {
         "effect_type": "choice",
@@ -98,16 +96,17 @@
                         "amount": 2
                     }
                 }
-            }
+            },
+            "force_max": 1
         }
     ],
     "image_resources": {
         "character_default": {
-            "url": "https://i.imgur.com/iKgORiF.png",
+            "url": "https://i.imgur.com/FSUn1fz.png",
             "multiple_cards": false
         },
         "character_exceeded": {
-            "url": "https://i.imgur.com/AoBHJAv.png",
+            "url": "https://i.imgur.com/Ak9sKIg.png",
             "multiple_cards": false
         },
         "cardback": {
@@ -115,7 +114,7 @@
             "multiple_cards": false
         },
         "specials": {
-            "url": "https://i.imgur.com/f22WHO8.png",
+            "url": "https://i.imgur.com/mSilGV2.png",
             "multiple_cards": true
         },
         "normals": {
@@ -143,7 +142,7 @@
             "metadata": {
                 "scaling": 0.25,
                 "flip": false,
-                "horizontal_offset": -100
+                "horizontal_offset": 0
             }
         }
     },
@@ -426,7 +425,7 @@
             "force_cost": 0,
             "gauge_cost": 0,
             "range_min": 1,
-            "range_max": 1,
+            "range_max": 2,
             "power": 3,
             "speed": 5,
             "armor": 0,
@@ -434,22 +433,13 @@
             "effects": [
                 {
                     "timing": "before",
-                    "effect_type": "close",
-                    "amount": 3
-                },
-                {
-                    "timing": "hit",
-                    "effect_type": "force_for_effect",
-                    "per_force_effect": null,
-                    "overall_effect": {
-                        "effect_type": "powerup",
-                        "amount": 2,
-                        "and": {
-                            "effect_type": "advance",
-                            "amount": 2
-                        }
-                    },
-                    "force_max": 2
+                    "effect_type": "advance",
+                    "amount": 2,
+                    "bonus_effect": {
+                        "condition": "advanced_through",
+                        "effect_type": "draw",
+                        "amount": 1
+                    }
                 }
             ],
             "boost": {
@@ -517,7 +507,7 @@
                 }
             ],
             "boost": {
-                "boost_type": "immediate",
+                "boost_type": "continuous",
                 "force_cost": 1,
                 "cancel_cost": -1,
                 "display_name": "Légéreté",
@@ -574,7 +564,7 @@
             ],
             "boost": {
                 "boost_type": "immediate",
-                "force_cost": 0,
+                "force_cost": 1,
                 "cancel_cost": -1,
                 "display_name": "Petit Pas",
                 "effects": [
@@ -591,6 +581,11 @@
                                 "amount": 1
                             }
                         ]
+                    },
+                    {
+                        "timing": "immediate",
+                        "effect_type": "draw",
+                        "amount": 1
                     },
                     {
                         "timing": "immediate",
@@ -637,16 +632,16 @@
                 "effects": [
                     {
                         "timing": "during_strike",
-                        "effect_type": "powerup",
-                        "amount": 1,
-                        "and": {
-                            "effect_type": "speedup",
-                            "amount": 1
-                        }
+                        "effect_type": "speedup",
+                        "amount": 1
                     },
                     {
                         "timing": "now",
                         "effect_type": "strike"
+                    },
+                    {
+                        "timing": "hit",
+                        "effect_type": "gain_advantage"
                     }
                 ]
             }
@@ -657,9 +652,9 @@
             "display_name": "Coup D'éclair",
             "force_cost": 0,
             "gauge_cost": 3,
-            "range_min": 1,
+            "range_min": 2,
             "range_max": 3,
-            "power": 3,
+            "power": 2,
             "speed": 7,
             "armor": 0,
             "guard": 0,
