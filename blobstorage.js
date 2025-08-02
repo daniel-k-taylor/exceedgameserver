@@ -58,11 +58,37 @@ async function download_file_from_blob_storage(container, filename) {
 }
 
 export async function get_server_config() {
-    return download_file_from_blob_storage(CONFIG_CONTAINER_NAME, CONFIG_BLOB_NAME);
+    if (!process.env.AZURE_STORAGE_CONNECTION_STRING) {
+        console.warn('Azure Storage Connection string not found, falling back to default config');
+        // Fallback to default config if no connection string is provided.
+        // The default config is in config/server_config.json.
+        // Assume running locally so use the dir of this file as the base path.
+        const __dirname = path.dirname(new URL(import.meta.url).pathname);
+        let fallback_dir = path.join(__dirname, 'config')
+        // Remove leading slash if it exists (for Windows compatibility)
+        if (fallback_dir.startsWith('\\')) {
+            fallback_dir = fallback_dir.slice(1);
+        }
+        const defaultConfigPath = path.join(fallback_dir, CONFIG_BLOB_NAME);
+        console.log('Using default config path:', defaultConfigPath);
+        if (fs.existsSync(defaultConfigPath)) {
+            const defaultConfig = fs.readFileSync(defaultConfigPath, 'utf8');
+            return JSON5.default.parse(defaultConfig);
+        } else {
+            console.error('Default config file not found:', defaultConfigPath);
+            return null;
+        }
+    } else {
+        return download_file_from_blob_storage(CONFIG_CONTAINER_NAME, CONFIG_BLOB_NAME);
+    }
 }
 
 export async function update_customs_db(current_customs_db) {
 
+    if (!process.env.AZURE_STORAGE_CONNECTION_STRING) {
+        console.warn('Azure Storage Connection string not found, skipping customs update');
+        return current_customs_db;
+    }
     var current_version = current_customs_db["version"]
 
     // Download the latest manifest from blob storage.
@@ -153,6 +179,10 @@ export async function upload_to_blob_storage(matchData) {
 }
 
 export async function checkAndDownloadUpdatedGameZip(gamePath) {
+    if (!process.env.AZURE_STORAGE_CONNECTION_STRING) {
+        console.warn('Azure Storage Connection string not found, skipping game zip update');
+        return;
+    }
     const localPath = path.join(gamePath, GAME_ZIP_BLOB_NAME);
     try {
         const containerClient = getContainerClient(GAME_ZIP_CONTAINER_NAME);
