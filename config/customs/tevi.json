@@ -12,7 +12,7 @@
 				"effect_type": "boost_multiple",
 				"limitation": "",
 				"amount": 1,
-				"valid_zones": ["hand", "discard", "gauge"]
+				"valid_zones": ["hand"]
 			},
 			{ "effect_type": "pass" }
 		]
@@ -63,7 +63,7 @@
 			"multiple_cards": false
 		},
 		"character_exceeded": {
-			"url": "https://i.imgur.com/X26c6ax.png",
+			"url": "https://i.imgur.com/s4NpUaE.png",
 			"multiple_cards": false
 		},
 		"cardback": {
@@ -71,7 +71,7 @@
 			"multiple_cards": false
 		},
 		"specials": {
-			"url": "https://i.imgur.com/yOjl8zJ.png",
+			"url": "https://i.imgur.com/lvhTcJA.png",
 			"multiple_cards": true
 		},
 		"normals": {
