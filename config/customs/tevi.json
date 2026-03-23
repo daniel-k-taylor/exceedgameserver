@@ -89,7 +89,7 @@
 				"scaling": 1.8
 			}
 
-		},
+		}
 	},
 	"portrait_image_url": "https://i.imgur.com/KtyTGxb.png",
 	"cards": [
@@ -293,7 +293,7 @@
 							"amount": 1,
 							"and": {
 								"effect_type": "armorup",
-								"amount": 1,
+								"amount": 1
 							}
 						}
 					},
@@ -487,7 +487,8 @@
 							"effect_type": "choice",
 							"choice": [
 								{ "effect_type": "advance", "amount": 1 },
-								{ "effect_type": "retreat", "amount": 1 }
+								{ "effect_type": "retreat", "amount": 1 },
+								{ "effect_type": "pass" }
 							]
 						}
 					},
