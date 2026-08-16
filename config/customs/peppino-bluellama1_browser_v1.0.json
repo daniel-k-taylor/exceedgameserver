@@ -1,0 +1,1846 @@
+{
+	"id": "peppino-bluellama1",
+	"season": -1,
+	"author": "Bluellama1",
+	"difficulty": "***",
+	"display_name": "Peppino Spaghetti",
+	"exceed_cost": 5,
+	"on_exceed": {
+		"effect_type": "draw",
+		"amount": 3,
+		"and": {
+			"effect_type": "strike"
+		}
+	},
+	"ability_effects": [
+		{
+			"timing": "end_of_turn",
+			"condition": "did_end_of_turn_draw",
+			"effect_type": "pass",
+			"silent_effect": true,
+			"and": {
+				"condition": "boost_in_play",
+				"effect_type": "discard_continuous_boost",
+				"amount": 1,
+				"required": true,
+				"limitation": "mine",
+				"overall_effect": {
+					"condition": "boost_in_play",
+					"effect_type": "discard_continuous_boost",
+					"amount": 1,
+					"required": true,
+					"limitation": "mine",
+					"overall_effect": {
+						"effect_type": "add_top_discard_to_gauge",
+						"amount": 1,
+						"and": {
+							"condition": "boost_in_play",
+							"effect_type": "discard_continuous_boost",
+							"amount": 1,
+							"required": true,
+							"limitation": "mine",
+							"overall_effect": {
+								"effect_type": "add_top_discard_to_gauge",
+								"amount": 1,
+								"and": {
+									"condition": "boost_in_play",
+									"effect_type": "discard_continuous_boost",
+									"amount": 1,
+									"required": true,
+									"limitation": "mine",
+									"overall_effect": {
+										"effect_type": "add_top_discard_to_gauge",
+										"amount": 1,
+										"and": {
+											"condition": "boost_in_play",
+											"effect_type": "discard_continuous_boost",
+											"amount": 1,
+											"required": true,
+											"limitation": "mine",
+											"overall_effect": {
+												"effect_type": "add_top_discard_to_gauge",
+												"amount": 1,
+												"and": {
+													"condition": "boost_in_play",
+													"effect_type": "discard_continuous_boost",
+													"amount": 1,
+													"required": true,
+													"limitation": "mine",
+													"overall_effect": {
+														"effect_type": "add_top_discard_to_gauge",
+														"amount": 1,
+														"and": {
+															"condition": "boost_in_play",
+															"effect_type": "discard_continuous_boost",
+															"amount": 1,
+															"required": true,
+															"limitation": "mine",
+															"overall_effect": {
+																"effect_type": "add_top_discard_to_gauge",
+																"amount": 1,
+																"and": {
+																	"condition": "boost_in_play",
+																	"effect_type": "discard_continuous_boost",
+																	"amount": 1,
+																	"required": true,
+																	"limitation": "mine",
+																	"overall_effect": {
+																		"effect_type": "add_top_discard_to_gauge",
+																		"amount": 1,
+																		"and": {
+																			"condition": "boost_in_play",
+																			"effect_type": "discard_continuous_boost",
+																			"amount": 1,
+																			"required": true,
+																			"limitation": "mine",
+																			"overall_effect": {
+																				"effect_type": "add_top_discard_to_gauge",
+																				"amount": 1,
+																				"and": {
+																					"condition": "boost_in_play",
+																					"effect_type": "discard_continuous_boost",
+																					"amount": 1,
+																					"required": true,
+																					"limitation": "mine",
+																					"overall_effect": {
+																						"effect_type": "add_top_discard_to_gauge",
+																						"amount": 1,
+																						"and": {
+																							"condition": "boost_in_play",
+																							"effect_type": "discard_continuous_boost",
+																							"amount": 1,
+																							"required": true,
+																							"limitation": "mine",
+																							"overall_effect": {
+																								"effect_type": "add_top_discard_to_gauge",
+																								"amount": 1,
+																								"and": {
+																									"condition": "boost_in_play",
+																									"effect_type": "discard_continuous_boost",
+																									"amount": 1,
+																									"required": true,
+																									"limitation": "mine",
+																									"overall_effect": {
+																										"effect_type": "add_top_discard_to_gauge",
+																										"amount": 1,
+																										"and": {
+																											"condition": "boost_in_play",
+																											"effect_type": "discard_continuous_boost",
+																											"amount": 1,
+																											"required": true,
+																											"limitation": "mine",
+																											"overall_effect": {
+																												"effect_type": "add_top_discard_to_gauge",
+																												"amount": 1,
+																												"and": {
+																													"condition": "boost_in_play",
+																													"effect_type": "discard_continuous_boost",
+																													"amount": 1,
+																													"required": true,
+																													"limitation": "mine",
+																													"overall_effect": {
+																														"effect_type": "add_top_discard_to_gauge",
+																														"amount": 1,
+																														"and": {
+																															"condition": "boost_in_play",
+																															"effect_type": "discard_continuous_boost",
+																															"amount": 1,
+																															"required": true,
+																															"limitation": "mine",
+																															"overall_effect": {
+																																"effect_type": "add_top_discard_to_gauge",
+																																"amount": 1,
+																																"and": {
+																																	"condition": "boost_in_play",
+																																	"effect_type": "discard_continuous_boost",
+																																	"amount": 1,
+																																	"required": true,
+																																	"limitation": "mine",
+																																	"overall_effect": {
+																																		"effect_type": "add_top_discard_to_gauge",
+																																		"amount": 1,
+																																		"and": {
+																																			"condition": "boost_in_play",
+																																			"effect_type": "discard_continuous_boost",
+																																			"amount": 1,
+																																			"required": true,
+																																			"limitation": "mine",
+																																			"overall_effect": {
+																																				"effect_type": "add_top_discard_to_gauge",
+																																				"amount": 1,
+																																				"and": {
+																																					"condition": "boost_in_play",
+																																					"effect_type": "discard_continuous_boost",
+																																					"amount": 1,
+																																					"required": true,
+																																					"limitation": "mine",
+																																					"overall_effect": {
+																																						"effect_type": "add_top_discard_to_gauge",
+																																						"amount": 1,
+																																						"and": {
+																																							"condition": "boost_in_play",
+																																							"effect_type": "discard_continuous_boost",
+																																							"amount": 1,
+																																							"required": true,
+																																							"limitation": "mine",
+																																							"overall_effect": {
+																																								"effect_type": "add_top_discard_to_gauge",
+																																								"amount": 1
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"timing": "cleanup",
+			"condition": "is_special_or_ultra_attack",
+			"effect_type": "pass",
+			"silent_effect": true,
+			"and": {
+				"condition": "hit_opponent",
+				"effect_type": "boost_this_then_sustain",
+				"and": {
+					"condition": "not_stunned",
+					"effect_type": "sustain_all_boosts"
+				},
+				"negative_condition_effect": {
+					"is_negative_effect": true,
+					"condition": "boost_in_play",
+					"effect_type": "pass",
+					"silent_effect": true,
+					"and": {
+						"condition": "not_stunned",
+						"effect_type": "sustain_all_boosts"
+					}
+				}
+			},
+			"negative_condition_effect": {
+				"is_negative_effect": true,
+				"condition": "not_stunned",
+				"effect_type": "sustain_all_boosts"
+			},
+			"override_description": "If you were not stunned, sustain all your Continuous Boosts."
+		}
+	],
+	"exceed_ability_effects": [
+		{
+			"timing": "end_of_turn",
+			"condition": "did_end_of_turn_draw",
+			"effect_type": "pass",
+			"silent_effect": true,
+			"and": {
+				"condition": "boost_in_play",
+				"effect_type": "discard_continuous_boost",
+				"amount": 1,
+				"required": true,
+				"limitation": "mine",
+				"overall_effect": {
+					"effect_type": "add_top_discard_to_gauge",
+					"amount": 1,
+					"and": {
+						"condition": "boost_in_play",
+						"effect_type": "discard_continuous_boost",
+						"amount": 1,
+						"required": true,
+						"limitation": "mine",
+						"overall_effect": {
+							"effect_type": "add_top_discard_to_gauge",
+							"amount": 1,
+							"and": {
+								"condition": "boost_in_play",
+								"effect_type": "discard_continuous_boost",
+								"amount": 1,
+								"required": true,
+								"limitation": "mine",
+								"overall_effect": {
+									"effect_type": "add_top_discard_to_gauge",
+									"amount": 1,
+									"and": {
+										"condition": "boost_in_play",
+										"effect_type": "discard_continuous_boost",
+										"amount": 1,
+										"required": true,
+										"limitation": "mine",
+										"overall_effect": {
+											"effect_type": "add_top_discard_to_gauge",
+											"amount": 1,
+											"and": {
+												"condition": "boost_in_play",
+												"effect_type": "discard_continuous_boost",
+												"amount": 1,
+												"required": true,
+												"limitation": "mine",
+												"overall_effect": {
+													"effect_type": "add_top_discard_to_gauge",
+													"amount": 1,
+													"and": {
+														"condition": "boost_in_play",
+														"effect_type": "discard_continuous_boost",
+														"amount": 1,
+														"required": true,
+														"limitation": "mine",
+														"overall_effect": {
+															"effect_type": "add_top_discard_to_gauge",
+															"amount": 1,
+															"and": {
+																"condition": "boost_in_play",
+																"effect_type": "discard_continuous_boost",
+																"amount": 1,
+																"required": true,
+																"limitation": "mine",
+																"overall_effect": {
+																	"effect_type": "add_top_discard_to_gauge",
+																	"amount": 1,
+																	"and": {
+																		"condition": "boost_in_play",
+																		"effect_type": "discard_continuous_boost",
+																		"amount": 1,
+																		"required": true,
+																		"limitation": "mine",
+																		"overall_effect": {
+																			"effect_type": "add_top_discard_to_gauge",
+																			"amount": 1,
+																			"and": {
+																				"condition": "boost_in_play",
+																				"effect_type": "discard_continuous_boost",
+																				"amount": 1,
+																				"required": true,
+																				"limitation": "mine",
+																				"overall_effect": {
+																					"effect_type": "add_top_discard_to_gauge",
+																					"amount": 1,
+																					"and": {
+																						"condition": "boost_in_play",
+																						"effect_type": "discard_continuous_boost",
+																						"amount": 1,
+																						"required": true,
+																						"limitation": "mine",
+																						"overall_effect": {
+																							"effect_type": "add_top_discard_to_gauge",
+																							"amount": 1,
+																							"and": {
+																								"condition": "boost_in_play",
+																								"effect_type": "discard_continuous_boost",
+																								"amount": 1,
+																								"required": true,
+																								"limitation": "mine",
+																								"overall_effect": {
+																									"effect_type": "add_top_discard_to_gauge",
+																									"amount": 1,
+																									"and": {
+																										"condition": "boost_in_play",
+																										"effect_type": "discard_continuous_boost",
+																										"amount": 1,
+																										"required": true,
+																										"limitation": "mine",
+																										"overall_effect": {
+																											"effect_type": "add_top_discard_to_gauge",
+																											"amount": 1,
+																											"and": {
+																												"condition": "boost_in_play",
+																												"effect_type": "discard_continuous_boost",
+																												"amount": 1,
+																												"required": true,
+																												"limitation": "mine",
+																												"overall_effect": {
+																													"effect_type": "add_top_discard_to_gauge",
+																													"amount": 1,
+																													"and": {
+																														"condition": "boost_in_play",
+																														"effect_type": "discard_continuous_boost",
+																														"amount": 1,
+																														"required": true,
+																														"limitation": "mine",
+																														"overall_effect": {
+																															"effect_type": "add_top_discard_to_gauge",
+																															"amount": 1,
+																															"and": {
+																																"condition": "boost_in_play",
+																																"effect_type": "discard_continuous_boost",
+																																"amount": 1,
+																																"required": true,
+																																"limitation": "mine",
+																																"overall_effect": {
+																																	"effect_type": "add_top_discard_to_gauge",
+																																	"amount": 1,
+																																	"and": {
+																																		"condition": "boost_in_play",
+																																		"effect_type": "discard_continuous_boost",
+																																		"amount": 1,
+																																		"required": true,
+																																		"limitation": "mine",
+																																		"overall_effect": {
+																																			"effect_type": "add_top_discard_to_gauge",
+																																			"amount": 1,
+																																			"and": {
+																																				"condition": "boost_in_play",
+																																				"effect_type": "discard_continuous_boost",
+																																				"amount": 1,
+																																				"required": true,
+																																				"limitation": "mine",
+																																				"overall_effect": {
+																																					"effect_type": "add_top_discard_to_gauge",
+																																					"amount": 1,
+																																					"and": {
+																																						"condition": "boost_in_play",
+																																						"effect_type": "discard_continuous_boost",
+																																						"amount": 1,
+																																						"required": true,
+																																						"limitation": "mine",
+																																						"overall_effect": {
+																																							"effect_type": "add_top_discard_to_gauge",
+																																							"amount": 1
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"timing": "cleanup",
+			"condition": "is_special_or_ultra_attack",
+			"effect_type": "pass",
+			"silent_effect": true,
+			"and": {
+				"condition": "hit_opponent",
+				"effect_type": "boost_this_then_sustain",
+				"and": {
+					"condition": "not_stunned",
+					"effect_type": "sustain_all_boosts"
+				},
+				"negative_condition_effect": {
+					"is_negative_effect": true,
+					"condition": "boost_in_play",
+					"effect_type": "pass",
+					"silent_effect": true,
+					"and": {
+						"condition": "not_stunned",
+						"effect_type": "sustain_all_boosts"
+					}
+				}
+			},
+			"negative_condition_effect": {
+				"is_negative_effect": true,
+				"condition": "boost_in_play",
+				"effect_type": "pass",
+				"silent_effect": true,
+				"and": {
+					"condition": "not_stunned",
+					"effect_type": "sustain_all_boosts"
+				}
+			},
+			"override_description": "If you were not stunned, sustain all your Continuous Boosts."
+		}
+	],
+	"image_resources": {
+		"character_default": {
+			"url": "https://steamusercontent-a.akamaihd.net/ugc/2042990556612503512/0D674C65DB46E2BD31CBD752235996344E7F33A5/",
+			"multiple_cards": false
+		},
+		"character_exceeded": {
+			"url": "https://steamusercontent-a.akamaihd.net/ugc/2042990556612503780/EC6258BA3231AB1468E89661D326034245B34317/",
+			"multiple_cards": false
+		},
+		"cardback": {
+			"url": "https://i.imgur.com/igYZhPh.png",
+			"multiple_cards": false
+		},
+		"specials": {
+			"url": "https://i.imgur.com/wyGEUuE.png",
+			"multiple_cards": true
+		},
+		"normals": {
+			"url": "https://i.imgur.com/1pnJnEb.png",
+			"multiple_cards": true
+		}
+	},
+	"custom_animations": {
+		"peppino-bluellama1": {
+			"idle": {
+				"url": "https://i.imgur.com/gB88Izu.png",
+				"frame_count": 10
+			},
+			"walk_forward": {
+				"url": "https://i.imgur.com/95OH0jp.png",
+				"frame_count": 5
+			},
+			"walk_backward": {
+				"url": "https://i.imgur.com/aqEQ3DI.png",
+				"frame_count": 5
+			},
+			"run": {
+				"url": "https://i.imgur.com/1zXdNtV.png",
+				"frame_count": 4
+			},
+			"dash_back": {
+				"url": "https://i.imgur.com/HsRjUde.png",
+				"frame_count": 4
+			}, 
+			"metadata": {
+				"scaling": 2.5,
+				"flip": true,
+				"horizontal_offset": 3
+			}
+
+		}
+	},
+	"portrait_image_url": "https://i.imgur.com/y73yAfr.png",
+	"cards": [
+		{
+			"definition_id": "peppino-bluellama1_mach3",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "peppino-bluellama1_mach3",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "peppino-bluellama1_supertaunt",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "peppino-bluellama1_supertaunt",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "peppino-bluellama1_shoulderbash",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "peppino-bluellama1_shoulderbash",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "peppino-bluellama1_shotgunblast",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "peppino-bluellama1_shotgunblast",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "peppino-bluellama1_ghostlyflight",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "peppino-bluellama1_ghostlyflight",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "peppino-bluellama1_dashngrab",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "peppino-bluellama1_dashngrab",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "peppino-bluellama1_risinguppercut",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "peppino-bluellama1_risinguppercut",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "peppino-bluellama1_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "peppino-bluellama1_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "peppino-bluellama1_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "peppino-bluellama1_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "peppino-bluellama1_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "peppino-bluellama1_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		}
+	],
+	"custom_card_definitions": [
+		{
+			"id": "peppino-bluellama1_mach3",
+			"type": "ultra",
+			"display_name": "Mach 3",
+			"force_cost": 0,
+			"gauge_cost": 4,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 4,
+			"speed": 4,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"condition": "range",
+					"condition_amount": 1,
+					"effect_type": "close",
+					"amount": 8,
+					"negative_condition_effect": {
+						"is_negative_effect": true,
+						"condition": "range",
+						"condition_amount": 2,
+						"effect_type": "close",
+						"amount": 8,
+						"and": {
+							"effect_type": "powerup",
+							"amount": 1
+						},
+						"negative_condition_effect": {
+							"is_negative_effect": true,
+							"condition": "range",
+							"condition_amount": 3,
+							"effect_type": "close",
+							"amount": 8,
+							"and": {
+								"effect_type": "powerup",
+								"amount": 2
+							},
+							"negative_condition_effect": {
+								"is_negative_effect": true,
+								"condition": "range",
+								"condition_amount": 4,
+								"effect_type": "close",
+								"amount": 8,
+								"and": {
+									"effect_type": "powerup",
+									"amount": 3
+								},
+								"negative_condition_effect": {
+									"is_negative_effect": true,
+									"condition": "range",
+									"condition_amount": 5,
+									"effect_type": "close",
+									"amount": 8,
+									"and": {
+										"effect_type": "powerup",
+										"amount": 4
+									},
+									"negative_condition_effect": {
+										"is_negative_effect": true,
+										"condition": "range",
+										"condition_amount": 6,
+										"effect_type": "close",
+										"amount": 8,
+										"and": {
+											"effect_type": "powerup",
+											"amount": 5
+										},
+										"negative_condition_effect": {
+											"is_negative_effect": true,
+											"condition": "range",
+											"condition_amount": 7,
+											"effect_type": "close",
+											"amount": 8,
+											"and": {
+												"effect_type": "powerup",
+												"amount": 6
+											},
+											"negative_condition_effect": {
+												"is_negative_effect": true,
+												"condition": "range",
+												"condition_amount": 8,
+												"effect_type": "close",
+												"amount": 8,
+												"and": {
+													"effect_type": "powerup",
+													"amount": 7
+												},
+												"negative_condition_effect": {
+													"is_negative_effect": true,
+													"condition": "range",
+													"condition_amount": 9,
+													"effect_type": "close",
+													"amount": 8,
+													"and": {
+														"effect_type": "powerup",
+														"amount": 8
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"override_description": "Close 8. For each space moved this way, gain +1 Power."
+				},
+				{
+					"timing": "hit",
+					"effect_type": "advance",
+					"amount": 8
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Rocket Booster",
+				"effects": [
+					{
+						"timing": "before",
+						"effect_type": "close",
+						"amount": 4,
+						"and": {
+							"effect_type": "add_boost_to_gauge_on_strike_cleanup",
+							"card_name": "Mach 3"
+						}
+					},
+					{
+						"timing": "end_of_turn",
+						"condition": "did_end_of_turn_draw",
+						"effect_type": "add_to_gauge_immediately"
+					}
+				]
+			}
+		},
+		{
+			"id": "peppino-bluellama1_supertaunt",
+			"type": "ultra",
+			"display_name": "Super Taunt",
+			"force_cost": 0,
+			"gauge_cost": 6,
+			"gauge_cost_reduction": "per_boost_in_play",
+			"range_min": 1,
+			"range_max": 8,
+			"power": 5,
+			"speed": 6,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"condition": "boost_in_play",
+					"effect_type": "choice",
+					"choice": [
+						{
+							"condition": "boost_in_play",
+							"effect_type": "discard_continuous_boost",
+							"amount": 1,
+							"required": true,
+							"limitation": "mine",
+							"overall_effect": {
+								"condition": "boost_in_play",
+								"effect_type": "choice",
+								"choice": [
+									{
+										"condition": "boost_in_play",
+										"effect_type": "discard_continuous_boost",
+										"amount": 1,
+										"required": true,
+										"limitation": "mine",
+										"overall_effect": {
+											"condition": "boost_in_play",
+											"effect_type": "choice",
+											"choice": [
+												{
+													"condition": "boost_in_play",
+													"effect_type": "discard_continuous_boost",
+													"amount": 1,
+													"required": true,
+													"limitation": "mine",
+													"overall_effect": {
+														"condition": "boost_in_play",
+														"effect_type": "choice",
+														"choice": [
+															{
+																"condition": "boost_in_play",
+																"effect_type": "discard_continuous_boost",
+																"amount": 1,
+																"required": true,
+																"limitation": "mine",
+																"overall_effect": {
+																	"condition": "boost_in_play",
+																	"effect_type": "choice",
+																	"choice": [
+																		{
+																			"condition": "boost_in_play",
+																			"effect_type": "discard_continuous_boost",
+																			"amount": 1,
+																			"required": true,
+																			"limitation": "mine",
+																			"overall_effect": {
+																				"condition": "boost_in_play",
+																				"effect_type": "choice",
+																				"choice": [
+																					{
+																						"condition": "boost_in_play",
+																						"effect_type": "discard_continuous_boost",
+																						"amount": 1,
+																						"required": true,
+																						"limitation": "mine",
+																						"overall_effect": {
+																							"condition": "boost_in_play",
+																							"effect_type": "choice",
+																							"choice": [
+																								{
+																									"condition": "boost_in_play",
+																									"effect_type": "discard_continuous_boost",
+																									"amount": 1,
+																									"required": true,
+																									"limitation": "mine",
+																									"overall_effect": {
+																										"condition": "boost_in_play",
+																										"effect_type": "choice",
+																										"choice": [
+																											{
+																												"condition": "boost_in_play",
+																												"effect_type": "discard_continuous_boost",
+																												"amount": 1,
+																												"required": true,
+																												"limitation": "mine",
+																												"overall_effect": {
+																													"condition": "boost_in_play",
+																													"effect_type": "choice",
+																													"choice": [
+																														{
+																															"condition": "boost_in_play",
+																															"effect_type": "discard_continuous_boost",
+																															"amount": 1,
+																															"required": true,
+																															"limitation": "mine",
+																															"overall_effect": {
+																																"condition": "boost_in_play",
+																																"effect_type": "choice",
+																																"choice": [
+																																	{
+																																		"condition": "boost_in_play",
+																																		"effect_type": "discard_continuous_boost",
+																																		"amount": 1,
+																																		"required": true,
+																																		"limitation": "mine",
+																																		"overall_effect": {
+																																			"condition": "boost_in_play",
+																																			"effect_type": "choice",
+																																			"choice": [
+																																				{
+																																					"condition": "boost_in_play",
+																																					"effect_type": "discard_continuous_boost",
+																																					"amount": 1,
+																																					"required": true,
+																																					"limitation": "mine",
+																																					"overall_effect": {
+																																						"condition": "boost_in_play",
+																																						"effect_type": "choice",
+																																						"choice": [
+																																							{
+																																								"condition": "boost_in_play",
+																																								"effect_type": "discard_continuous_boost",
+																																								"amount": 1,
+																																								"required": true,
+																																								"limitation": "mine",
+																																								"overall_effect": {
+																																									"condition": "boost_in_play",
+																																									"effect_type": "choice",
+																																									"choice": [
+																																										{
+																																											"condition": "boost_in_play",
+																																											"effect_type": "discard_continuous_boost",
+																																											"amount": 1,
+																																											"required": true,
+																																											"limitation": "mine",
+																																											"overall_effect": {
+																																												"condition": "boost_in_play",
+																																												"effect_type": "choice",
+																																												"choice": [
+																																													{
+																																														"condition": "boost_in_play",
+																																														"effect_type": "discard_continuous_boost",
+																																														"amount": 1,
+																																														"required": true,
+																																														"limitation": "mine",
+																																														"overall_effect": {
+																																															"condition": "boost_in_play",
+																																															"effect_type": "choice",
+																																															"choice": [
+																																																{
+																																																	"condition": "boost_in_play",
+																																																	"effect_type": "discard_continuous_boost",
+																																																	"amount": 1,
+																																																	"required": true,
+																																																	"limitation": "mine",
+																																																	"overall_effect": {
+																																																		"condition": "boost_in_play",
+																																																		"effect_type": "choice",
+																																																		"choice": [
+																																																			{
+																																																				"condition": "boost_in_play",
+																																																				"effect_type": "discard_continuous_boost",
+																																																				"amount": 1,
+																																																				"required": true,
+																																																				"limitation": "mine",
+																																																				"overall_effect": {
+																																																					"condition": "boost_in_play",
+																																																					"effect_type": "choice",
+																																																					"choice": [
+																																																						{
+																																																							"condition": "boost_in_play",
+																																																							"effect_type": "discard_continuous_boost",
+																																																							"amount": 1,
+																																																							"required": true,
+																																																							"limitation": "mine",
+																																																							"overall_effect": {
+																																																								"condition": "boost_in_play",
+																																																								"effect_type": "choice",
+																																																								"choice": [
+																																																									{
+																																																										"condition": "boost_in_play",
+																																																										"effect_type": "discard_continuous_boost",
+																																																										"amount": 1,
+																																																										"required": true,
+																																																										"limitation": "mine",
+																																																										"overall_effect": {
+																																																											"condition": "boost_in_play",
+																																																											"effect_type": "choice",
+																																																											"choice": [
+																																																												{
+																																																													"condition": "boost_in_play",
+																																																													"effect_type": "discard_continuous_boost",
+																																																													"amount": 1,
+																																																													"required": true,
+																																																													"limitation": "mine",
+																																																													"overall_effect": {
+																																																														"effect_type": "draw",
+																																																														"amount": 38
+																																																													},
+																																																													"negative_condition_effect": {
+																																																														"is_negative_effect": true,
+																																																														"effect_type": "draw",
+																																																														"amount": 36
+																																																													},
+																																																													"override_description": "Discard an additional continuous boost in play for an additional Draw 2."
+																																																												},
+																																																												{
+																																																													"effect_type": "draw",
+																																																													"amount": 36
+																																																												}
+																																																											],
+																																																											"negative_condition_effect": {
+																																																												"is_negative_effect": true,
+																																																												"effect_type": "draw",
+																																																												"amount": 36
+																																																											}
+																																																										},
+																																																										"negative_condition_effect": {
+																																																											"is_negative_effect": true,
+																																																											"effect_type": "draw",
+																																																											"amount": 34
+																																																										},
+																																																										"override_description": "Discard an additional continuous boost in play for an additional Draw 2."
+																																																									},
+																																																									{
+																																																										"effect_type": "draw",
+																																																										"amount": 34
+																																																									}
+																																																								],
+																																																								"negative_condition_effect": {
+																																																									"is_negative_effect": true,
+																																																									"effect_type": "draw",
+																																																									"amount": 34
+																																																								}
+																																																							},
+																																																							"negative_condition_effect": {
+																																																								"is_negative_effect": true,
+																																																								"effect_type": "draw",
+																																																								"amount": 32
+																																																							},
+																																																							"override_description": "Discard an additional continuous boost in play for an additional Draw 2."
+																																																						},
+																																																						{
+																																																							"effect_type": "draw",
+																																																							"amount": 32
+																																																						}
+																																																					],
+																																																					"negative_condition_effect": {
+																																																						"is_negative_effect": true,
+																																																						"effect_type": "draw",
+																																																						"amount": 32
+																																																					}
+																																																				},
+																																																				"negative_condition_effect": {
+																																																					"is_negative_effect": true,
+																																																					"effect_type": "draw",
+																																																					"amount": 30
+																																																				},
+																																																				"override_description": "Discard an additional continuous boost in play for an additional Draw 2."
+																																																			},
+																																																			{
+																																																				"effect_type": "draw",
+																																																				"amount": 30
+																																																			}
+																																																		],
+																																																		"negative_condition_effect": {
+																																																			"is_negative_effect": true,
+																																																			"effect_type": "draw",
+																																																			"amount": 30
+																																																		}
+																																																	},
+																																																	"negative_condition_effect": {
+																																																		"is_negative_effect": true,
+																																																		"effect_type": "draw",
+																																																		"amount": 28
+																																																	},
+																																																	"override_description": "Discard an additional continuous boost in play for an additional Draw 2."
+																																																},
+																																																{
+																																																	"effect_type": "draw",
+																																																	"amount": 28
+																																																}
+																																															],
+																																															"negative_condition_effect": {
+																																																"is_negative_effect": true,
+																																																"effect_type": "draw",
+																																																"amount": 28
+																																															}
+																																														},
+																																														"negative_condition_effect": {
+																																															"is_negative_effect": true,
+																																															"effect_type": "draw",
+																																															"amount": 26
+																																														},
+																																														"override_description": "Discard an additional continuous boost in play for an additional Draw 2."
+																																													},
+																																													{
+																																														"effect_type": "draw",
+																																														"amount": 26
+																																													}
+																																												],
+																																												"negative_condition_effect": {
+																																													"is_negative_effect": true,
+																																													"effect_type": "draw",
+																																													"amount": 26
+																																												}
+																																											},
+																																											"negative_condition_effect": {
+																																												"is_negative_effect": true,
+																																												"effect_type": "draw",
+																																												"amount": 24
+																																											},
+																																											"override_description": "Discard an additional continuous boost in play for an additional Draw 2."
+																																										},
+																																										{
+																																											"effect_type": "draw",
+																																											"amount": 24
+																																										}
+																																									],
+																																									"negative_condition_effect": {
+																																										"is_negative_effect": true,
+																																										"effect_type": "draw",
+																																										"amount": 24
+																																									}
+																																								},
+																																								"negative_condition_effect": {
+																																									"is_negative_effect": true,
+																																									"effect_type": "draw",
+																																									"amount": 22
+																																								},
+																																								"override_description": "Discard an additional continuous boost in play for an additional Draw 2."
+																																							},
+																																							{
+																																								"effect_type": "draw",
+																																								"amount": 22
+																																							}
+																																						],
+																																						"negative_condition_effect": {
+																																							"is_negative_effect": true,
+																																							"effect_type": "draw",
+																																							"amount": 22
+																																						}
+																																					},
+																																					"negative_condition_effect": {
+																																						"is_negative_effect": true,
+																																						"effect_type": "draw",
+																																						"amount": 20
+																																					},
+																																					"override_description": "Discard an additional continuous boost in play for an additional Draw 2."
+																																				},
+																																				{
+																																					"effect_type": "draw",
+																																					"amount": 20
+																																				}
+																																			],
+																																			"negative_condition_effect": {
+																																				"is_negative_effect": true,
+																																				"effect_type": "draw",
+																																				"amount": 20
+																																			}
+																																		},
+																																		"negative_condition_effect": {
+																																			"is_negative_effect": true,
+																																			"effect_type": "draw",
+																																			"amount": 18
+																																		},
+																																		"override_description": "Discard an additional continuous boost in play for an additional Draw 2."
+																																	},
+																																	{
+																																		"effect_type": "draw",
+																																		"amount": 18
+																																	}
+																																],
+																																"negative_condition_effect": {
+																																	"is_negative_effect": true,
+																																	"effect_type": "draw",
+																																	"amount": 18
+																																}
+																															},
+																															"negative_condition_effect": {
+																																"is_negative_effect": true,
+																																"effect_type": "draw",
+																																"amount": 16
+																															},
+																															"override_description": "Discard an additional continuous boost in play for an additional Draw 2."
+																														},
+																														{
+																															"effect_type": "draw",
+																															"amount": 16
+																														}
+																													],
+																													"negative_condition_effect": {
+																														"is_negative_effect": true,
+																														"effect_type": "draw",
+																														"amount": 16
+																													}
+																												},
+																												"negative_condition_effect": {
+																													"is_negative_effect": true,
+																													"effect_type": "draw",
+																													"amount": 14
+																												},
+																												"override_description": "Discard an additional continuous boost in play for an additional Draw 2."
+																											},
+																											{
+																												"effect_type": "draw",
+																												"amount": 14
+																											}
+																										],
+																										"negative_condition_effect": {
+																											"is_negative_effect": true,
+																											"effect_type": "draw",
+																											"amount": 14
+																										}
+																									},
+																									"negative_condition_effect": {
+																										"is_negative_effect": true,
+																										"effect_type": "draw",
+																										"amount": 12
+																									},
+																									"override_description": "Discard an additional continuous boost in play for an additional Draw 2."
+																								},
+																								{
+																									"effect_type": "draw",
+																									"amount": 12
+																								}
+																							],
+																							"negative_condition_effect": {
+																								"is_negative_effect": true,
+																								"effect_type": "draw",
+																								"amount": 12
+																							}
+																						},
+																						"negative_condition_effect": {
+																							"is_negative_effect": true,
+																							"effect_type": "draw",
+																							"amount": 10
+																						},
+																						"override_description": "Discard an additional continuous boost in play for an additional Draw 2."
+																					},
+																					{
+																						"effect_type": "draw",
+																						"amount": 10
+																					}
+																				],
+																				"negative_condition_effect": {
+																					"is_negative_effect": true,
+																					"effect_type": "draw",
+																					"amount": 10
+																				}
+																			},
+																			"negative_condition_effect": {
+																				"is_negative_effect": true,
+																				"effect_type": "draw",
+																				"amount": 8
+																			},
+																			"override_description": "Discard an additional continuous boost in play for an additional Draw 2."
+																		},
+																		{
+																			"effect_type": "draw",
+																			"amount": 8
+																		}
+																	],
+																	"negative_condition_effect": {
+																		"is_negative_effect": true,
+																		"effect_type": "draw",
+																		"amount": 8
+																	}
+																},
+																"negative_condition_effect": {
+																	"is_negative_effect": true,
+																	"effect_type": "draw",
+																	"amount": 6
+																},
+																"override_description": "Discard an additional continuous boost in play for an additional Draw 2."
+															},
+															{
+																"effect_type": "draw",
+																"amount": 6
+															}
+														],
+														"negative_condition_effect": {
+															"is_negative_effect": true,
+															"effect_type": "draw",
+															"amount": 6
+														}
+													},
+													"negative_condition_effect": {
+														"is_negative_effect": true,
+														"effect_type": "draw",
+														"amount": 4
+													},
+													"override_description": "Discard an additional continuous boost in play for an additional Draw 2."
+												},
+												{
+													"effect_type": "draw",
+													"amount": 4
+												}
+											],
+											"negative_condition_effect": {
+												"is_negative_effect": true,
+												"effect_type": "draw",
+												"amount": 4
+											}
+										},
+										"negative_condition_effect": {
+											"is_negative_effect": true,
+											"effect_type": "draw",
+											"amount": 2
+										},
+										"override_description": "Discard an additional continuous boost in play for an additional Draw 2."
+									},
+									{
+										"effect_type": "draw",
+										"amount": 2
+									}
+								],
+								"negative_condition_effect": {
+									"is_negative_effect": true,
+									"effect_type": "draw",
+									"amount": 2
+								}
+							},
+							"override_description": "Discard a continuous boost in play and Draw 2"
+						},
+						{
+							"effect_type": "pass"
+						}
+					]
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Delicious Pepper Pizza",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "attack_is_ex"
+					},
+					{
+						"timing": "cleanup",
+						"condition": "min_cards_in_gauge",
+						"condition_amount": 1,
+						"effect_type": "choice",
+						"choice": [
+							{
+								"effect_type": "gauge_for_effect",
+								"required": true,
+								"per_gauge_effect": null,
+								"overall_effect": {
+									"effect_type": "sustain_this"
+								},
+								"gauge_max": 1
+							},
+							{
+								"effect_type": "discard_this"
+							}
+						],
+						"negative_condition_effect": {
+							"is_negative_effect": true,
+							"effect_type": "discard_this"
+						},
+						"override_description": "Cleanup: You may spend 1 Gauge. If you do, sustain this. Otherwise, discard it."
+					},
+					{
+						"timing": "end_of_turn",
+						"condition": "did_end_of_turn_draw",
+						"effect_type": "add_to_gauge_immediately"
+					}
+				]
+			}
+		},
+		{
+			"id": "peppino-bluellama1_shoulderbash",
+			"type": "special",
+			"display_name": "Shoulder Bash",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 5,
+			"speed": 2,
+			"armor": 0,
+			"guard": 3,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 2
+				},
+				{
+					"timing": "hit",
+					"effect_type": "push",
+					"amount": 2
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Trusty Weenie Mount",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "speedup",
+						"amount": 1,
+						"and": {
+							"effect_type": "guardup",
+							"amount": 2
+						}
+					},
+					{
+						"timing": "hit",
+						"effect_type": "draw",
+						"amount": 1
+					}
+				]
+			}
+		},
+		{
+			"id": "peppino-bluellama1_shotgunblast",
+			"type": "special",
+			"display_name": "Shotgun Blast",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 3,
+			"range_max": 5,
+			"power": 6,
+			"speed": 2,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "hit",
+					"effect_type": "draw",
+					"amount": 2,
+					"and": {
+						"effect_type": "gain_advantage"
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Quick Attack",
+				"effects": [
+					{
+						"timing": "set_strike",
+						"effect_type": "force_for_effect",
+						"per_force_effect": null,
+						"overall_effect": {
+							"effect_type": "add_attack_effect",
+							"added_effect": {
+								"timing": "before",
+								"effect_type": "choice",
+								"choice": [
+									{
+										"effect_type": "advance",
+										"amount": 1
+									},
+									{
+										"effect_type": "retreat",
+										"amount": 1
+									}
+								]
+							}
+						},
+						"force_max": 1
+					}
+				]
+			}
+		},
+		{
+			"id": "peppino-bluellama1_ghostlyflight",
+			"type": "special",
+			"display_name": "Ghostly Flight",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 4,
+			"speed": 3,
+			"armor": 0,
+			"guard": 4,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "advance",
+					"amount": 2
+				},
+				{
+					"timing": "hit",
+					"condition": "moved_past",
+					"effect_type": "move_to_any_space",
+					"move_min": 0,
+					"move_max": 2
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Chicken Wings [Warning: SPICY!!]",
+				"effects": [
+					{
+						"timing": "set_strike",
+						"condition": "initiated_strike",
+						"effect_type": "force_for_effect",
+						"per_force_effect": null,
+						"overall_effect": {
+							"effect_type": "powerup",
+							"amount": 1,
+							"and": {
+								"effect_type": "add_attack_effect",
+								"added_effect": {
+									"timing": "before",
+									"effect_type": "advance",
+									"amount": 2
+								}
+							}
+						},
+						"force_max": 2
+					}
+				]
+			}
+		},
+		{
+			"id": "peppino-bluellama1_dashngrab",
+			"type": "special",
+			"display_name": "Dash n Grab",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 3,
+			"speed": 5,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 3
+				},
+				{
+					"timing": "hit",
+					"effect_type": "choice",
+					"choice": [
+						{
+							"effect_type": "push",
+							"amount": 2
+						},
+						{
+							"effect_type": "pull",
+							"amount": 2
+						}
+					]
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Knight in Shining Armor",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 1,
+						"and": {
+							"effect_type": "armorup",
+							"amount": 1
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "peppino-bluellama1_risinguppercut",
+			"type": "special",
+			"display_name": "Rising Uppercut",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 4,
+			"speed": 6,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "hit",
+					"effect_type": "draw",
+					"amount": 2
+				},
+				{
+					"timing": "after",
+					"effect_type": "choice",
+					"choice": [
+						{
+							"effect_type": "advance",
+							"amount": 1
+						},
+						{
+							"effect_type": "retreat",
+							"amount": 1
+						}
+					]
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Covered in Sticky Cheese",
+				"effects": [
+					{
+						"timing": "set_strike",
+						"effect_type": "force_for_effect",
+						"per_force_effect": null,
+						"overall_effect": {
+							"effect_type": "add_attack_effect",
+							"added_effect": {
+								"timing": "during_strike",
+								"effect_type": "speedup",
+								"amount": -2,
+								"and": {
+									"effect_type": "stun_immunity"
+								}
+							}
+						},
+						"force_max": 1
+					}
+				]
+			}
+		},
+		{
+			"id": "peppino-bluellama1_normal_grasp",
+			"type": "normal",
+			"display_name": "Grasp",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 3,
+			"speed": 7,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "hit",
+					"effect_type": "choice",
+					"choice": [
+						{
+							"effect_type": "push",
+							"amount": 1
+						},
+						{
+							"effect_type": "push",
+							"amount": 2
+						},
+						{
+							"effect_type": "pull",
+							"amount": 1
+						},
+						{
+							"effect_type": "pull",
+							"amount": 2
+						}
+					]
+				},
+				{
+					"timing": "cleanup",
+					"condition": "exceeded",
+					"effect_type": "pass",
+					"silent_effect": true,
+					"and": {
+						"condition": "hit_opponent",
+						"effect_type": "boost_this_then_sustain"
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Fierce",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 2
+					}
+				]
+			}
+		},
+		{
+			"id": "peppino-bluellama1_normal_spike",
+			"type": "normal",
+			"display_name": "Spike",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 2,
+			"range_max": 3,
+			"power": 5,
+			"speed": 3,
+			"armor": 0,
+			"guard": 4,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"effect_type": "ignore_armor",
+					"and": {
+						"effect_type": "ignore_guard"
+					}
+				},
+				{
+					"timing": "cleanup",
+					"condition": "exceeded",
+					"effect_type": "pass",
+					"silent_effect": true,
+					"and": {
+						"condition": "hit_opponent",
+						"effect_type": "boost_this_then_sustain"
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Defend",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "armorup",
+						"amount": 1
+					},
+					{
+						"timing": "during_strike",
+						"effect_type": "guardup",
+						"amount": 3
+					}
+				]
+			}
+		},
+		{
+			"id": "peppino-bluellama1_normal_sweep",
+			"type": "normal",
+			"display_name": "Sweep",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 3,
+			"power": 6,
+			"speed": 2,
+			"armor": 0,
+			"guard": 6,
+			"effects": [
+				{
+					"timing": "hit",
+					"effect_type": "opponent_discard_random",
+					"amount": 1
+				},
+				{
+					"timing": "cleanup",
+					"condition": "exceeded",
+					"effect_type": "pass",
+					"silent_effect": true,
+					"and": {
+						"condition": "hit_opponent",
+						"effect_type": "boost_this_then_sustain"
+					}
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Light",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "speedup",
+						"amount": 2
+					}
+				]
+			}
+		}
+	]
+}

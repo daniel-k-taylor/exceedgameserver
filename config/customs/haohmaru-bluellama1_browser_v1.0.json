@@ -1,0 +1,648 @@
+{
+	"id": "haohmaru-bluellama1",
+	"season": -1,
+	"author": "Bluellama1",
+	"difficulty": "**",
+	"display_name": "Haohmaru",
+	"exceed_cost": 3,
+	"on_exceed": {
+		"effect_type": "draw",
+		"amount": 2,
+		"and": {
+			"effect_type": "choice",
+			"choice": [
+				{
+					"effect_type": "close",
+					"amount": 1
+				},
+				{
+					"effect_type": "close",
+					"amount": 2
+				},
+				{
+					"effect_type": "pass"
+				}
+			]
+		}
+	},
+	"character_action_default": [
+		{
+			"gauge_cost": 0,
+			"force_cost": 1,
+			"effect": {
+				"effect_type": "close",
+				"amount": 1,
+				"and": {
+					"effect_type": "draw",
+					"amount": 1
+				}
+			}
+		}
+	],
+	"character_action_exceeded": [
+		{
+			"gauge_cost": 0,
+			"force_cost": 1,
+			"effect": {
+				"effect_type": "choice",
+				"choice": [
+					{
+						"effect_type": "close",
+						"amount": 1,
+						"and": {
+							"effect_type": "draw",
+							"amount": 1,
+							"and": {
+								"effect_type": "choice",
+								"choice": [
+									{
+										"effect_type": "strike",
+										"override_description": "Strike with +1 Power"
+									},
+									{
+										"effect_type": "pass"
+									}
+								]
+							}
+						},
+						"override_description": "Close 1"
+					},
+					{
+						"effect_type": "pass",
+						"and": {
+							"effect_type": "draw",
+							"amount": 1,
+							"and": {
+								"effect_type": "choice",
+								"choice": [
+									{
+										"effect_type": "strike",
+										"override_description": "Strike with +1 Power"
+
+									},
+									{
+										"effect_type": "pass"
+									}
+								]
+							}
+						},
+						"override_description": "Pass"
+					}
+				]
+			}
+		}
+	],
+	"exceed_ability_effects": [
+		{
+			"timing": "set_strike",
+			"condition": "used_character_action",
+			"condition_details": [ "exceed", 0 ],
+			"character_effect": true,
+			"effect_type": "powerup",
+			"amount": 1
+		}
+	],
+	"image_resources": {
+		"character_default": {
+			"url": "https://i.imgur.com/UpBJnuV.png",
+			"multiple_cards": false
+		},
+		"character_exceeded": {
+			"url": "https://i.imgur.com/TJMdUAM.png",
+			"multiple_cards": false
+		},
+		"cardback": {
+			"url": "https://i.imgur.com/igYZhPh.png",
+			"multiple_cards": false
+		},
+		"specials": {
+			"url": "https://i.imgur.com/SQYhDvi.png",
+			"multiple_cards": true
+		},
+		"normals": {
+			"url": "https://i.imgur.com/tXuqP40.jpeg",
+			"multiple_cards": true
+		}
+	},
+	"custom_animations": {
+		"haohmaru-bluellama1": {
+			"idle": {
+				"url": "https://i.imgur.com/Rky6fVf.png",
+				"frame_count": 10
+			},
+			"walk_forward": {
+				"url": "https://i.imgur.com/b5kDxwt.png",
+				"frame_count": 4
+			},
+			"walk_backward": {
+				"url": "https://i.imgur.com/DaJQCj4.png",
+				"frame_count": 4
+			},
+			"run": {
+				"url": "https://i.imgur.com/qxw9lwf.png",
+				"frame_count": 2
+			},
+			"dash_back": {
+				"url": "https://i.imgur.com/sFwt1aw.png",
+				"frame_count": 5
+			},
+			"hit": {
+				"url": "https://i.imgur.com/EhTi8kE.png",
+				"frame_count": 3
+			},
+			"stunned": {
+				"url": "https://i.imgur.com/f8YDPzM.png",
+				"frame_count": 6
+			},
+			"pushed": {
+				"url": "https://i.imgur.com/Y2whbvq.png",
+				"frame_count": 4
+			},
+			"pulled": {
+				"url": "https://i.imgur.com/DRVmlF0.png",
+				"frame_count": 4
+			},
+			"metadata": {
+				"scaling": 2.125,
+				"flip": true,
+				"horizontal_offset": 0
+			}
+		}
+	},
+	"portrait_image_url": "https://i.imgur.com/OAmL0v3.png",
+	"cards": [
+		{
+			"definition_id": "haohmaru-bluellama1_tenhafuujinzan",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "haohmaru-bluellama1_tenhafuujinzan",
+			"image_name": "specials",
+			"image_index": 5
+		},
+		{
+			"definition_id": "haohmaru-bluellama1_tenhaseiouzan",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "haohmaru-bluellama1_tenhaseiouzan",
+			"image_name": "specials",
+			"image_index": 6
+		},
+		{
+			"definition_id": "haohmaru-bluellama1_senpuuretsuzan",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "haohmaru-bluellama1_senpuuretsuzan",
+			"image_name": "specials",
+			"image_index": 0
+		},
+		{
+			"definition_id": "haohmaru-bluellama1_kogetsuzan",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "haohmaru-bluellama1_kogetsuzan",
+			"image_name": "specials",
+			"image_index": 1
+		},
+		{
+			"definition_id": "haohmaru-bluellama1_resshinzan",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "haohmaru-bluellama1_resshinzan",
+			"image_name": "specials",
+			"image_index": 2
+		},
+		{
+			"definition_id": "haohmaru-bluellama1_sakekougeki",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "haohmaru-bluellama1_sakekougeki",
+			"image_name": "specials",
+			"image_index": 3
+		},
+		{
+			"definition_id": "haohmaru-bluellama1_zankousen",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "haohmaru-bluellama1_zankousen",
+			"image_name": "specials",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_grasp",
+			"image_name": "normals",
+			"image_index": 0
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_cross",
+			"image_name": "normals",
+			"image_index": 1
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_assault",
+			"image_name": "normals",
+			"image_index": 2
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_dive",
+			"image_name": "normals",
+			"image_index": 3
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_spike",
+			"image_name": "normals",
+			"image_index": 4
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_sweep",
+			"image_name": "normals",
+			"image_index": 5
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_focus",
+			"image_name": "normals",
+			"image_index": 6
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		},
+		{
+			"definition_id": "standard_normal_block",
+			"image_name": "normals",
+			"image_index": 7
+		}
+	],
+	"custom_card_definitions": [
+		{
+			"id": "haohmaru-bluellama1_senpuuretsuzan",
+			"type": "special",
+			"display_name": "Senpuuretsuzan",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 3,
+			"range_max": 5,
+			"power": 6,
+			"speed": 3,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "hit",
+					"effect_type": "opponent_discard_random",
+					"amount": 1
+				},
+				{
+					"timing": "after",
+					"effect_type": "choice",
+					"choice": [
+						{
+							"effect_type": "close",
+							"amount": 1
+						},
+						{
+							"effect_type": "close",
+							"amount": 2
+						},
+						{
+							"effect_type": "pass"
+						}
+					]
+				}
+			],
+			"boost": {
+				"boost_type": "immediate",
+				"force_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Roll",
+				"effects": [
+					{
+						"timing": "immediate",
+						"effect_type": "choice",
+						"choice": [
+							{
+								"effect_type": "advance",
+								"amount": 2
+							},
+							{
+								"effect_type": "retreat",
+								"amount": 2
+							}
+						]
+					},
+					{
+						"timing": "immediate",
+						"condition": "range_multiple",
+						"condition_amount_min": 2,
+						"condition_amount_max": 3,
+						"effect_type": "bonus_action"
+					}
+				]
+			}
+		},
+		{
+			"id": "haohmaru-bluellama1_kogetsuzan",
+			"type": "special",
+			"display_name": "Kogetsuzan",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 5,
+			"speed": 6,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "hit",
+					"effect_type": "draw",
+					"amount": 1
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Transience",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 3
+					}
+				]
+			}
+		},
+		{
+			"id": "haohmaru-bluellama1_resshinzan",
+			"type": "special",
+			"display_name": "Resshinzan",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 6,
+			"speed": 3,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"effect_type": "ignore_guard"
+				},
+				{
+					"timing": "before",
+					"effect_type": "close",
+					"amount": 2
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Shoujin",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "speedup",
+						"amount": 1
+					},
+					{
+						"timing": "now",
+						"effect_type": "close",
+						"amount": 1,
+						"and": {
+							"effect_type": "draw",
+							"amount": 1
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "haohmaru-bluellama1_sakekougeki",
+			"type": "special",
+			"display_name": "Sake Kougeki",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 2,
+			"power": 4,
+			"speed": 4,
+			"armor": 0,
+			"guard": 4,
+			"effects": [
+				{
+					"timing": "hit",
+					"effect_type": "gain_advantage"
+				},
+				{
+					"timing": "after",
+					"effect_type": "choice",
+					"choice": [
+						{
+							"effect_type": "advance",
+							"amount": 1
+						},
+						{
+							"effect_type": "advance",
+							"amount": 2
+						},
+						{
+							"effect_type": "retreat",
+							"amount": 1
+						},
+						{
+							"effect_type": "retreat",
+							"amount": 2
+						}
+					]
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Sakura",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "ignore_armor"
+					},
+					{
+						"timing": "now",
+						"effect_type": "draw",
+						"amount": 1
+					}
+				]
+			}
+		},
+		{
+			"id": "haohmaru-bluellama1_zankousen",
+			"type": "special",
+			"display_name": "Zankousen",
+			"force_cost": 0,
+			"gauge_cost": 0,
+			"range_min": 1,
+			"range_max": 3,
+			"power": 7,
+			"speed": 2,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+				{
+					"timing": "during_strike",
+					"effect_type": "ignore_armor"
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "Shuradou",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 1,
+						"and": {
+							"effect_type": "stun_immunity"
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "haohmaru-bluellama1_tenhafuujinzan",
+			"type": "ultra",
+			"display_name": "Tenha Fuujinzan",
+			"force_cost": 0,
+			"gauge_cost": 3,
+			"range_min": 1,
+			"range_max": 1,
+			"power": 10,
+			"speed": 5,
+			"armor": 0,
+			"guard": 0,
+			"effects": [
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 1,
+				"cancel_cost": -1,
+				"display_name": "The Ronin Vagabond",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 2,
+						"and": {
+							"effect_type": "speedup",
+							"amount": 1
+						}
+					},
+					{
+						"timing": "now",
+						"effect_type": "choice",
+						"choice": [
+							{
+								"effect_type": "advance",
+								"amount": 1
+							},
+							{
+								"effect_type": "retreat",
+								"amount": 1
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"id": "haohmaru-bluellama1_tenhaseiouzan",
+			"type": "ultra",
+			"display_name": "Tenha Seiouzan",
+			"force_cost": 0,
+			"gauge_cost": 4,
+			"range_min": 2,
+			"range_max": 6,
+			"power": 8,
+			"speed": 4,
+			"armor": 0,
+			"guard": 4,
+			"effects": [
+				{
+					"timing": "hit",
+					"effect_type": "opponent_discard_random",
+					"amount": 3
+				}
+			],
+			"boost": {
+				"boost_type": "continuous",
+				"force_cost": 0,
+				"cancel_cost": -1,
+				"display_name": "Legend",
+				"effects": [
+					{
+						"timing": "during_strike",
+						"effect_type": "powerup",
+						"amount": 2
+					},
+					{
+						"timing": "now",
+						"effect_type": "strike"
+					}
+				]
+			}
+		}
+	]
+}
