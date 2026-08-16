@@ -1,4 +1,5 @@
 import { WebSocketServer } from 'ws'
+import { v4 as uuidv4 } from 'uuid'
 import {
 	RegExpMatcher,
 	TextCensor,
@@ -10,6 +11,13 @@ import Database from './dbaccess.js'
 import QueueManager from './queue_manager.js'
 import RoomManager from './room_manager.js';
 import DiscordConnection from './discordconnection.js';
+import {
+  build_player_state_snapshot,
+  build_server_hello_message,
+  build_server_keepalive_message,
+  build_session_restore_failed_message,
+  build_session_restored_message,
+} from './session_messages.js'
 import { get_server_config, update_customs_db, checkAndDownloadUpdatedGameZip } from './blobstorage.js'
 import * as dotenv from 'dotenv';
 dotenv.config({ path: `.env`, debug: true });
@@ -49,7 +57,21 @@ const censor = new TextCensor();
 
 // Set player timeout to 15 minutes
 const PlayerTimeoutMs = 15 * 60 * 1000 * 99
+// How long a seat in a live game is held for a player who dropped.
+const ReconnectGraceMs = parseInt(process.env.RECONNECT_GRACE_MS) || 2 * 60 * 1000
+// How long a disconnected player's identity stays restorable.
+const SessionGraceMs = Math.max(
+  parseInt(process.env.SESSION_GRACE_MS) || 10 * 60 * 1000,
+  ReconnectGraceMs
+)
+const KeepaliveIntervalMs = parseInt(process.env.KEEPALIVE_INTERVAL_MS) || 15 * 1000
+const SweepIntervalMs = 5 * 1000
+
+// websocket -> the player it is currently bound to.
 const active_connections = new Map()
+// Long lived session indexes. A player outlives its websocket so that a
+// reconnecting client can be put back into the game it dropped out of.
+const sessions_by_token = new Map()
 
 const sqltimeout = 30000
 const config = {
@@ -72,7 +94,7 @@ const config = {
 const discord_connection = new DiscordConnection()
 const database = new Database(config);
 const server_config = await get_server_config()
-const room_manager = new RoomManager()
+const room_manager = new RoomManager(ReconnectGraceMs)
 const queue_manager = new QueueManager(database, server_config, discord_connection, room_manager)
 var customs_db = {
   version: 0,
@@ -94,6 +116,231 @@ setInterval(async () => {
 
 var running_id = 1
 var check_value = process.env.CHECK_VALUE
+
+// ---------------------------------------------------------------------------
+// Session and connection management
+// ---------------------------------------------------------------------------
+
+function create_player(ws) {
+  const player = new Player(ws, uuidv4(), "Anon_" + get_next_id(), uuidv4(), uuidv4())
+  sessions_by_token.set(player.session_token, player)
+  return player
+}
+
+function unregister_player(player) {
+  if (!player) {
+    return
+  }
+  if (sessions_by_token.get(player.session_token) === player) {
+    sessions_by_token.delete(player.session_token)
+  }
+}
+
+function get_player_for_ws(ws) {
+  return active_connections.get(ws)
+}
+
+function get_connected_players() {
+  return Array.from(new Set(active_connections.values()))
+}
+
+function attach_connection_to_player(ws, player) {
+  player.attach_connection(ws)
+  active_connections.set(ws, player)
+}
+
+function detach_player_connection(player) {
+  if (player.ws && active_connections.get(player.ws) === player) {
+    active_connections.delete(player.ws)
+  }
+  clear_player_timeout(player)
+  player.detach_connection()
+}
+
+function clear_player_timeout(player) {
+  if (player.timeout !== null) {
+    clearTimeout(player.timeout)
+    player.timeout = null
+  }
+}
+
+function is_player_connection_alive(player) {
+  return !!(
+    player &&
+    player.connected &&
+    player.ws &&
+    player.ws.readyState === 1 &&
+    active_connections.get(player.ws) === player
+  )
+}
+
+function send_message(ws, message) {
+  try {
+    ws.send(JSON.stringify(message))
+  } catch (error) {
+    console.log("Failed to send message:", error)
+  }
+}
+
+// Sockets that died without a clean close leave a player marked connected.
+// Detaching them here starts the reconnect clock and runs the same cleanup a
+// clean close would, so nothing is left holding a stale queue or room slot.
+function detach_dead_connections() {
+  for (const [ws, player] of [...active_connections.entries()]) {
+    if (ws.readyState === 1) {
+      continue
+    }
+    active_connections.delete(ws)
+    if (player.ws !== ws) {
+      continue
+    }
+    clear_player_timeout(player)
+    player.detach_connection()
+    queue_manager.leaveRoom(player)
+    room_manager.leaveRoom(player, true)
+  }
+}
+
+function sweep_state(now = Date.now()) {
+  detach_dead_connections()
+  queue_manager.pruneStaleQueues(is_player_connection_alive)
+  const rooms_changed = room_manager.sweep(is_player_connection_alive, now)
+
+  for (const player of [...sessions_by_token.values()]) {
+    if (is_player_connection_alive(player)) {
+      continue
+    }
+    if (player.room || player.queue_id) {
+      continue
+    }
+    if (!player.last_disconnect_at) {
+      continue
+    }
+    if (now - player.last_disconnect_at.getTime() <= SessionGraceMs) {
+      continue
+    }
+    unregister_player(player)
+  }
+
+  return rooms_changed
+}
+
+function get_public_room_name(room) {
+  if (!room) {
+    return null
+  }
+  if (room.name.startsWith("custom_")) {
+    return room.name.substring("custom_".length)
+  }
+  return room.name
+}
+
+function send_restore_failed(ws, reason, details = {}) {
+  send_message(ws, build_session_restore_failed_message(reason, details))
+}
+
+// Rebinds a websocket onto a previously created player session. The session
+// token is the only accepted credential: it is the one thing that proves the
+// caller is the same client that owned the session.
+function restore_session(ws, json_data) {
+  if (typeof json_data !== 'object' || json_data === null) {
+    return false
+  }
+
+  const current_player = get_player_for_ws(ws)
+  if (!current_player) {
+    send_restore_failed(ws, 'current_player_missing')
+    return true
+  }
+
+  const context = typeof json_data.context === 'object' && json_data.context !== null
+    ? json_data.context
+    : json_data
+  const previous_session_token = context.previous_session_token
+
+  if (typeof previous_session_token !== 'string' || previous_session_token.length === 0) {
+    send_restore_failed(ws, 'missing_session_token')
+    return true
+  }
+
+  // Expire anything that is already past its grace period before matching, so
+  // a stale session is never resurrected.
+  sweep_state()
+
+  const old_player = sessions_by_token.get(previous_session_token)
+  if (!old_player) {
+    console.log(`[restore_session] failed: no session for the supplied token`)
+    send_restore_failed(ws, 'no_matching_session')
+    return true
+  }
+
+  // Optional consistency checks. These are not match keys, they only catch a
+  // client sending a token that disagrees with the rest of its saved state.
+  if (context.previous_player_id && String(context.previous_player_id) !== String(old_player.id)) {
+    send_restore_failed(ws, 'session_mismatch', { field: 'previous_player_id' })
+    return true
+  }
+  if (context.previous_session_id && context.previous_session_id !== old_player.session_id) {
+    send_restore_failed(ws, 'session_mismatch', { field: 'previous_session_id' })
+    return true
+  }
+
+  if (old_player === current_player) {
+    // Nothing to merge, but the client still wants its current state.
+    send_message(ws, build_session_restored_message(
+      old_player,
+      null,
+      build_player_state_snapshot(old_player, get_public_room_name)
+    ))
+    return true
+  }
+
+  console.log(`[restore_session] attempt: temporary_player=${current_player.id} target_session=${old_player.session_id} target_player=${old_player.id}/${old_player.name}`)
+
+  // The token holder owns the session, so an older connection still holding it
+  // (a duplicate tab, or a socket the server has not noticed is dead) loses.
+  if (old_player.ws && old_player.ws !== ws) {
+    console.log(`[restore_session] replacing_connection: player=${old_player.id}`)
+    const replaced_ws = old_player.ws
+    active_connections.delete(replaced_ws)
+    try {
+      replaced_ws.close()
+    } catch (error) {
+      console.log("Failed to close replaced websocket during restore:", error)
+    }
+  }
+
+  if (current_player.version !== "?") {
+    old_player.version = current_player.version
+  }
+
+  // Drop the throwaway identity this websocket was given on connect. Detaching
+  // it first releases the websocket and cancels its idle timeout, which would
+  // otherwise fire later and close the restored player's connection.
+  remove_player_from_all_state(current_player)
+  detach_player_connection(current_player)
+  unregister_player(current_player)
+
+  attach_connection_to_player(ws, old_player)
+  set_player_timeout(old_player)
+
+  const snapshot = build_player_state_snapshot(old_player, get_public_room_name)
+  send_message(ws, build_session_restored_message(old_player, current_player, snapshot))
+
+  if (old_player.room && old_player.room.gameStarted) {
+    old_player.room.player_reconnect(old_player)
+  }
+
+  console.log(`[restore_session] success: player=${old_player.id}/${old_player.name} room=${snapshot.room_id ?? 'Lobby'} in_game=${snapshot.in_game}`)
+  broadcast_players_update()
+  return true
+}
+
+function remove_player_from_all_state(player) {
+  queue_manager.leaveRoom(player)
+  room_manager.leaveRoom(player, false)
+  player.lobby_state = "Lobby"
+}
 
 function join_custom_room(ws, join_room_json) {
   // join_room_json required parameters:
@@ -125,7 +372,7 @@ function join_custom_room(ws, join_room_json) {
   }
   var player_join_version = join_room_json.version
 
-  var player = active_connections.get(ws)
+  var player = get_player_for_ws(ws)
   if (player === undefined) {
     console.log("join_room Player is undefined")
     return false
@@ -241,7 +488,7 @@ function observe_room(ws, json_data) {
   }
   var player_join_version = json_data.version
 
-  var player = active_connections.get(ws)
+  var player = get_player_for_ws(ws)
   if (player === undefined) {
     console.log("observe_room Player is undefined")
     return false
@@ -264,10 +511,7 @@ function observe_room(ws, json_data) {
 
   // Find the match.
   // Search for the match as is, or with the custom_ prefix.
-  var room = room_manager.findRoom(room_name)
-  if (!room) {
-    room = room_manager.findRoom("custom_" + room_name)
-  }
+  var room = room_manager.findRoomByJoinId(room_name)
 
   if (room) {
     if (room.version != player_join_version) {
@@ -335,7 +579,7 @@ function join_matchmaking(ws, json_data) {
 
   var player_join_version = json_data.version
 
-  var player = active_connections.get(ws)
+  var player = get_player_for_ws(ws)
   if (player === undefined) {
     console.log("join_matchmaking Player is undefined")
     return false
@@ -378,7 +622,6 @@ function join_matchmaking(ws, json_data) {
     }
   }
 
-  var player = active_connections.get(ws)
   player.set_deck_id(deck_id, custom_deck_definition)
   var success = queue_manager.addPlayer(queue_id, player, player_join_version)
 
@@ -422,21 +665,30 @@ function send_paged_customs(ws) {
 function leave_room(player, disconnect) {
   queue_manager.leaveRoom(player)
   room_manager.leaveRoom(player, disconnect)
+  if (!disconnect) {
+    player.lobby_state = "Lobby"
+  }
   broadcast_players_update()
 }
 
 function handle_disconnect(ws) {
-  const player = active_connections.get(ws)
-  if (player) {
-    console.log(`Player ${player.name} disconnected`)
-    leave_room(player, true)
-    active_connections.delete(ws)
-    broadcast_players_update()
+  const player = get_player_for_ws(ws)
+  if (!player) {
+    return
   }
+
+  console.log(`Player ${player.name} disconnected`)
+  detach_player_connection(player)
+  // A player who drops out of a live game keeps their seat until the reconnect
+  // grace period expires. Everything else is cleaned up immediately.
+  queue_manager.leaveRoom(player)
+  room_manager.leaveRoom(player, true)
+  sweep_state()
+  broadcast_players_update()
 }
 
 function already_has_player_with_name(player_to_ignore, name) {
-  for (const player of active_connections.values()) {
+  for (const player of get_connected_players()) {
     if (player === player_to_ignore) {
       continue
     }
@@ -481,6 +733,7 @@ function set_lobby_state(player, json_message) {
     return false
   }
   var lobby_state = json_message.lobby_state
+  player.lobby_state = lobby_state
   if (lobby_state == "AI") {
     player.set_playing_AI(true)
   } else {
@@ -489,14 +742,14 @@ function set_lobby_state(player, json_message) {
   broadcast_players_update()
 }
 
-function broadcast_players_update() {
+function build_players_update_message() {
   const message = {
     type: 'players_update',
     players: [],
     rooms: [],
     queues: queue_manager.getQueueInfos(),
   }
-  for (const player of active_connections.values()) {
+  for (const player of get_connected_players()) {
     var room_name = "Lobby"
     if (player.room !== null) {
       room_name = player.room.name
@@ -512,9 +765,19 @@ function broadcast_players_update() {
     })
   }
   message.rooms = room_manager.getRoomInfos()
-  for (const player of active_connections.values()) {
-    player.ws.send(JSON.stringify(message))
+  return message
+}
+
+function broadcast_players_update() {
+  const message = build_players_update_message()
+  for (const player of get_connected_players()) {
+    player.send(message)
   }
+}
+
+function send_players_update(ws) {
+  send_message(ws, build_players_update_message())
+  return true
 }
 
 function set_player_timeout(player) {
@@ -524,7 +787,9 @@ function set_player_timeout(player) {
   player.timeout = setTimeout(() => {
     console.log("Timing out")
     console.log(`Player ${player.name} timed out`)
-    player.ws.close()
+    if (player.ws) {
+      player.ws.close()
+    }
   }, PlayerTimeoutMs)
 }
 
@@ -537,15 +802,18 @@ function get_next_id() {
 }
 
 wss.on('connection', function connection(ws) {
-  var new_player_id = get_next_id()
-  var player_name = "Anon_" + new_player_id
-  const player = new Player(ws, new_player_id, player_name)
-  active_connections.set(ws, player)
+  const player = create_player(ws)
+  attach_connection_to_player(ws, player)
   set_player_timeout(player)
 
   ws.on('message', function message(data) {
     var handled = false
-    set_player_timeout(player)
+    // The player bound to this websocket can change: a successful
+    // restore_session swaps the temporary player for the restored one.
+    const bound_player = get_player_for_ws(ws)
+    if (bound_player) {
+      set_player_timeout(bound_player)
+    }
     try {
       const json_data = JSON.parse(data)
       const message_type = json_data.type
@@ -555,22 +823,30 @@ wss.on('connection', function connection(ws) {
         handled = observe_room(ws, json_data)
       } else if (message_type == "join_matchmaking") {
         handled = join_matchmaking(ws, json_data)
+      } else if (message_type == "restore_session") {
+        handled = restore_session(ws, json_data)
       } else if (message_type == "set_name") {
-        set_name(player, json_data)
-        handled = true
-      } else if (message_type == "set_lobby_state") {
-        set_lobby_state(player, json_data)
-        handled = true
-      } else if (message_type == "leave_room") {
-        leave_room(player, false)
-        handled = true
-      } else if (message_type == "observe_room") {
-        handled = observe_room(player, json_data)
-      } else if (message_type == "game_message") {
-        if (player.room !== null) {
-          player.room.handle_game_message(player, json_data)
+        if (bound_player) {
+          set_name(bound_player, json_data)
         }
         handled = true
+      } else if (message_type == "set_lobby_state") {
+        if (bound_player) {
+          set_lobby_state(bound_player, json_data)
+        }
+        handled = true
+      } else if (message_type == "leave_room") {
+        if (bound_player) {
+          leave_room(bound_player, false)
+        }
+        handled = true
+      } else if (message_type == "game_message") {
+        if (bound_player && bound_player.room !== null) {
+          bound_player.room.handle_game_message(bound_player, json_data)
+        }
+        handled = true
+      } else if (message_type == "request_players_update") {
+        handled = send_players_update(ws)
       } else if (message_type == "get_customs") {
         handled = send_paged_customs(ws)
       }
@@ -588,12 +864,54 @@ wss.on('connection', function connection(ws) {
     handle_disconnect(ws)
   })
 
-  const message = {
-    type: 'server_hello',
-    player_name: player_name
-  }
-  ws.send(JSON.stringify(message))
+  ws.on('error', (error) => {
+    console.log("Websocket error:", error)
+    handle_disconnect(ws)
+  })
+
+  ws.on('pong', () => {
+    const bound_player = get_player_for_ws(ws)
+    if (bound_player) {
+      bound_player.mark_pong()
+    }
+  })
+
+  send_message(ws, build_server_hello_message(player))
   broadcast_players_update()
 })
+
+// Detect half open connections quickly instead of waiting for TCP to notice.
+// The server_keepalive message additionally lets browser clients, which cannot
+// observe websocket level pings, tell that the server is still there.
+setInterval(() => {
+  const keepalive_message = build_server_keepalive_message()
+  for (const [ws, player] of [...active_connections.entries()]) {
+    if (ws.readyState !== 1) {
+      continue
+    }
+    if (player.awaiting_pong) {
+      console.log(`Player ${player.name} missed a keepalive pong, terminating connection`)
+      ws.terminate()
+      continue
+    }
+    player.awaiting_pong = true
+    try {
+      ws.ping()
+      ws.send(JSON.stringify(keepalive_message))
+    } catch (error) {
+      console.log(`Failed to send keepalive to player ${player.id}:`, error)
+      ws.terminate()
+    }
+  }
+}, KeepaliveIntervalMs)
+
+// Expire held seats and stale sessions even when nothing else is happening.
+setInterval(() => {
+  const player_count_before = get_connected_players().length
+  const rooms_changed = sweep_state()
+  if (rooms_changed || get_connected_players().length !== player_count_before) {
+    broadcast_players_update()
+  }
+}, SweepIntervalMs)
 
 console.log("Server started on port " + port + ".")
