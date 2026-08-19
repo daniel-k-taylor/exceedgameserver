@@ -251,6 +251,28 @@ test('a restore snapshot carries the replay messages for a live game', () => {
   assert.equal(snapshot.messages[1].type, 'game_message')
 })
 
+test('a restore snapshot reports how long the opponent has left to reconnect', () => {
+  const room_manager = new RoomManager(GRACE_MS)
+  const { room, player_one, player_two } = make_started_room(room_manager)
+
+  // Opponent still present: there is no held seat, so there is no deadline.
+  const connected_snapshot = build_player_state_snapshot(player_one, get_public_room_name, GRACE_MS)
+  assert.equal(connected_snapshot.opponent_connected, true)
+  assert.equal(connected_snapshot.opponent_reconnect_deadline, null)
+
+  player_two.connected = false
+  player_two.last_disconnect_at = new Date()
+  room.hold_seat_for_reconnect(player_two, GRACE_MS)
+
+  const snapshot = build_player_state_snapshot(player_one, get_public_room_name, GRACE_MS)
+  assert.equal(snapshot.opponent_connected, false)
+  assert.equal(
+    snapshot.opponent_reconnect_deadline,
+    player_two.last_disconnect_at.getTime() + GRACE_MS,
+    'the restoring client needs the same deadline the peers were broadcast'
+  )
+})
+
 test('a lobby snapshot has no room and no replay', () => {
   const player = make_player("Alice")
   const snapshot = build_player_state_snapshot(player, get_public_room_name)

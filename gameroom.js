@@ -334,10 +334,31 @@ class GameRoom {
       player_name: player.name,
       reason: 'reconnect_timeout',
     })
+    this.end_game_if_not_enough_players()
+    return true
+  }
+
+  // A two player game cannot continue once a seat is permanently vacated, so
+  // the room must not keep advertising itself as a live match that somebody
+  // could be restored back into.
+  end_game_if_not_enough_players() {
     if (this.players.length === 0) {
       this.game_over()
+      return
     }
-    return true
+    if (this.gameStarted && this.players.length < 2) {
+      this.game_over()
+      return
+    }
+    // Held seats keep a player in this.players, so a room where everybody has
+    // disconnected still looks like a live match. Nobody is waiting for a
+    // reconnect that nobody is present to complete, and restoring into it
+    // strands the returning player in an inescapable "waiting for opponent"
+    // overlay for a match that no longer exists.
+    if (this.gameStarted && this.get_connected_player_count() === 0) {
+      console.log(`Room ${this.name} has no connected players left, ending the game`)
+      this.game_over()
+    }
   }
 
   // Returns true when the caller should clear the player's room reference.
@@ -348,7 +369,12 @@ class GameRoom {
       return true
     } else if (this.is_player(player)) {
       if (disconnect && this.gameStarted && !this.is_game_over) {
-        return !this.hold_seat_for_reconnect(player, this.reconnect_grace_ms)
+        const seat_held = this.hold_seat_for_reconnect(player, this.reconnect_grace_ms)
+        if (seat_held) {
+          // That may have been the last player present.
+          this.end_game_if_not_enough_players()
+        }
+        return !seat_held
       }
       if (disconnect) {
         this.disconnects += 1
@@ -362,9 +388,7 @@ class GameRoom {
         player_name: player.name,
       }
       this.broadcast(message)
-      if (this.players.length === 0) {
-        this.game_over()
-      }
+      this.end_game_if_not_enough_players()
       return true
     }
 

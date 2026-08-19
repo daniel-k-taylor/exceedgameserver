@@ -17,6 +17,7 @@ import {
   build_server_keepalive_message,
   build_session_restore_failed_message,
   build_session_restored_message,
+  build_session_replaced_message,
 } from './session_messages.js'
 import { get_server_config, update_customs_db, checkAndDownloadUpdatedGameZip } from './blobstorage.js'
 import * as dotenv from 'dotenv';
@@ -290,7 +291,7 @@ function restore_session(ws, json_data) {
     send_message(ws, build_session_restored_message(
       old_player,
       null,
-      build_player_state_snapshot(old_player, get_public_room_name)
+      build_player_state_snapshot(old_player, get_public_room_name, ReconnectGraceMs)
     ))
     return true
   }
@@ -303,6 +304,10 @@ function restore_session(ws, json_data) {
     console.log(`[restore_session] replacing_connection: player=${old_player.id}`)
     const replaced_ws = old_player.ws
     active_connections.delete(replaced_ws)
+    // Tell the loser why it is being closed. Without this the close looks like
+    // a network blip, so it auto reconnects and steals the session back, and
+    // the two clients bounce each other forever.
+    send_message(replaced_ws, build_session_replaced_message(old_player))
     try {
       replaced_ws.close()
     } catch (error) {
@@ -324,7 +329,7 @@ function restore_session(ws, json_data) {
   attach_connection_to_player(ws, old_player)
   set_player_timeout(old_player)
 
-  const snapshot = build_player_state_snapshot(old_player, get_public_room_name)
+  const snapshot = build_player_state_snapshot(old_player, get_public_room_name, ReconnectGraceMs)
   send_message(ws, build_session_restored_message(old_player, current_player, snapshot))
 
   if (old_player.room && old_player.room.gameStarted) {

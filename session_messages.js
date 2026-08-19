@@ -18,7 +18,7 @@ export function build_session_restore_failed_message(reason, details = {}) {
 }
 
 // Everything the client needs to put itself back where it was.
-export function build_player_state_snapshot(player, get_public_room_name) {
+export function build_player_state_snapshot(player, get_public_room_name, reconnect_grace_ms = 0) {
   const room = player.room
   const is_room_player = !!(room && room.is_player(player))
   const in_game = !!(room && room.gameStarted && is_room_player)
@@ -40,6 +40,11 @@ export function build_player_state_snapshot(player, get_public_room_name) {
     game_over: in_game ? room.is_game_over : false,
     opponent_name: opponent ? opponent.name : null,
     opponent_connected: opponent ? opponent.connected : null,
+    // Lets a restoring client show the same countdown as a client that was
+    // present for the original player_disconnect_pending broadcast.
+    opponent_reconnect_deadline: opponent
+      ? room.get_reconnect_deadline(opponent, reconnect_grace_ms)
+      : null,
     messages: in_game ? room.get_replay_messages() : [],
   }
 }
@@ -50,6 +55,17 @@ export function build_session_restored_message(restored_player, temporary_player
     restored_player_id: restored_player.id,
     removed_temporary_player_id: temporary_player ? temporary_player.id : null,
     ...snapshot,
+  }
+}
+
+// Sent to a connection that is losing ownership of its session to a newer
+// connection, so it can stop trying to reclaim it.
+export function build_session_replaced_message(player) {
+  return {
+    type: 'session_replaced',
+    player_id: player.id,
+    session_id: player.session_id,
+    reason: 'opened_elsewhere',
   }
 }
 
