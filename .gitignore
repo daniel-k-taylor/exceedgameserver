@@ -163,3 +163,4 @@ cython_debug/
 
 /.vscode/
 /public/
+/public_azure_backup/
