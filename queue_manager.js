@@ -53,6 +53,26 @@ export default class QueueManager {
         this.initQueues()
     }
 
+    findDeckConfig(deck_id) {
+        return this.decks.find(deck => deck && typeof deck === 'object' && deck.character === deck_id)
+    }
+
+    // Alternate skins are suffixed with _<n> (e.g. "nanase_2"). They share the
+    // season and ban status of the base character.
+    getBaseDeckId(deck_id) {
+        const skin_match = /^(.+)_([1-9]\d*)$/.exec(deck_id)
+        if (!skin_match) {
+            return deck_id
+        }
+
+        const base_deck_id = skin_match[1]
+        if (this.findDeckConfig(base_deck_id)) {
+            return base_deck_id
+        }
+
+        return deck_id
+    }
+
     validateDeck(queue_id, deck_id) {
         // If the player picks random, their deck_id is random_*#deck_id
         // Where * is either s1, s2, etc. or just plain random#deck_id if all season random.
@@ -70,7 +90,8 @@ export default class QueueManager {
             return true
         }
 
-        const deck = this.decks.find(deck => deck.character === deck_id)
+        const base_deck_id = this.getBaseDeckId(deck_id)
+        const deck = this.findDeckConfig(base_deck_id)
         if (!deck) {
             console.log(`Couldn't find deck ${deck_id}`)
             return false
@@ -80,7 +101,7 @@ export default class QueueManager {
             return false
         }
 
-        if (queue.banned.includes(deck_id)) {
+        if (queue.banned.includes(deck_id) || queue.banned.includes(base_deck_id)) {
             return false
         }
 
@@ -95,15 +116,57 @@ export default class QueueManager {
         return true
     }
 
+    // The character the lone queued player picked, so the lobby can show it.
+    getVisibleWaitingDeckId(queue) {
+        if (!queue.waiting_room || queue.waiting_room.players.length !== 1) {
+            return ""
+        }
+
+        const waiting_player = queue.waiting_room.players[0]
+        if (!waiting_player || typeof waiting_player.deck_id !== 'string') {
+            return ""
+        }
+
+        if (waiting_player.deck_id.startsWith('random') && waiting_player.deck_id.includes('#')) {
+            return waiting_player.deck_id.split('#')[1] || waiting_player.deck_id
+        }
+
+        return waiting_player.deck_id
+    }
+
     getQueueInfos() {
         // Each queue has id, name, and match_available fields.
         return this.queues.map(queue => {
-            return {
+            const queue_info = {
                 id: queue.id,
                 name: queue.name,
                 match_available: queue.waiting_room !== null
             }
+
+            const waiting_deck_id = this.getVisibleWaitingDeckId(queue)
+            if (queue_info.match_available && waiting_deck_id) {
+                queue_info.waiting_deck_id = waiting_deck_id
+            }
+
+            return queue_info
         })
+    }
+
+    // Clears waiting rooms whose queued player is no longer reachable, so the
+    // lobby never advertises a match that cannot be joined.
+    pruneStaleQueues(is_player_alive) {
+        for (const queue of this.queues) {
+            if (!queue.waiting_room) {
+                continue
+            }
+            if (!queue.waiting_room.players.some(player => is_player_alive(player))) {
+                for (const player of queue.waiting_room.players) {
+                    player.queue_id = null
+                }
+                this.room_manager.deleteRoom(queue.waiting_room.name)
+                queue.waiting_room = null
+            }
+        }
     }
 
     addPlayer(queue_id, player, player_join_version) {
@@ -114,20 +177,23 @@ export default class QueueManager {
         }
 
         var success = false
+        player.queue_id = queue_id
         if (queue.waiting_room) {
             // A room already exists for this match.
             if (queue.waiting_room.version < player_join_version) {
                 // The player joining has a larger version,
                 // kick the player in the room and make a new one.
                 var player_in_room = queue.waiting_room.players[0]
-                send_join_version_error(player_in_room.ws)
+                send_join_version_error(player_in_room)
+                player_in_room.queue_id = null
                 this.room_manager.leaveRoom(player_in_room, false)
                 queue.waiting_room = this.createNewMatchRoom(queue, player_join_version, player)
                 success = true
             } else if (queue.waiting_room.version > player_join_version) {
                 // Lower version than room, probably need to update.
                 // Send error message.
-                send_join_version_error(ws)
+                send_join_version_error(player)
+                player.queue_id = null
                 return true
             } else {
                 // Join the room successfully.
@@ -160,10 +226,12 @@ export default class QueueManager {
         for (const queue of this.queues) {
             if (queue.waiting_room) {
                 if (queue.waiting_room.is_player(player)) {
+                    this.room_manager.deleteRoom(queue.waiting_room.name)
                     queue.waiting_room = null
                 }
             }
         }
+        player.queue_id = null
     }
 
     createNewMatchRoom(queue, version, player) {
@@ -194,10 +262,10 @@ export default class QueueManager {
     }
 }
 
-function send_join_version_error(ws) {
+function send_join_version_error(player) {
     const message = {
         type: 'room_join_failed',
         reason: 'version_mismatch'
     }
-    ws.send(JSON.stringify(message))
+    player.send(message)
 }
