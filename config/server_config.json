@@ -6,7 +6,9 @@
             "season_restriction": { "min": 7, "max": 7 },
             "custom_allowed": false,
             "banned": [
-                "carmine"
+                "carmine",
+                "ulrik",
+                "meilien"
             ],
             "starting_timer": 900,
             "enforce_timer": false,
@@ -19,7 +21,9 @@
             "season_restriction": { "min": 3, "max": 7 },
             "custom_allowed": false,
             "banned": [
-                "carmine"
+                "carmine",
+                "ulrik",
+                "meilien"
             ],
             "starting_timer": 900,
             "enforce_timer": false,
@@ -32,7 +36,9 @@
             "season_restriction": { "min": 1, "max": 7 },
             "custom_allowed": false,
             "banned": [
-                "carmine"
+                "carmine",
+                "ulrik",
+                "meilien"
             ],
             "starting_timer": 900,
             "enforce_timer": false,
