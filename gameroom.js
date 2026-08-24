@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { upload_to_blob_storage } from './blobstorage.js';
 
 class GameRoom {
-  constructor(version, room_name, database, starting_timer, enforce_timer, minimum_time_per_choice) {
+  constructor(version, room_name, database, starting_timer, enforce_timer, minimum_time_per_choice, reconnect_grace_ms = 0) {
     this.database = database
     this.name = room_name
     this.players = []
@@ -20,10 +20,37 @@ class GameRoom {
     this.starting_timer = starting_timer
     this.enforce_timer = enforce_timer
     this.minimum_time_per_choice = minimum_time_per_choice
+    this.reconnect_grace_ms = reconnect_grace_ms
   }
 
   get_observer_count() {
     return this.observers.length
+  }
+
+  get_connected_player_count() {
+    return this.players.filter(player => player.connected).length
+  }
+
+  get_disconnected_players() {
+    return this.players.filter(player => !player.connected)
+  }
+
+  has_disconnected_player() {
+    return this.get_disconnected_players().length > 0
+  }
+
+  is_empty() {
+    return this.players.length === 0 && this.observers.length === 0
+  }
+
+  // Messages an already-running game needs in order to rebuild its state.
+  get_replay_messages() {
+    const game_start_message = this.message_log.find(message => message.type === 'game_start')
+    if (!game_start_message) {
+      return []
+    }
+    const game_messages = this.message_log.filter(message => message.type === 'game_message')
+    return [game_start_message, ...game_messages]
   }
 
   get_player_name(index) {
@@ -68,7 +95,7 @@ class GameRoom {
         const message = {
           type: 'room_waiting_for_opponent',
         }
-        player.ws.send(JSON.stringify(message))
+        player.send(message)
       }
       return true
     }
@@ -83,7 +110,7 @@ class GameRoom {
       type: 'observe_start',
       messages: this.message_log
     }
-    player.ws.send(JSON.stringify(message))
+    player.send(message)
     return true
   }
 
@@ -227,18 +254,128 @@ class GameRoom {
   broadcast(message) {
     this.message_log.push(message)
     for (const player of this.players) {
-      message['your_player_id'] = player.id
-      player.ws.send(JSON.stringify(message))
+      // Copy per recipient. Mutating the shared object would leak the last
+      // player's id into the message log and into every observer's copy.
+      player.send({ ...message, your_player_id: player.id })
     }
     for (const player of this.observers) {
-      player.ws.send(JSON.stringify(message))
+      player.send(message)
     }
   }
 
+  // Out of band notifications that are not part of the replayable game log.
+  broadcast_to_peers(source_player, message) {
+    for (const player of this.players) {
+      if (player !== source_player) {
+        player.send(message)
+      }
+    }
+    for (const player of this.observers) {
+      player.send(message)
+    }
+  }
+
+  get_reconnect_deadline(player, reconnect_grace_ms) {
+    if (player.connected || !player.last_disconnect_at) {
+      return null
+    }
+    return player.last_disconnect_at.getTime() + reconnect_grace_ms
+  }
+
+  // An abnormal disconnect during a live game. The seat is held so the player
+  // can reclaim it with their session token before the grace period expires.
+  hold_seat_for_reconnect(player, reconnect_grace_ms) {
+    if (!this.is_player(player) || !this.gameStarted || this.is_game_over) {
+      return false
+    }
+
+    this.disconnects += 1
+    console.log(`Player ${player.name} disconnected from ${this.name}, holding seat for reconnect`)
+    this.broadcast_to_peers(player, {
+      type: 'player_disconnect_pending',
+      id: player.id,
+      name: player.name,
+      player_id: player.id,
+      player_name: player.name,
+      reconnect_deadline: this.get_reconnect_deadline(player, reconnect_grace_ms),
+    })
+    return true
+  }
+
+  player_reconnect(player) {
+    if (!this.is_player(player) || !this.gameStarted) {
+      return false
+    }
+
+    console.log(`Player ${player.name} reconnected to ${this.name}`)
+    this.broadcast_to_peers(player, {
+      type: 'player_reconnect',
+      id: player.id,
+      name: player.name,
+      player_id: player.id,
+      player_name: player.name,
+    })
+    return true
+  }
+
+  // The grace period ran out. Fall back to the pre-reconnect behaviour so
+  // clients see exactly the disconnect they have always seen.
+  expire_held_seat(player) {
+    if (!this.is_player(player)) {
+      return false
+    }
+
+    this.players = this.players.filter(p => p !== player)
+    this.broadcast({
+      type: 'player_disconnect',
+      id: player.id,
+      name: player.name,
+      player_id: player.id,
+      player_name: player.name,
+      reason: 'reconnect_timeout',
+    })
+    this.end_game_if_not_enough_players()
+    return true
+  }
+
+  // A two player game cannot continue once a seat is permanently vacated, so
+  // the room must not keep advertising itself as a live match that somebody
+  // could be restored back into.
+  end_game_if_not_enough_players() {
+    if (this.players.length === 0) {
+      this.game_over()
+      return
+    }
+    if (this.gameStarted && this.players.length < 2) {
+      this.game_over()
+      return
+    }
+    // Held seats keep a player in this.players, so a room where everybody has
+    // disconnected still looks like a live match. Nobody is waiting for a
+    // reconnect that nobody is present to complete, and restoring into it
+    // strands the returning player in an inescapable "waiting for opponent"
+    // overlay for a match that no longer exists.
+    if (this.gameStarted && this.get_connected_player_count() === 0) {
+      console.log(`Room ${this.name} has no connected players left, ending the game`)
+      this.game_over()
+    }
+  }
+
+  // Returns true when the caller should clear the player's room reference.
+  // A held seat returns false so the player can be restored into this game.
   player_quit(player, disconnect) {
     if (this.is_observer(player)) {
       this.observers = this.observers.filter(p => p !== player)
+      return true
     } else if (this.is_player(player)) {
+      if (disconnect && this.gameStarted && !this.is_game_over) {
+        const seat_held = this.hold_seat_for_reconnect(player, this.reconnect_grace_ms)
+        if (seat_held) {
+          // That may have been the last player present.
+          this.end_game_if_not_enough_players()
+        }
+        return !seat_held
+      }
       if (disconnect) {
         this.disconnects += 1
       }
@@ -246,13 +383,16 @@ class GameRoom {
       const message = {
         type: disconnect ? 'player_disconnect' : 'player_quit',
         id: player.id,
-        name: player.name
+        name: player.name,
+        player_id: player.id,
+        player_name: player.name,
       }
       this.broadcast(message)
-      if (this.players.length === 0) {
-        this.game_over()
-      }
+      this.end_game_if_not_enough_players()
+      return true
     }
+
+    return false
   }
 }
 

@@ -179,6 +179,10 @@ export async function upload_to_blob_storage(matchData) {
 }
 
 export async function checkAndDownloadUpdatedGameZip(gamePath) {
+    if (process.env.SKIP_GAME_ZIP_DOWNLOAD) {
+        console.warn('SKIP_GAME_ZIP_DOWNLOAD set, serving the existing contents of public/ as-is.');
+        return;
+    }
     if (!process.env.AZURE_STORAGE_CONNECTION_STRING) {
         console.warn('Azure Storage Connection string not found, skipping game zip update');
         return;
