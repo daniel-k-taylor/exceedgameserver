@@ -48,7 +48,7 @@
         {
             "id": "anything",
             "name": "Anything Goes",
-            "season_restriction": { "min": 1, "max": 7 },
+            "season_restriction": { "min": 1, "max": 8 },
             "custom_allowed": true,
             "banned": [],
             "starting_timer": 900,

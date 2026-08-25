@@ -33,11 +33,26 @@ export default class QueueManager {
     updateServerConfig(server_config) {
         this.decks = server_config["decks"]
 
-        // Check if the queue config has changed by looking
-        // at the queue ids. If the ids are the same, do nothing.
+        // If the queue ids are unchanged, the queues themselves are still valid,
+        // so update their settings in place and keep any waiting rooms alive.
         const old_ids = this.queue_config.map(config => config.id)
         const new_ids = server_config["queue_config"].map(config => config.id)
         if (JSON.stringify(old_ids) === JSON.stringify(new_ids)) {
+            this.queue_config = server_config["queue_config"]
+            for (const config of this.queue_config) {
+                const queue = this.getQueueById(config["id"])
+                if (!queue) {
+                    continue
+                }
+                queue.name = config["name"]
+                queue.season_restriction = config.season_restriction
+                queue.custom_allowed = config.custom_allowed
+                queue.banned = config.banned
+                queue.starting_timer = config.starting_timer
+                queue.enforce_timer = config.enforce_timer
+                queue.minimum_time_per_choice = config.minimum_time_per_choice
+                queue.best_of = config.best_of
+            }
             return
         }
 
