@@ -363,6 +363,26 @@ test('alternate skins validate against their base character', () => {
   assert.equal(queue_manager.validateDeck("all", "not_a_character"), false)
 })
 
+test('config updates apply to existing queues without an id change', () => {
+  const { queue_manager } = make_queue_manager()
+  const player = make_player("Alice", "ryu")
+  queue_manager.addPlayer("all", player, "test")
+  const waiting_room_name = queue_manager.getQueueById("all").waiting_room.name
+
+  assert.equal(queue_manager.validateDeck("s1", "nanase"), false)
+  assert.equal(queue_manager.validateDeck("s1", "ryu"), false, 'ryu starts banned')
+
+  const updated_config = structuredClone(server_config)
+  updated_config.queue_config.find(config => config.id === "s1").season_restriction.max = 3
+  updated_config.queue_config.find(config => config.id === "s1").banned = []
+  queue_manager.updateServerConfig(updated_config)
+
+  assert.equal(queue_manager.validateDeck("s1", "nanase"), true, 'season restriction is refreshed')
+  assert.equal(queue_manager.validateDeck("s1", "ryu"), true, 'ban list is refreshed')
+  assert.equal(queue_manager.getQueueById("all").waiting_room.name, waiting_room_name,
+    'unchanged queues keep their waiting room')
+})
+
 test('the queue advertises the character that is waiting', () => {
   const { queue_manager } = make_queue_manager()
   const player = make_player("Alice", "random_s1#ryu")

@@ -33,7 +33,7 @@
         {
             "id": "allseasons",
             "name": "All Seasons",
-            "season_restriction": { "min": 1, "max": 7 },
+            "season_restriction": { "min": 1, "max": 8 },
             "custom_allowed": false,
             "banned": [
                 "carmine",
@@ -48,7 +48,7 @@
         {
             "id": "anything",
             "name": "Anything Goes",
-            "season_restriction": { "min": 1, "max": 7 },
+            "season_restriction": { "min": 1, "max": 8 },
             "custom_allowed": true,
             "banned": [],
             "starting_timer": 900,
@@ -114,6 +114,7 @@
         { "character": "mika", "season": 6 },
         { "character": "millia", "season": 7 },
         { "character": "minato", "season": 2 },
+        { "character": "miyuki", "season": 8 },
         { "character": "mole", "season": 4 },
         { "character": "morathi", "season": 1 },
         { "character": "nago", "season": 7 },
