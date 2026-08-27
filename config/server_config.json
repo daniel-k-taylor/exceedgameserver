@@ -58,9 +58,11 @@
         }
     ],
     "decks": [
+        { "character": "akimo", "season": 8 },
         { "character": "akuma", "season": 3 },
         { "character": "anji", "season": 7 },
         { "character": "arakune", "season": 5 },
+        { "character": "astryda", "season": 8 },
         { "character": "axl", "season": 7 },
         { "character": "baiken", "season": 7 },
         { "character": "bang", "season": 5 },
@@ -93,6 +95,7 @@
         { "character": "hakumen", "season": 5 },
         { "character": "happychaos", "season": 7 },
         { "character": "hazama", "season": 5 },
+        { "character": "heraal", "season": 8 },
         { "character": "hilda", "season": 6 },
         { "character": "hyde", "season": 6 },
         { "character": "iaquis", "season": 2 },
